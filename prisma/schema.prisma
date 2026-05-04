@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String       @id @default(uuid())
+  email        String       @unique
+  name         String
+  passwordHash String
+  role         String       @default("analyst") // analyst | admin
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  engagements  Engagement[]
+}
+
+model Engagement {
+  id              String           @id @default(uuid())
+  name            String           // e.g. "Bank X — Mortgage Discovery"
+  clientName      String
+  processTemplate String           // mortgage | sme_loan | dispute | onboarding
+  processMap      Json?            // Saved canvas state from ProcessModeler
+  status          String           @default("created") // created | uploading | analyzing | completed
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  createdBy       User             @relation(fields: [createdById], references: [id])
+  createdById     String
+  uploads         Upload[]
+  eventLogs       EventLog[]
+  analysisResults AnalysisResult[]
+}
+
+model Upload {
+  id            String     @id @default(uuid())
+  fileName      String
+  originalName  String
+  systemSource  String?    // CRM, LOS, Core Banking, etc.
+  rowCount      Int?
+  columnCount   Int?
+  sizeBytes     Int?
+  schemaInference Json?    // Stores the Claude-inferred schema
+  rawData       Json?      // Full parsed CSV rows for correlation engine
+  status        String     @default("uploaded") // uploaded | inferring | inferred | correlated | error
+  createdAt     DateTime   @default(now())
+  engagement    Engagement @relation(fields: [engagementId], references: [id], onDelete: Cascade)
+  engagementId  String
+  eventLogs     EventLog[]
+}
+
+model EventLog {
+  id            String     @id @default(uuid())
+  caseId        String     // Correlated case identifier
+  activity      String     // Activity/step name
+  timestamp     DateTime   // When the event occurred
+  system        String     // Source system
+  actor         String?    // Who performed the step
+  attributes    Json?      // Additional event attributes
+  confidence    Float      @default(1.0) // Correlation confidence (0-1)
+  engagement    Engagement @relation(fields: [engagementId], references: [id], onDelete: Cascade)
+  engagementId  String
+  upload        Upload?    @relation(fields: [uploadId], references: [id])
+  uploadId      String?
+
+  @@index([engagementId, caseId])
+  @@index([engagementId, timestamp])
+}
+
+model ProcessStepTemplate {
+  id              String   @id @default(uuid())
+  label           String
+  processTemplate String   // mortgage | sme_loan | dispute | onboarding | generic
+  order           Int      @default(0)
+  description     String   @default("")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model ProcessActor {
+  id          String   @id @default(uuid())
+  name        String
+  color       String   @default("#3366FF")
+  description String   @default("")
+  type        String   @default("employee") // customer | front-office | back-office | operations | fraud | compliance | external | automated
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ApplicationSystem {
+  id               String   @id @default(uuid())
+  name             String
+  color            String   @default("#3366FF")
+  description      String   @default("")
+  processTemplates String[] // ["*"] = all, ["mortgage","sme_loan"] = specific
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model AnalysisResult {
+  id           String     @id @default(uuid())
+  type         String     // cycle_time | bottleneck | rework | dark_process | variant | apa_opportunity
+  title        String
+  description  String
+  data         Json       // Structured result data
+  severity     String?    // high | medium | low
+  createdAt    DateTime   @default(now())
+  engagement   Engagement @relation(fields: [engagementId], references: [id], onDelete: Cascade)
+  engagementId String
+}
