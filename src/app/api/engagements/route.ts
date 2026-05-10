@@ -27,11 +27,14 @@ export async function POST(request: NextRequest) {
   }
 
   const body = await request.json();
-  const { name, clientName, processTemplate } = body;
+  const {
+    name, clientName,
+    country, region, institutionType, aum, employees, customers,
+  } = body;
 
-  if (!name || !clientName || !processTemplate) {
+  if (!name || !clientName) {
     return NextResponse.json(
-      { error: "name, clientName, and processTemplate are required" },
+      { error: "name and clientName are required" },
       { status: 400 }
     );
   }
@@ -40,9 +43,9 @@ export async function POST(request: NextRequest) {
 
   const engagement = await prisma.engagement.create({
     data: {
-      name,
-      clientName,
-      processTemplate,
+      name, clientName,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ...({ country: country || null, region: region || null, institutionType: institutionType || null, aum: aum || null, employees: employees || null, customers: customers || null } as any),
       createdById: userId,
     },
   });

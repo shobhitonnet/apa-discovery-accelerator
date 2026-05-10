@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>APA Discovery Accelerator — Status</title>
+<style>
+  :root {
+    --navy:#001C3D; --ink:#0E2240; --slate:#374D6C; --muted:#5C6E84;
+    --soft:#9AAABB; --line:#DDE3EC; --bg:#F5F7FB; --card:#FFFFFF;
+    --blue:#1A5AFF; --green:#26BC71; --amber:#FFAC09; --red:#EF4444;
+    --purple:#7C3AED; --cyan:#06B6D4; --pink:#EC4899;
+    --claude:#C96442; --db:#1A5AFF; --algo:#26BC71;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, sans-serif; }
+  header { background: linear-gradient(135deg, var(--navy) 0%, #003B7A 100%); color: #fff; padding: 32px 40px; }
+  h1 { margin:0; font-size: 24px; font-weight: 800; letter-spacing: -0.01em; }
+  .sub { color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 4px; }
+  .pill { display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:20px; background: rgba(38,188,113,0.15); color: #6FE3A2; font-size: 11px; font-weight:700; margin-left: 12px; }
+  .pill .dot { width:6px; height:6px; border-radius:50%; background:#26BC71; }
+  nav.tabs { background: var(--card); border-bottom: 1px solid var(--line); padding: 0 40px; display: flex; gap: 4px; position: sticky; top: 0; z-index: 10; }
+  nav.tabs button { background: transparent; border: none; padding: 16px 18px; font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; }
+  nav.tabs button:hover { color: var(--ink); }
+  nav.tabs button.active { color: var(--blue); border-bottom-color: var(--blue); }
+  main { padding: 32px 40px 80px; max-width: 1400px; margin: 0 auto; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  h2 { font-size: 18px; margin: 0 0 6px; font-weight: 800; color: var(--navy); }
+  .lede { color: var(--muted); font-size: 13px; margin-bottom: 24px; line-height: 1.55; }
+  h3 { font-size: 13px; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: 0.06em; margin: 28px 0 12px; }
+  h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin: 16px 0 8px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; margin-bottom: 16px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { text-align: left; font-weight: 700; padding: 10px 12px; background: #F5F7FB; color: var(--slate); border-bottom: 1px solid var(--line); text-transform: uppercase; letter-spacing: 0.05em; font-size: 10px; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  code { font-family: 'SF Mono', Monaco, Consolas, monospace; font-size: 11px; background: #F0F4FA; padding: 2px 6px; border-radius: 3px; color: var(--navy); }
+  .badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .badge.claude { background: rgba(201,100,66,0.12); color: var(--claude); }
+  .badge.db     { background: rgba(26,90,255,0.10);  color: var(--db); }
+  .badge.algo   { background: rgba(38,188,113,0.12); color: #1A8F4F; }
+  .badge.gray   { background: #EEF2F8; color: var(--muted); }
+  .badge.live   { background: rgba(38,188,113,0.12); color: #1A8F4F; }
+  .badge.draft  { background: rgba(255,172,9,0.15); color: #B07800; }
+  .badge.locked { background: #EEF2F8; color: var(--soft); }
+  .stage { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 10px; }
+  .stage .num { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg,#26BC71,#06B6D4); color:#fff; font-weight:800; font-size: 12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .stage .body { flex: 1; }
+  .stage .title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+  .stage .desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .arch-flow { display: flex; gap: 12px; align-items: stretch; flex-wrap: wrap; margin: 16px 0 24px; }
+  .arch-box { flex: 1; min-width: 160px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; text-align: center; }
+  .arch-box .label { font-size: 10px; font-weight: 800; color: var(--soft); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .arch-box .name { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .arch-box .meta { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .arch-box.claude { border-left: 4px solid var(--claude); }
+  .arch-box.db { border-left: 4px solid var(--db); }
+  .arch-box.algo { border-left: 4px solid var(--algo); }
+  .arch-box.user { border-left: 4px solid var(--purple); }
+  .arrow { display:flex; align-items:center; color: var(--soft); font-size: 18px; }
+  .schema-table { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+  .schema-table .name { font-weight: 800; color: var(--navy); font-size: 13px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .schema-table .desc { font-size: 11px; color: var(--muted); margin-bottom: 10px; line-height: 1.4; }
+  .schema-table table { font-size: 11px; }
+  .schema-table th { padding: 6px 10px; }
+  .schema-table td { padding: 6px 10px; }
+  .schema-table .col-name { font-family: 'SF Mono', Monaco, Consolas, monospace; font-weight: 600; color: var(--navy); }
+  .schema-table .col-type { color: var(--blue); font-family: 'SF Mono', Monaco, Consolas, monospace; }
+  .schema-table .col-note { color: var(--muted); font-size: 10px; }
+  .legend { display: flex; gap: 16px; margin: 8px 0 16px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+  .legend-item .sw { width: 10px; height: 10px; border-radius: 2px; }
+  ul.clean { list-style: none; padding: 0; margin: 0; }
+  ul.clean li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--ink); display: flex; gap: 10px; }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean li .marker { color: var(--blue); font-weight: 800; flex-shrink: 0; }
+  .v-card { border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; background: var(--card); margin-bottom: 14px; }
+  .v-card .head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+  .v-card .num { font-size: 22px; font-weight: 800; color: var(--blue); }
+  .v-card .title { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .v-card .date { font-size: 11px; color: var(--soft); margin-left: auto; }
+  .v-card .tagline { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .backlog-item { display: flex; gap: 14px; padding: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; }
+  .backlog-item .prio { padding: 3px 10px; border-radius: 4px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; height: fit-content; }
+  .backlog-item .prio.p1 { background: rgba(239,68,68,0.12); color: #C0392B; }
+  .backlog-item .prio.p2 { background: rgba(255,172,9,0.15); color: #B07800; }
+  .backlog-item .prio.p3 { background: rgba(26,90,255,0.10); color: var(--blue); }
+  .backlog-item .prio.p4 { background: #EEF2F8; color: var(--muted); }
+  .backlog-item .prio.bug { background: rgba(239,68,68,0.12); color: #C0392B; }
+  .backlog-item .body { flex: 1; }
+  .backlog-item .title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .backlog-item .desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .arch-diagram { background: linear-gradient(180deg, #F8FAFD 0%, #FFFFFF 100%); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-bottom: 18px; }
+  .layer { display: flex; gap: 10px; margin-bottom: 14px; align-items: stretch; }
+  .layer-label { width: 90px; font-size: 10px; font-weight: 800; color: var(--soft); text-transform: uppercase; letter-spacing: 0.07em; padding-top: 14px; }
+  .layer-body { flex: 1; display: flex; gap: 8px; flex-wrap: wrap; }
+  .node { padding: 10px 14px; background: #fff; border: 1px solid var(--line); border-radius: 8px; font-size: 11px; font-weight: 600; color: var(--navy); }
+  .node.claude { border-left: 3px solid var(--claude); }
+  .node.db { border-left: 3px solid var(--db); }
+  .node.algo { border-left: 3px solid var(--algo); }
+  .node.user { border-left: 3px solid var(--purple); }
+  .relation { font-size: 10px; color: var(--muted); margin-left: 6px; }
+  .footnote { font-size: 11px; color: var(--soft); margin-top: 24px; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>APA Discovery Accelerator <span class="pill"><span class="dot"></span>v1.0 — locked 2026-05-10</span></h1>
+  <div class="sub">Process discovery & APA opportunity identification for Backbase consulting engagements</div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="active" data-target="architecture">Architecture</button>
+  <button data-target="userflow">User Flow</button>
+  <button data-target="aivsdb">AI vs Database</button>
+  <button data-target="versions">Version Control</button>
+  <button data-target="backlog">Backlog</button>
+</nav>
+
+<main>
+
+<!-- ====================== ARCHITECTURE ====================== -->
+<section class="panel active" id="architecture">
+  <h2>Application Architecture</h2>
+  <div class="lede">A Next.js 16 (App Router, Turbopack) full-stack app on Postgres. Claude Sonnet 4 is invoked surgically — only where structured generation or narrative synthesis is the actual product. Everything deterministic (process mining, KPI computation, RAG status) lives in TypeScript and runs against the database.</div>
+
+  <h3>Stack at a glance</h3>
+  <div class="arch-flow">
+    <div class="arch-box user"><div class="label">Browser</div><div class="name">React 19</div><div class="meta">@xyflow/react · dagre</div></div>
+    <div class="arrow">→</div>
+    <div class="arch-box"><div class="label">Server</div><div class="name">Next.js 16</div><div class="meta">App Router · Turbopack</div></div>
+    <div class="arrow">→</div>
+    <div class="arch-box db"><div class="label">Data</div><div class="name">Postgres (Neon)</div><div class="meta">Prisma 7</div></div>
+    <div class="arrow">→</div>
+    <div class="arch-box claude"><div class="label">AI</div><div class="name">Claude Sonnet 4</div><div class="meta">@anthropic-ai/sdk 0.90</div></div>
+  </div>
+
+  <h3>Layer diagram</h3>
+  <div class="arch-diagram">
+    <div class="layer">
+      <div class="layer-label">UI</div>
+      <div class="layer-body">
+        <div class="node user">EngagementCard / ProcessScanTiles</div>
+        <div class="node user">ProcessModelerCanvas (BPMN)</div>
+        <div class="node user">IngestionSection (5 stages)</div>
+        <div class="node user">ProcessExplorer (graph)</div>
+        <div class="node user">CockpitView (KPIs)</div>
+        <div class="node user">FindingsSection</div>
+        <div class="node user">AdminHomeTiles</div>
+      </div>
+    </div>
+    <div class="layer">
+      <div class="layer-label">API</div>
+      <div class="layer-body">
+        <div class="node">/api/engagements</div>
+        <div class="node">/api/engagements/[id]/processes/[processId]/build-activity-table</div>
+        <div class="node">/api/engagements/[id]/processes/[processId]/process-graph</div>
+        <div class="node">/api/engagements/[id]/processes/[processId]/cockpit</div>
+        <div class="node">/api/engagements/[id]/processes/[processId]/findings</div>
+        <div class="node">/api/engagements/[id]/processes/[processId]/metric-overrides</div>
+        <div class="node">/api/admin/process-templates</div>
+        <div class="node">/api/admin/value-coefficients</div>
+        <div class="node">/api/admin/deviation-patterns</div>
+        <div class="node">/api/admin/generate-process</div>
+        <div class="node">/api/admin/country-process-activations</div>
+        <div class="node">/api/schema-inference</div>
+      </div>
+    </div>
+    <div class="layer">
+      <div class="layer-label">Logic</div>
+      <div class="layer-body">
+        <div class="node algo">activityTable.ts</div>
+        <div class="node algo">processGraph.ts</div>
+        <div class="node algo">variants.ts</div>
+        <div class="node algo">cockpitMetrics.ts</div>
+        <div class="node algo">deviationLibrary.ts</div>
+        <div class="node algo">repositoryBootstrap.ts</div>
+        <div class="node claude">findings.ts (prompt)</div>
+        <div class="node claude">anthropic.ts (client)</div>
+      </div>
+    </div>
+    <div class="layer">
+      <div class="layer-label">Data</div>
+      <div class="layer-body">
+        <div class="node db">User · Engagement · EngagementProcess</div>
+        <div class="node db">Upload · EventLog</div>
+        <div class="node db">ProcessTemplate · CountryProcessActivation</div>
+        <div class="node db">ValueCoefficient · DeviationPattern</div>
+        <div class="node db">DataRequestTemplate · AnalysisResult</div>
+        <div class="node db">ProcessActor · ApplicationSystem · ProcessStepTemplate</div>
+      </div>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><span class="sw" style="background:var(--purple)"></span>UI / user-facing</div>
+    <div class="legend-item"><span class="sw" style="background:var(--algo)"></span>Deterministic algorithm</div>
+    <div class="legend-item"><span class="sw" style="background:var(--claude)"></span>Claude AI call</div>
+    <div class="legend-item"><span class="sw" style="background:var(--db)"></span>Postgres table</div>
+  </div>
+
+  <h3>Database schema (Prisma)</h3>
+
+  <h4>Identity</h4>
+  <div class="schema-table">
+    <div class="name">User <span class="badge gray">core</span></div>
+    <div class="desc">Authenticated consultant accounts. Role-gated admin features check <code>role === "admin"</code>.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">id</td><td class="col-type">String (uuid)</td><td class="col-note">PK</td></tr>
+      <tr><td class="col-name">email</td><td class="col-type">String</td><td class="col-note">unique</td></tr>
+      <tr><td class="col-name">name</td><td class="col-type">String</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">passwordHash</td><td class="col-type">String</td><td class="col-note">bcrypt</td></tr>
+      <tr><td class="col-name">role</td><td class="col-type">String</td><td class="col-note">analyst | admin (default analyst)</td></tr>
+    </tbody></table>
+  </div>
+
+  <h4>Engagement workspace</h4>
+  <div class="schema-table">
+    <div class="name">Engagement <span class="badge gray">core</span></div>
+    <div class="desc">One per client × discovery exercise. Holds client profile and is the parent of all uploads, processes and analysis.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">id, name, clientName</td><td class="col-type">String</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">country, region</td><td class="col-type">String?</td><td class="col-note">region auto-derived from country</td></tr>
+      <tr><td class="col-name">institutionType</td><td class="col-type">String?</td><td class="col-note">bank | credit_union | neobank | insurance | building_society | cooperative | fintech</td></tr>
+      <tr><td class="col-name">aum, employees, customers</td><td class="col-type">String?</td><td class="col-note">free text / range</td></tr>
+      <tr><td class="col-name">coreBankingSystem</td><td class="col-type">String?</td><td class="col-note">Temenos | SAP Fioneer | Finacle | Oracle FSS | Finastra | Mambu | Jack Henry | Thought Machine | Other</td></tr>
+      <tr><td class="col-name">processMap, dataRequest</td><td class="col-type">Json?</td><td class="col-note">legacy single-process fields, superseded by EngagementProcess</td></tr>
+      <tr><td class="col-name">status</td><td class="col-type">String</td><td class="col-note">created | uploading | analyzing | completed</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="schema-table">
+    <div class="name">EngagementProcess <span class="badge gray">core</span></div>
+    <div class="desc">One per process being analysed within an engagement. Owns its canvas, data request, capability assessment, and metric overrides.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">id, engagementId</td><td class="col-type">String</td><td class="col-note">cascade delete</td></tr>
+      <tr><td class="col-name">lineOfBusiness</td><td class="col-type">String</td><td class="col-note">retail | sme | commercial | wealth</td></tr>
+      <tr><td class="col-name">processKey</td><td class="col-type">String</td><td class="col-note">e.g. "retail_onboarding"</td></tr>
+      <tr><td class="col-name">processName</td><td class="col-type">String</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">processMap</td><td class="col-type">Json?</td><td class="col-note">React Flow nodes + edges</td></tr>
+      <tr><td class="col-name">dataRequest</td><td class="col-type">Json?</td><td class="col-note">AI-generated MoSCoW request</td></tr>
+      <tr><td class="col-name">processMetrics</td><td class="col-type">Json?</td><td class="col-note">legacy hardcoded form (volume, TAT, rates)</td></tr>
+      <tr><td class="col-name">processCapabilities</td><td class="col-type">Json?</td><td class="col-note">digital | partial | manual per sub-process</td></tr>
+      <tr><td class="col-name">metricOverrides</td><td class="col-type">Json?</td><td class="col-note">{ metricKey: numericValue } — overrides for assumed metrics</td></tr>
+      <tr><td class="col-name">templateVersion</td><td class="col-type">Int?</td><td class="col-note">Snapshot of ProcessTemplate.version at bootstrap</td></tr>
+    </tbody></table>
+  </div>
+
+  <h4>Ingestion & event log</h4>
+  <div class="schema-table">
+    <div class="name">Upload <span class="badge gray">core</span></div>
+    <div class="desc">A CSV file slot. Auto-matched to a data-request item by filename, then bound to a process and column roles.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">fileName, originalName, systemSource</td><td class="col-type">String</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">rowCount, columnCount, sizeBytes</td><td class="col-type">Int?</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">schemaInference</td><td class="col-type">Json?</td><td class="col-note"><span class="badge claude">Claude</span> field/role inference output</td></tr>
+      <tr><td class="col-name">rawData</td><td class="col-type">Json?</td><td class="col-note">parsed rows; <strong>nulled after build</strong> to keep storage flat</td></tr>
+      <tr><td class="col-name">processId, dataRequestFileName</td><td class="col-type">String?</td><td class="col-note">links to EngagementProcess + slot</td></tr>
+      <tr><td class="col-name">caseIdColumn, activityColumn, activityFallback, timestampColumn, actorColumn</td><td class="col-type">String?</td><td class="col-note">confirmed role bindings</td></tr>
+      <tr><td class="col-name">status</td><td class="col-type">String</td><td class="col-note">uploaded → inferring → inferred → matched → confirmed → correlated → error</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="schema-table">
+    <div class="name">EventLog <span class="badge gray">core</span></div>
+    <div class="desc">The atomic event store powering the digital twin. Indexed by (engagement, case) and (process, case).</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">caseId</td><td class="col-type">String</td><td class="col-note">correlated case identifier</td></tr>
+      <tr><td class="col-name">activity</td><td class="col-type">String</td><td class="col-note">activity/step name as captured</td></tr>
+      <tr><td class="col-name">activityKey</td><td class="col-type">String?</td><td class="col-note">stable key matching ideal model node IDs (Stage 4 overlay)</td></tr>
+      <tr><td class="col-name">timestamp</td><td class="col-type">DateTime</td><td class="col-note">parseTimestamp rejects years outside 1900-2100</td></tr>
+      <tr><td class="col-name">system, actor</td><td class="col-type">String / String?</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">attributes</td><td class="col-type">Json?</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">confidence</td><td class="col-type">Float</td><td class="col-note">correlation confidence 0-1, default 1.0</td></tr>
+    </tbody></table>
+  </div>
+
+  <h4>Process Repository</h4>
+  <div class="schema-table">
+    <div class="name">ProcessTemplate <span class="badge gray">repo</span></div>
+    <div class="desc">Versioned canonical process. Engagements snapshot the version they bootstrapped from so updates don't retroactively change historical work.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">processKey, version</td><td class="col-type">String / Int</td><td class="col-note">unique together</td></tr>
+      <tr><td class="col-name">isActive</td><td class="col-type">Boolean</td><td class="col-note">false = "coming soon" / draft</td></tr>
+      <tr><td class="col-name">name, description, lineOfBusiness</td><td class="col-type">String</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">applicableInstTypes</td><td class="col-type">String[]</td><td class="col-note">[] = all institution types</td></tr>
+      <tr><td class="col-name">defaultProcessMap</td><td class="col-type">Json</td><td class="col-note">BPMN nodes + edges</td></tr>
+      <tr><td class="col-name">subProcesses</td><td class="col-type">Json</td><td class="col-note">capability rows the consultant assesses</td></tr>
+      <tr><td class="col-name">metricDefinitions</td><td class="col-type">Json</td><td class="col-note">metrics this process collects (8 categories × 3 sources)</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="schema-table">
+    <div class="name">CountryProcessActivation <span class="badge gray">repo</span></div>
+    <div class="desc">Country × process variants. Engagements with matching (country, processKey) bootstrap from the activated variant; otherwise fall back to the canonical template.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">country, processKey</td><td class="col-type">String</td><td class="col-note">unique together</td></tr>
+      <tr><td class="col-name">basedOnTemplateVersion</td><td class="col-type">Int</td><td class="col-note">forked from this version</td></tr>
+      <tr><td class="col-name">isActive</td><td class="col-type">Boolean</td><td class="col-note">false = draft</td></tr>
+      <tr><td class="col-name">customProcessMap, customSubProcesses, customMetricDefinitions</td><td class="col-type">Json?</td><td class="col-note">null = inherit canonical</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="schema-table">
+    <div class="name">ValueCoefficient <span class="badge gray">repo</span></div>
+    <div class="desc">Country/institution-scoped coefficients used by Stage 5 quantification. Country wins for regulatory/value; institution-type optionally narrows further.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">country</td><td class="col-type">String</td><td class="col-note">ISO country name</td></tr>
+      <tr><td class="col-name">institutionType</td><td class="col-type">String</td><td class="col-note">"" sentinel = all institutions in that country</td></tr>
+      <tr><td class="col-name">key, value, unit</td><td class="col-type">String / Float / String</td><td class="col-note">e.g. fte_hourly_rate / 35 / GBP/hr</td></tr>
+      <tr><td class="col-name">category</td><td class="col-type">String</td><td class="col-note">operational | regulatory | risk</td></tr>
+      <tr><td class="col-name">source, validFrom, validTo</td><td class="col-type">String / DateTime</td><td class="col-note">citation + temporal validity</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="schema-table">
+    <div class="name">DeviationPattern <span class="badge gray">repo</span></div>
+    <div class="desc">DB-backed deviation library so non-engineer admins can edit without code deploys. Parallel to the in-code library.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">patternKey</td><td class="col-type">String</td><td class="col-note">unique — e.g. skip_kyc, loop_kyc</td></tr>
+      <tr><td class="col-name">type</td><td class="col-type">String</td><td class="col-note">skip | loop | out_of_order | extra_step</td></tr>
+      <tr><td class="col-name">stepKeyword</td><td class="col-type">String</td><td class="col-note">regex source string</td></tr>
+      <tr><td class="col-name">processKey, country</td><td class="col-type">String?</td><td class="col-note">null = applies to all</td></tr>
+      <tr><td class="col-name">reasons</td><td class="col-type">Json</td><td class="col-note">array of {category, severity, title, description, investigationHint, valueModel, apaAgent}</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="schema-table">
+    <div class="name">DataRequestTemplate <span class="badge gray">repo</span></div>
+    <div class="desc">Pre-built data-request items per process. Used as a starting point; AI may refine based on capability assessment.</div>
+    <table><thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead><tbody>
+      <tr><td class="col-name">processKey</td><td class="col-type">String</td><td class="col-note">unique</td></tr>
+      <tr><td class="col-name">version, isActive</td><td class="col-type">Int / Boolean</td><td class="col-note"></td></tr>
+      <tr><td class="col-name">items</td><td class="col-type">Json</td><td class="col-note">array of DataRequestItem</td></tr>
+    </tbody></table>
+  </div>
+
+  <h4>Reference dimensions</h4>
+  <div class="grid-3">
+    <div class="schema-table"><div class="name">ProcessActor</div><div class="desc">customer | front-office | back-office | operations | fraud | compliance | external | automated.</div></div>
+    <div class="schema-table"><div class="name">ApplicationSystem</div><div class="desc">Source systems with per-template applicability list (["*"] = all).</div></div>
+    <div class="schema-table"><div class="name">ProcessStepTemplate</div><div class="desc">Legacy step library kept for backwards compatibility with older flows.</div></div>
+  </div>
+
+  <div class="schema-table">
+    <div class="name">AnalysisResult <span class="badge gray">output</span></div>
+    <div class="desc">Persisted analysis outputs by type — cycle_time | bottleneck | rework | dark_process | variant | apa_opportunity.</div>
+  </div>
+</section>
+
+<!-- ====================== USER FLOW ====================== -->
+<section class="panel" id="userflow">
+  <h2>End-to-end user flow</h2>
+  <div class="lede">A consultant logs in, creates an engagement, scopes one or more processes, drafts an ideal model + data request, ingests CSVs, then drives the digital twin through to a quantified findings narrative.</div>
+
+  <h3>Consultant flow</h3>
+
+  <div class="stage"><div class="num">1</div><div class="body"><div class="title">Sign in</div><div class="desc">NextAuth credentials provider. Role determines admin visibility (<code>analyst</code> vs <code>admin</code>).</div></div></div>
+
+  <div class="stage"><div class="num">2</div><div class="body"><div class="title">Create or open an Engagement</div><div class="desc">Capture client profile: country/region (region auto-derived), institution type, AUM, employees, customers, core banking system. The engagement's country drives ValueCoefficient lookups in Stage 5.</div></div></div>
+
+  <div class="stage"><div class="num">3</div><div class="body"><div class="title">Add Processes (one or many)</div><div class="desc">Pick a line of business (Retail / SME / Commercial / Wealth) and a process. Bootstrapped from the active CountryProcessActivation if available, else from the canonical ProcessTemplate. Snapshot of <code>templateVersion</code> recorded.</div></div></div>
+
+  <div class="stage"><div class="num">4</div><div class="body"><div class="title">Process landing — three tiles</div><div class="desc"><strong>Tile 1: Process Model & Data Request</strong> · <strong>Tile 2: Process Discovery & Insights</strong> · <strong>Tile 3: APA Simulation & Value Recovery</strong> (locked).</div></div></div>
+
+  <h3>Tile 1 — Process Model & Data Request</h3>
+  <div class="stage"><div class="num">A</div><div class="body"><div class="title">Edit the BPMN canvas</div><div class="desc">React Flow + Dagre layout. Drag/drop sub-processes, decisions, end states. State persisted to <code>EngagementProcess.processMap</code>.</div></div></div>
+  <div class="stage"><div class="num">B</div><div class="body"><div class="title">Capability assessment</div><div class="desc">For each sub-process, mark digital / partial / manual. Persisted to <code>processCapabilities</code>. Drives the data-request scoping below.</div></div></div>
+  <div class="stage"><div class="num">C</div><div class="body"><div class="title">Generate Data Request</div><div class="desc">Claude takes canvas + capability state, returns a MoSCoW-prioritised data request (must / should / could / won't), saved to <code>dataRequest</code>. Sample CSVs deterministically match the request — same item set every download.</div></div></div>
+
+  <h3>Tile 2 — Process Discovery & Insights (5 inline stages)</h3>
+
+  <div class="stage"><div class="num">1</div><div class="body"><div class="title">Stage 1 — Upload</div><div class="desc">Drag CSVs into per-data-request slots. Auto-match by filename. <code>Reset</code> clears stale uploads. Per-file role auto-detection: case_id, activity, timestamp, actor.</div></div></div>
+
+  <div class="stage"><div class="num">2</div><div class="body"><div class="title">Stage 2 — Build Activity Table</div><div class="desc">Heuristic + value-based column detection, <code>parseTimestamp</code> rejects years outside 1900-2100, chunked event inserts (CHUNK=2000), <code>rawData</code> purged after build. Result: rows in <code>EventLog</code> ready for mining.</div></div></div>
+
+  <div class="stage"><div class="num">3</div><div class="body"><div class="title">Stage 3 — Process Explorer + Variants</div><div class="desc">React Flow graph with two sliders (min activity %, min path %) defaulting to clean view. Heat-map toggle (frequency / cycle time). Pink edges mark exception flows. Variant analysis lists top-N paths with frequency + median cycle time.</div></div></div>
+
+  <div class="stage"><div class="num">4</div><div class="body"><div class="title">Stage 4 — KPI Cockpit</div><div class="desc">8 categories (time / volume / quality / outcome / cost / cx / workforce / compliance) × 3 sources (direct / inferred / assumed). RAG status vs benchmarks. Click any <strong>assumed</strong> metric to override per engagement; assumed metrics are stored as defaults in <code>metricDefinitions</code> and overridden per-engagement in <code>metricOverrides</code>.</div></div></div>
+
+  <div class="stage"><div class="num">5</div><div class="body"><div class="title">Stage 5 — Findings (Value Leak)</div><div class="desc">Claude narrates findings grouped by cockpit category, with rank, severity, cases affected, annual value leak (computed from coefficients), root cause, recommendation, and recommended APA agent.</div></div></div>
+
+  <h3>Admin flow (role: admin)</h3>
+  <div class="stage"><div class="num">A</div><div class="body"><div class="title">Admin home — three tiles</div><div class="desc">Process Repository · Country Repository · Knowledge Library.</div></div></div>
+  <div class="stage"><div class="num">B</div><div class="body"><div class="title">Process Repository → click a process</div><div class="desc">Header shows Active/Draft + version + line of business. Sections: Steps · Systems · Actors · Deviation Library · Sub-processes · Metric Definitions. <strong>Process Explorer Agent</strong> button (Claude) generates a full process from a name + description.</div></div></div>
+  <div class="stage"><div class="num">C</div><div class="body"><div class="title">Country Repository → click a country</div><div class="desc">Activated Processes (links to canonical templates) + Value Coefficients table (CRUD). New country activation: pick canonical version → optionally customise map / sub-processes / metrics → activate.</div></div></div>
+  <div class="stage"><div class="num">D</div><div class="body"><div class="title">Knowledge Library</div><div class="desc">Read-only browse of deviation patterns across processes. Editing happens inside each process detail page.</div></div></div>
+</section>
+
+<!-- ====================== AI VS DATABASE ====================== -->
+<section class="panel" id="aivsdb">
+  <h2>AI vs Database vs Algorithm</h2>
+  <div class="lede">Every feature is classified by where its data comes from. <strong>Claude</strong> is invoked only where structured generation or narrative synthesis is the actual product. <strong>Database</strong> rows answer everything that's a curated fact or persisted state. <strong>Algorithm</strong> covers deterministic computation over those rows.</div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="badge claude">Claude</span> AI call to claude-sonnet-4-20250514</div>
+    <div class="legend-item"><span class="badge db">Database</span> Postgres read/write via Prisma</div>
+    <div class="legend-item"><span class="badge algo">Algorithm</span> deterministic TS code</div>
+  </div>
+
+  <h3>Feature × data source matrix</h3>
+  <div class="card">
+    <table>
+      <thead><tr><th style="width:28%">Feature</th><th style="width:14%">Source</th><th style="width:24%">Tables / Lib</th><th>How it works</th></tr></thead>
+      <tbody>
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Tile 1 — Process Model & Data Request</td></tr>
+        <tr>
+          <td>BPMN canvas (drag/drop, save)</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>EngagementProcess.processMap</code></td>
+          <td>React Flow state serialised to Json on save. No AI.</td>
+        </tr>
+        <tr>
+          <td>Default process map for a new process</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>ProcessTemplate.defaultProcessMap</code> · <code>CountryProcessActivation.customProcessMap</code></td>
+          <td>Bootstrap cascade: country variant → canonical template.</td>
+        </tr>
+        <tr>
+          <td>Capability assessment (digital/partial/manual)</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>EngagementProcess.processCapabilities</code></td>
+          <td>Form input persisted to Json. No AI.</td>
+        </tr>
+        <tr>
+          <td>Sub-process rows shown in capability form</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>ProcessTemplate.subProcesses</code></td>
+          <td>Drives the capability rows the consultant assesses.</td>
+        </tr>
+        <tr>
+          <td>Generate Data Request (MoSCoW)</td>
+          <td><span class="badge claude">Claude</span></td>
+          <td><code>/api/engagements/[id]/data-request</code> · <code>DataRequestTemplate.items</code></td>
+          <td>Claude takes the canvas + capability state and returns a MoSCoW-prioritised data request. Seeded from <code>DataRequestTemplate</code> when present.</td>
+        </tr>
+        <tr>
+          <td>Sample CSV download</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>/api/engagements/[id]/processes/[processId]/sample-csvs</code></td>
+          <td>Deterministic generator that writes one CSV per <code>DataRequestItem</code> with the right columns. Bundled as a zip via JSZip.</td>
+        </tr>
+
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Tile 2 — Stage 1 Upload</td></tr>
+        <tr>
+          <td>Schema inference (column → role)</td>
+          <td><span class="badge claude">Claude</span></td>
+          <td><code>/api/schema-inference</code> · <code>Upload.schemaInference</code></td>
+          <td>Claude proposes column roles (case_id / activity / timestamp / actor / attribute). Result cached on the upload row.</td>
+        </tr>
+        <tr>
+          <td>Auto-match upload → data-request slot</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>Upload.dataRequestFileName</code></td>
+          <td>Filename match against <code>DataRequestItem.fileName</code>; same-name uploads auto-replace the prior file.</td>
+        </tr>
+
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Tile 2 — Stage 2 Build Activity Table</td></tr>
+        <tr>
+          <td>Column role binding (heuristic)</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>activityTable.ts:guessColumnByRole</code></td>
+          <td>Header-name heuristic + value-shape sniffing. AI-inferred schema only used as a hint.</td>
+        </tr>
+        <tr>
+          <td>Timestamp parsing</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>activityTable.ts:parseTimestamp</code></td>
+          <td>Rejects <code>new Date("675")</code> year-675 bug; only accepts dates in 1900-2100.</td>
+        </tr>
+        <tr>
+          <td>EventLog persistence</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>EventLog</code></td>
+          <td>Chunked inserts (CHUNK=2000). <code>Upload.rawData</code> nulled after build to keep storage flat.</td>
+        </tr>
+
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Tile 2 — Stage 3 Process Explorer + Variants</td></tr>
+        <tr>
+          <td>Process graph (nodes, edges, frequencies, cycle time)</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>processGraph.ts</code> · reads <code>EventLog</code></td>
+          <td>Group events by case → derive directly-follows graph → aggregate frequency & median cycle time per edge → dagre layout with happy-path edge weighting (10×).</td>
+        </tr>
+        <tr>
+          <td>Variant analysis (top-N + long tail)</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>variants.ts</code></td>
+          <td>Hash each case's activity sequence, count, sort, bucket the long tail.</td>
+        </tr>
+        <tr>
+          <td>Pink exception edges</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>processGraph.ts</code> + <code>deviationLibrary.ts</code></td>
+          <td>Edges flagged when target activity matches a deviation pattern step keyword.</td>
+        </tr>
+
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Tile 2 — Stage 4 KPI Cockpit</td></tr>
+        <tr>
+          <td>Metric definitions (catalog)</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>ProcessTemplate.metricDefinitions</code></td>
+          <td>8 categories × 3 sources, with thresholds, direction, unit, formula. Curated per process.</td>
+        </tr>
+        <tr>
+          <td>Direct metrics (cycle time, throughput, etc.)</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>cockpitMetrics.ts:computeDirect</code> · reads <code>EventLog</code></td>
+          <td>Keyword-matched aggregations over the event store. No AI.</td>
+        </tr>
+        <tr>
+          <td>Inferred metrics (cost, FTE-driven)</td>
+          <td><span class="badge algo">Algorithm</span> + <span class="badge db">Database</span></td>
+          <td><code>cockpitMetrics.ts:computeInferred</code> + <code>ValueCoefficient</code></td>
+          <td>Formula evaluator that pulls FTE rates and other coefficients from the country/institution scope. Touch-time uses TOUCH_RATIO=0.18 banking estimate.</td>
+        </tr>
+        <tr>
+          <td>Assumed metrics (defaults)</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>ProcessTemplate.metricDefinitions[].defaultValue</code></td>
+          <td>Default value carried by the metric definition.</td>
+        </tr>
+        <tr>
+          <td>Per-engagement metric overrides</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>EngagementProcess.metricOverrides</code></td>
+          <td>Click an assumed metric → save number → PATCH <code>/metric-overrides</code>. Override flag rendered as a purple pill.</td>
+        </tr>
+        <tr>
+          <td>RAG status vs benchmarks</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>cockpitMetrics.ts:evaluateStatus</code></td>
+          <td>Compare value to <code>goodThreshold</code> / <code>poorThreshold</code> with respect to <code>direction</code> (lower/higher is better).</td>
+        </tr>
+
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Tile 2 — Stage 5 Findings (Value Leak)</td></tr>
+        <tr>
+          <td>Detect deviations from graph</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>findings.ts:detectDeviations</code></td>
+          <td>Scan the discovered graph + variants for skip / loop / out-of-order / extra-step patterns.</td>
+        </tr>
+        <tr>
+          <td>Match deviations to library</td>
+          <td><span class="badge algo">Algorithm</span></td>
+          <td><code>findings.ts:matchToLibrary</code> + <code>DeviationPattern</code> + <code>deviationLibrary.ts</code></td>
+          <td>Pattern key + step keyword + scope (process, country) match against the curated library to attach candidate reasons.</td>
+        </tr>
+        <tr>
+          <td>Findings narrative + recommendations</td>
+          <td><span class="badge claude">Claude</span></td>
+          <td><code>/api/engagements/[id]/processes/[processId]/findings</code> · <code>findings.ts:buildFindingsPrompt</code></td>
+          <td>Claude takes detected deviations + matched reasons + cockpit + coefficients, returns ranked findings with narrative, root cause, value-leak breakdown, recommendation, and recommended APA agent.</td>
+        </tr>
+        <tr>
+          <td>Annual value leak quantification</td>
+          <td><span class="badge algo">Algorithm</span> + <span class="badge db">Database</span></td>
+          <td><code>findings.ts</code> + <code>ValueCoefficient</code></td>
+          <td>Cases-affected × per-case cost (FTE rate × touch hours, breach fines, lost revenue) using the engagement's country coefficients.</td>
+        </tr>
+
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Admin — Process Repository</td></tr>
+        <tr>
+          <td>Process Explorer Agent (generate a full process)</td>
+          <td><span class="badge claude">Claude</span></td>
+          <td><code>/api/admin/generate-process</code></td>
+          <td>Name + description in → steps, actors, systems, deviation patterns + reasons, metric definitions out. Upserts ProcessTemplate + DeviationPattern + legacy step/actor/system rows.</td>
+        </tr>
+        <tr>
+          <td>Process Templates list / detail / CRUD</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>ProcessTemplate</code> · <code>/api/admin/process-templates</code></td>
+          <td>Plain CRUD with versioning.</td>
+        </tr>
+        <tr>
+          <td>Metric Definitions admin</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>ProcessTemplate.metricDefinitions</code></td>
+          <td>Inline editor: category, source, unit, formula, thresholds, direction, required.</td>
+        </tr>
+        <tr>
+          <td>Deviation Patterns (per process)</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>DeviationPattern</code> · <code>/api/admin/deviation-patterns</code></td>
+          <td>Edit/delete patterns + individual reasons. 9 seeded patterns covering KYC, credit, fraud, document, decision/account ordering.</td>
+        </tr>
+
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Admin — Country Repository</td></tr>
+        <tr>
+          <td>Activated processes per country</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>CountryProcessActivation</code></td>
+          <td>Country forks a canonical version; engagements with matching (country, processKey) bootstrap from this.</td>
+        </tr>
+        <tr>
+          <td>Value Coefficients (FTE rates, fines, etc.)</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>ValueCoefficient</code></td>
+          <td>Scoped by (country, institutionType="" sentinel, key, validFrom). Cascade: country+inst → country → fail closed.</td>
+        </tr>
+
+        <tr><td colspan="4" style="background:#F5F7FB; font-weight:800; color:var(--navy); padding:10px 12px;">Auth & misc</td></tr>
+        <tr>
+          <td>Login</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>User</code> · NextAuth credentials</td>
+          <td>bcrypt password check; role determines admin visibility.</td>
+        </tr>
+        <tr>
+          <td>Engagement create / list / detail</td>
+          <td><span class="badge db">Database</span></td>
+          <td><code>Engagement</code></td>
+          <td>Plain CRUD.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Where Claude is called — quick index</h3>
+  <ul class="clean">
+    <li><span class="marker">1.</span><div><strong>Schema inference</strong> — <code>/api/schema-inference</code> — proposes column roles for an uploaded CSV.</div></li>
+    <li><span class="marker">2.</span><div><strong>Generate Data Request</strong> — <code>/api/engagements/[id]/data-request</code> — turns canvas + capability state into a MoSCoW data request.</div></li>
+    <li><span class="marker">3.</span><div><strong>Generate ideal model</strong> — <code>/api/engagements/[id]/generate-model</code> — used in the older single-process flow.</div></li>
+    <li><span class="marker">4.</span><div><strong>Correlate / analyze</strong> — <code>/api/engagements/[id]/correlate</code>, <code>/analyze</code> — legacy analysis hooks (kept for backwards compat).</div></li>
+    <li><span class="marker">5.</span><div><strong>Findings narrative</strong> — <code>/api/engagements/[id]/processes/[processId]/findings</code> — Stage 5 ranked findings.</div></li>
+    <li><span class="marker">6.</span><div><strong>Process Explorer Agent</strong> — <code>/api/admin/generate-process</code> — generates a full ProcessTemplate from a name + description.</div></li>
+  </ul>
+  <div class="lede">All Claude calls go through <code>src/lib/anthropic.ts</code> using <code>claude-sonnet-4-20250514</code>. Everything else — process mining, KPI computation, RAG status, value-leak math, repository lookups — runs against Postgres in deterministic TypeScript.</div>
+</section>
+
+<!-- ====================== VERSION CONTROL ====================== -->
+<section class="panel" id="versions">
+  <h2>Version control</h2>
+  <div class="lede">Each version is a tested, working snapshot worth rolling back to. The full changelog lives in <code>VERSION.md</code>; this tab is the at-a-glance view.</div>
+
+  <div class="v-card">
+    <div class="head">
+      <div class="num">v1.1</div>
+      <div class="title">Explorer interactivity + executive view</div>
+      <div class="date">locked 2026-05-10 <span class="badge live">current</span></div>
+    </div>
+    <div class="tagline">Process Explorer becomes interactive (hover + click on edges/activities → pinned callouts), variants slider replaces % paths, full lens system (Outcome/Duration/Conformance/Time), tab restructure, cockpit + findings auto-load with caching, Elastic Ops triangle on findings.</div>
+
+    <h4>Process Explorer interactivity</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Hover an edge → pink darkens, others dim to ~12%, endpoint nodes get amber halo</div></li>
+      <li><span class="marker">·</span><div>Click an edge → pinned callout: from→to header, transition metrics, apps, actor breakdown, example cases, banking root causes</div></li>
+      <li><span class="marker">·</span><div>Click an activity → similar callout with activity metrics, apps, actors, flow connections; explicit "no actor identified" state</div></li>
+      <li><span class="marker">·</span><div>New endpoints: <code>/edge-detail</code>, <code>/activity-detail</code></div></li>
+    </ul>
+
+    <h4>Variants slider + lens filters</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Variants slider — discrete steps, each adds next most frequent variant; right-end falls back to full graph</div></li>
+      <li><span class="marker">·</span><div>Outcome chips (Approved/Declined/Withdrawn/In progress) derived from last activity</div></li>
+      <li><span class="marker">·</span><div>Duration chips (Fastest 25% / Q2 / Q3 / Slowest 25%) — quartiles computed across the dataset</div></li>
+      <li><span class="marker">·</span><div>Conformance chips (Conforming / Deviating) — case follows happy path edge-for-edge vs at least one deviation</div></li>
+      <li><span class="marker">·</span><div>Time-period dual-thumb range slider with server refetch (debounced)</div></li>
+      <li><span class="marker">·</span><div>Activities slider removed; mutual exclusivity across chip lenses</div></li>
+    </ul>
+
+    <h4>Tab restructure</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Top tabs: <strong>Data Setup</strong> (Stage 1 + 2) · <strong>Digital Twin</strong> (Stage 3 + 4 + 5)</div></li>
+      <li><span class="marker">·</span><div>Digital Twin sub-tabs: Process Explorer · Process Cockpit · Process Analysis</div></li>
+      <li><span class="marker">·</span><div>Smart default — lands on Digital Twin when activity table is built</div></li>
+      <li><span class="marker">·</span><div>Locked-state placeholder + "Open Digital Twin" nudge</div></li>
+    </ul>
+
+    <h4>Auto-load + caching</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Process Cockpit auto-loads on mount; button is now <strong>Refresh ↻</strong> (deterministic, free)</div></li>
+      <li><span class="marker">·</span><div>Process Analysis: <strong>findings + findingsGeneratedAt</strong> columns added to EngagementProcess</div></li>
+      <li><span class="marker">·</span><div>First visit auto-generates and caches; subsequent visits load instantly from DB</div></li>
+      <li><span class="marker">·</span><div><strong>Regenerate</strong> button forces a fresh Claude call</div></li>
+    </ul>
+
+    <h4>Elastic Operations triangle (Process Analysis)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Three-card executive view: Growth · Efficiency · Control</div></li>
+      <li><span class="marker">·</span><div>Each finding tagged with elasticOpsVertex; Claude provides per-vertex summary + main factors</div></li>
+      <li><span class="marker">·</span><div>Server-side reconciliation — triangle totals recomputed from per-finding tags so math always sums exactly</div></li>
+      <li><span class="marker">·</span><div>Three hard prompt rules — math consistency, no fabricated coefficients, explicit reconciliation contract</div></li>
+    </ul>
+
+    <h4>Other polish</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Actor data-request priority lowered must-have → should-have in Claude prompt</div></li>
+      <li><span class="marker">·</span><div>Cockpit top-stat strip wraps cleanly at narrow widths</div></li>
+      <li><span class="marker">·</span><div>Sample-CSV actor-uniformity bug logged in Backlog tab</div></li>
+    </ul>
+
+    <h4>Rollback</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Tagged <code>v1.1</code> in git. To roll back: <code>git checkout v1.1</code></div></li>
+    </ul>
+  </div>
+
+  <div class="v-card">
+    <div class="head">
+      <div class="num">v1.0</div>
+      <div class="title">Discovery foundation</div>
+      <div class="date">locked 2026-05-10</div>
+    </div>
+    <div class="tagline">End-to-end discovery: CSV → digital twin → KPI cockpit → quantified findings. Backed by a curated process repository, country/coefficient knowledge base, and admin UI.</div>
+
+    <h4>Engagement workspace</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Engagement creation with country, region (auto-derived), institution type, AUM, employees, customers, core banking system</div></li>
+      <li><span class="marker">·</span><div>Multi-process per engagement (Retail / SME / Commercial / Wealth)</div></li>
+      <li><span class="marker">·</span><div>Per-process landing with 3 tiles (Process Model & Data Request, Discovery & Insights, APA Simulation [locked])</div></li>
+    </ul>
+
+    <h4>Tile 1 — Process Model & Data Request</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>BPMN canvas (React Flow + Dagre), state persisted</div></li>
+      <li><span class="marker">·</span><div>Capability assessment (digital / partial / manual)</div></li>
+      <li><span class="marker">·</span><div>Process metrics form (legacy hardcoded fields)</div></li>
+      <li><span class="marker">·</span><div>Claude-generated MoSCoW Data Request</div></li>
+      <li><span class="marker">·</span><div>Deterministic sample-CSV generator (zip download)</div></li>
+    </ul>
+
+    <h4>Tile 2 — Discovery & Insights (5 stages)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Stage 1: Upload with role auto-detection + slot mapping</div></li>
+      <li><span class="marker">·</span><div>Stage 2: Build Activity Table (heuristic columns, safe timestamp parsing, chunked inserts, rawData purge)</div></li>
+      <li><span class="marker">·</span><div>Stage 3: Process Explorer + Variants — two sliders, heat-map toggle, pink exception edges</div></li>
+      <li><span class="marker">·</span><div>Stage 4: KPI Cockpit — 8 categories × 3 sources, RAG vs benchmarks, inline override of assumed metrics</div></li>
+      <li><span class="marker">·</span><div>Stage 5: Findings — Claude narrative grouped by cockpit category, with value-leak quantification</div></li>
+    </ul>
+
+    <h4>Process & Country Repository</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Versioned ProcessTemplate (steps, sub-processes, metric definitions)</div></li>
+      <li><span class="marker">·</span><div>CountryProcessActivation (per-country forks of a canonical version)</div></li>
+      <li><span class="marker">·</span><div>ValueCoefficient cascade (country + institutionType + key)</div></li>
+      <li><span class="marker">·</span><div>DeviationPattern library — 9 seeded banking patterns</div></li>
+      <li><span class="marker">·</span><div>Process Explorer Agent (Claude) generates full processes from a name + description</div></li>
+    </ul>
+
+    <h4>Auth & deploy</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>NextAuth credentials provider, role-gated admin (<code>role: "admin"</code>)</div></li>
+      <li><span class="marker">·</span><div>Postgres on Neon Launch tier</div></li>
+      <li><span class="marker">·</span><div>Claude calls centralised in <code>src/lib/anthropic.ts</code> (claude-sonnet-4-20250514)</div></li>
+    </ul>
+
+    <h4>Known limitations (deferred to next versions)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Stage 4 visual conformance overlay — not yet built</div></li>
+      <li><span class="marker">·</span><div>Tile 3 APA Simulation & Value Recovery — locked placeholder</div></li>
+      <li><span class="marker">·</span><div>Multi-tenancy — single workspace today</div></li>
+      <li><span class="marker">·</span><div>Exports (CSV/PDF) — not yet built</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== BACKLOG ====================== -->
+<section class="panel" id="backlog">
+  <h2>Backlog</h2>
+  <div class="lede">Pending features and improvements. P1 = unblocks a stage we already promised; P2 = high-value next step; P3 = nice-to-have; P4 = exploratory. <strong>Bugs</strong> = known issues deferred for later.</div>
+
+  <h3>Known bugs (deferred)</h3>
+  <div class="backlog-item">
+    <span class="prio bug">Bug</span>
+    <div class="body">
+      <div class="title">Sample CSV simulator: actors uniformly random per row</div>
+      <div class="desc">In <code>sample-csvs/route.ts:99-100</code> the actor cell for every event is picked uniformly at random from a fixed 6-name pool (<code>customer, front_office_agent, compliance_officer, underwriter, system, fraud_analyst</code>) regardless of which activity the row represents. Result: every activity in the explorer shows ~17% across all 6 actors instead of one or two dominant actors. Fix: make the generator activity-aware (e.g. KYC → 60% system, 30% compliance_officer, 10% customer) and reflect realistic banking data quality (heavy <code>SYSTEM</code> / service-account share, occasional named users). Doesn't affect production data — only the demo / sample CSVs.</div>
+    </div>
+  </div>
+
+  <h3>P1 — Stage closures</h3>
+  <div class="backlog-item">
+    <span class="prio p1">P1</span>
+    <div class="body">
+      <div class="title">Stage 4 visual conformance overlay</div>
+      <div class="desc">Render the actual discovered graph as a coloured overlay on the ideal BPMN canvas. Green = on path, amber = under-frequented, red = unknown step, pink = exception. Uses <code>EventLog.activityKey</code> to map actual events to ideal node IDs.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p1">P1</span>
+    <div class="body">
+      <div class="title">Stage 5 narrative refinement (per-category structure)</div>
+      <div class="desc">Tighten the prompt so each cockpit category produces a consistent narrative shape (lead-in fact → root cause → value math → recommendation). Test on 3+ engagements before locking.</div>
+    </div>
+  </div>
+
+  <h3>P2 — Tile 3 (the big one)</h3>
+  <div class="backlog-item">
+    <span class="prio p2">P2</span>
+    <div class="body">
+      <div class="title">Tile 3 — APA Simulation & Value Recovery</div>
+      <div class="desc">Currently locked. Plan: simulator that takes Stage 5 findings + recommended APA agents, models the to-be cycle time / cost / FTE, and shows a recovered-value waterfall. Will share the cockpit's metric framework so before/after is comparable.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p2">P2</span>
+    <div class="body">
+      <div class="title">Country/process expansion</div>
+      <div class="desc">Today only UK + retail_onboarding is fully seeded. Need: US + retail onboarding, UK + retail mortgage, EU + onboarding (PSD2/AML6 specifics).</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p2">P2</span>
+    <div class="body">
+      <div class="title">Exports — Cockpit + Findings to PDF / Excel</div>
+      <div class="desc">One-click export for client delivery. PDF for findings narrative; Excel for the cockpit table with all metric details.</div>
+    </div>
+  </div>
+
+  <h3>P3 — Quality of life</h3>
+  <div class="backlog-item">
+    <span class="prio p3">P3</span>
+    <div class="body">
+      <div class="title">Engagement clone / template start</div>
+      <div class="desc">"Start from previous engagement" to copy canvas + capabilities + overrides; cuts setup for repeat work.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p3">P3</span>
+    <div class="body">
+      <div class="title">In-app data-request preview before download</div>
+      <div class="desc">Currently consultants only see the request after generate; show a preview table so they can edit prompt context before committing.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p3">P3</span>
+    <div class="body">
+      <div class="title">Cockpit metric history</div>
+      <div class="desc">Track override timeline per engagement — useful when consultants iterate and want to compare assumptions.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p3">P3</span>
+    <div class="body">
+      <div class="title">Activity-key auto-mapping (ideal ↔ actual)</div>
+      <div class="desc">Today <code>activityKey</code> is null for most events. Need a mapping step (regex or fuzzy match) so Stage 4 overlay can colour the canvas without manual binding.</div>
+    </div>
+  </div>
+
+  <h3>P4 — Exploratory</h3>
+  <div class="backlog-item">
+    <span class="prio p4">P4</span>
+    <div class="body">
+      <div class="title">Multi-tenancy</div>
+      <div class="desc">Org/workspace boundary so multiple Backbase teams can share the deployment without cross-engagement bleed. Affects every table.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p4">P4</span>
+    <div class="body">
+      <div class="title">SSO (Okta / Azure AD)</div>
+      <div class="desc">Replace credentials provider with OIDC. Pre-req for any client-side rollout beyond Backbase consultants.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p4">P4</span>
+    <div class="body">
+      <div class="title">Coefficient sourcing automation</div>
+      <div class="desc">Auto-refresh ValueCoefficient values from public sources (FCA reports, ONS wage data) on a schedule with diff review.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p4">P4</span>
+    <div class="body">
+      <div class="title">Real-time event ingestion (no CSV)</div>
+      <div class="desc">Replace CSV upload with a connector to the client's event store (Kafka / SaaS API) for live discovery rather than point-in-time.</div>
+    </div>
+  </div>
+</section>
+
+<div class="footnote">APA Discovery Accelerator — internal status board · v1.0 locked 2026-05-10</div>
+
+</main>
+
+<script>
+  const tabs = document.querySelectorAll('nav.tabs button');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(t => {
+    t.addEventListener('click', () => {
+      tabs.forEach(x => x.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      t.classList.add('active');
+      const panel = document.getElementById(t.dataset.target);
+      if (panel) panel.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>

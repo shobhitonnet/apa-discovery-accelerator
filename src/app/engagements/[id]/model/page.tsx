@@ -27,7 +27,9 @@ export default async function ProcessModelerPage({
 
   if (!engagement) notFound();
 
-  const template = PROCESS_TEMPLATES.find((t) => t.id === engagement.processTemplate);
+  const template = engagement.processTemplate
+    ? PROCESS_TEMPLATES.find((t) => t.id === engagement.processTemplate)
+    : undefined;
 
   const rawMap = engagement.processMap as { nodes?: Node[]; edges?: Edge[] } | null;
   const initialProcessMap =
@@ -35,9 +37,11 @@ export default async function ProcessModelerPage({
       ? { nodes: rawMap.nodes, edges: rawMap.edges }
       : null;
 
+  const pt = engagement.processTemplate ?? "";
+
   // Template-specific steps (sorted by order)
   const templateSteps = allSteps
-    .filter((s) => s.processTemplate === engagement.processTemplate)
+    .filter((s) => pt && s.processTemplate === pt)
     .sort((a, b) => a.order - b.order);
 
   // Generic steps
@@ -47,14 +51,14 @@ export default async function ProcessModelerPage({
 
   // Systems visible for this template: ["*"] (generic) OR includes this template
   const applications = allSystems.filter(
-    (s) => s.processTemplates.includes("*") || s.processTemplates.includes(engagement.processTemplate)
+    (s) => s.processTemplates.includes("*") || (pt && s.processTemplates.includes(pt))
   );
 
   return (
     <ProcessModelerCanvas
       engagementId={engagement.id}
-      processTemplate={engagement.processTemplate}
-      processName={template?.name ?? engagement.processTemplate}
+      processTemplate={engagement.processTemplate ?? ""}
+      processName={template?.name ?? engagement.processTemplate ?? engagement.name}
       initialProcessMap={initialProcessMap}
       templateSteps={templateSteps.map((s) => ({
         id: s.id,

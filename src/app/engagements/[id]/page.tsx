@@ -3,82 +3,21 @@ import { redirect, notFound } from "next/navigation";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { Header } from "@/components/Header";
-import { PROCESS_TEMPLATES } from "@/types";
 import { UploadSection } from "@/components/UploadSection";
 import { AnalysisPanel } from "@/components/AnalysisPanel";
+import { ProcessesSection } from "@/components/ProcessesSection";
+import { EditEngagementProfile } from "@/components/EditEngagementProfile";
 import Link from "next/link";
 
-function ProcessMapCard({
-  engagementId,
-  processMap,
-}: {
-  engagementId: string;
-  processMap: Record<string, unknown> | null;
-}) {
-  const summary = processMap?.summary as {
-    stepCount?: number;
-    applications?: string[];
-    steps?: { order: number; label: string; application: string | null }[];
-  } | undefined;
-
-  const hasMappedSteps = summary && (summary.stepCount ?? 0) > 0;
-
+function ProfileChip({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg border border-border bg-bg-card p-5 mb-6">
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2">
-          <div
-            className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-            style={{ background: hasMappedSteps ? "rgba(38,188,113,0.15)" : "rgba(51,102,255,0.15)", color: hasMappedSteps ? "#26BC71" : "#3366FF" }}
-          >
-            {hasMappedSteps ? "✓" : "1"}
-          </div>
-          <h3 className="text-sm font-semibold text-text-primary">Process Map</h3>
-          {hasMappedSteps && (
-            <span className="text-xs text-accent-green">
-              {summary!.stepCount} steps · {(summary!.applications ?? []).length} systems
-            </span>
-          )}
-        </div>
-        <Link
-          href={`/engagements/${engagementId}/model`}
-          className="text-xs font-semibold px-3 py-1.5 rounded-md"
-          style={{ background: "rgba(51,102,255,0.12)", color: "#3366FF", textDecoration: "none" }}
-        >
-          {hasMappedSteps ? "Edit Map" : "Model Process →"}
-        </Link>
-      </div>
-
-      {hasMappedSteps ? (
-        <div className="flex items-center gap-1.5 flex-wrap">
-          {(summary!.steps ?? []).map((step, i) => (
-            <div key={i} className="flex items-center gap-1.5">
-              <div
-                className="rounded px-2 py-1 text-xs font-medium"
-                style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  color: "rgba(255,255,255,0.75)",
-                }}
-              >
-                {step.label}
-                {step.application && (
-                  <span style={{ color: "rgba(51,102,255,0.9)", marginLeft: 4 }}>
-                    · {step.application}
-                  </span>
-                )}
-              </div>
-              {i < (summary!.steps ?? []).length - 1 && (
-                <span className="text-text-muted text-xs">→</span>
-              )}
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p className="text-xs text-text-muted">
-          Map your process steps and which systems handle each one. This guides the data collection and correlation engine.
-        </p>
-      )}
+    <div style={{
+      display: "flex", flexDirection: "column", gap: 2,
+      padding: "8px 14px", borderRadius: 10,
+      background: "#F5F7F9", border: "1px solid #EEF2F8",
+    }}>
+      <span style={{ fontSize: 10, fontWeight: 600, color: "#9AAABB", textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</span>
+      <span style={{ fontSize: 13, fontWeight: 700, color: "#001C3D", textTransform: "capitalize" }}>{value}</span>
     </div>
   );
 }
@@ -96,18 +35,14 @@ export default async function EngagementDetailPage({
   const engagement = await prisma.engagement.findUnique({
     where: { id },
     include: {
+      processes: { orderBy: { order: "asc" } },
       uploads: { orderBy: { createdAt: "desc" } },
       analysisResults: { orderBy: { createdAt: "desc" } },
       _count: { select: { eventLogs: true } },
     },
-    // processMap is a direct field, always fetched automatically
   });
 
   if (!engagement) notFound();
-
-  const template = PROCESS_TEMPLATES.find(
-    (t) => t.id === engagement.processTemplate
-  );
 
   return (
     <div className="min-h-screen bg-bg-primary">
@@ -123,61 +58,93 @@ export default async function EngagementDetailPage({
           <span className="text-text-secondary">{engagement.name}</span>
         </div>
 
-        {/* Engagement header */}
-        <div className="rounded-lg border border-border bg-bg-card p-6 mb-6">
-          <div className="flex items-start justify-between">
+        {/* Engagement header + bank profile */}
+        <div style={{ background: "#fff", borderRadius: 16, border: "1px solid #DDE3EC", padding: "24px 28px", marginBottom: 20 }}>
+          {/* Name + status row */}
+          <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 16 }}>
             <div>
-              <h2 className="text-lg font-semibold text-text-primary">
+              <h2 style={{ fontSize: 22, fontWeight: 800, color: "#001C3D", letterSpacing: "-0.02em", margin: 0 }}>
                 {engagement.name}
               </h2>
-              <p className="text-sm text-text-muted mt-1">
-                {engagement.clientName}
-              </p>
+              <p style={{ fontSize: 14, color: "#5C6E84", marginTop: 4 }}>{engagement.clientName}</p>
             </div>
-            <span className="inline-flex items-center rounded-full bg-accent-blue/10 px-3 py-1 text-xs font-medium text-accent-blue">
+            <span style={{
+              fontSize: 10, fontWeight: 700, padding: "4px 12px", borderRadius: 20,
+              background: "rgba(26,90,255,0.08)", color: "#1A5AFF",
+              letterSpacing: "0.06em", textTransform: "uppercase",
+            }}>
               {engagement.status}
             </span>
           </div>
 
-          <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div>
-              <p className="text-xs text-text-muted">Process</p>
-              <p className="text-sm text-text-primary mt-0.5">
-                {template?.name ?? engagement.processTemplate}
-              </p>
+          {/* Bank profile — always shown, editable inline */}
+          <div style={{ borderTop: "1px solid #EEF2F8", paddingTop: 16, marginBottom: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#9AAABB" }}>
+                Bank Profile
+              </div>
+              <EditEngagementProfile
+                engagementId={engagement.id}
+                initial={{
+                  name: engagement.name,
+                  clientName: engagement.clientName,
+                  country: engagement.country,
+                  region: engagement.region,
+                  institutionType: engagement.institutionType,
+                  aum: engagement.aum,
+                  employees: engagement.employees,
+                  customers: engagement.customers,
+                }}
+              />
             </div>
-            <div>
-              <p className="text-xs text-text-muted">Files uploaded</p>
-              <p className="text-sm text-text-primary mt-0.5">
-                {engagement.uploads.length}
-              </p>
-            </div>
-            <div>
-              <p className="text-xs text-text-muted">Events correlated</p>
-              <p className="text-sm text-text-primary mt-0.5">
-                {engagement._count.eventLogs.toLocaleString()}
-              </p>
-            </div>
-            <div>
-              <p className="text-xs text-text-muted">Findings</p>
-              <p className="text-sm text-text-primary mt-0.5">
-                {engagement.analysisResults.length}
-              </p>
-            </div>
+            {(engagement.country || engagement.institutionType || engagement.aum || engagement.employees || engagement.customers) ? (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {engagement.country && <ProfileChip label="Country" value={engagement.country} />}
+                {engagement.region && <ProfileChip label="Region" value={engagement.region} />}
+                {engagement.institutionType && <ProfileChip label="Type" value={engagement.institutionType.replace(/_/g, " ")} />}
+                {engagement.aum && <ProfileChip label="AUM" value={engagement.aum} />}
+                {engagement.employees && <ProfileChip label="Employees" value={engagement.employees} />}
+                {engagement.customers && <ProfileChip label="Customers" value={engagement.customers} />}
+              </div>
+            ) : (
+              <p style={{ fontSize: 12, color: "#9AAABB" }}>No profile details saved yet — click Edit Profile to add.</p>
+            )}
+          </div>
+
+          {/* Stats row */}
+          <div style={{ borderTop: "1px solid #EEF2F8", paddingTop: 16, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+            {[
+              { label: "Processes",        value: engagement.processes.length },
+              { label: "Files uploaded",   value: engagement.uploads.length },
+              { label: "Events correlated",value: engagement._count.eventLogs.toLocaleString() },
+              { label: "Findings",         value: engagement.analysisResults.length },
+            ].map(({ label, value }) => (
+              <div key={label}>
+                <p style={{ fontSize: 11, color: "#9AAABB", fontWeight: 600 }}>{label}</p>
+                <p style={{ fontSize: 16, fontWeight: 800, color: "#001C3D", marginTop: 3 }}>{value}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Process Modeler step */}
-        <ProcessMapCard
+        {/* Processes */}
+        <ProcessesSection
           engagementId={engagement.id}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          processMap={(engagement as any).processMap as Record<string, unknown> | null}
+          initialProcesses={engagement.processes.map((p) => ({
+            id: p.id,
+            lineOfBusiness: p.lineOfBusiness,
+            processKey: p.processKey,
+            processName: p.processName,
+            processMap: p.processMap,
+            dataRequest: p.dataRequest,
+            status: p.status,
+          }))}
         />
 
         {/* Upload section */}
         <UploadSection
           engagementId={engagement.id}
-          processTemplate={engagement.processTemplate}
+          processTemplate={engagement.processTemplate ?? ""}
           uploads={engagement.uploads.map((u) => ({
             id: u.id,
             originalName: u.originalName,
@@ -203,47 +170,6 @@ export default async function EngagementDetailPage({
           initialEventCount={engagement._count.eventLogs}
         />
 
-        {/* Expected systems from template */}
-        {template && (
-          <div className="mt-6 rounded-lg border border-border bg-bg-card p-6">
-            <h3 className="text-sm font-semibold text-text-primary mb-4">
-              Expected Systems
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {template.expectedSystems.map((system) => {
-                const hasUpload = engagement.uploads.some(
-                  (u) =>
-                    u.systemSource?.toLowerCase() === system.toLowerCase()
-                );
-                return (
-                  <span
-                    key={system}
-                    className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${
-                      hasUpload
-                        ? "bg-accent-green/10 text-accent-green"
-                        : "bg-bg-secondary text-text-muted"
-                    }`}
-                  >
-                    {hasUpload && (
-                      <svg
-                        className="w-3 h-3 mr-1"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    )}
-                    {system}
-                  </span>
-                );
-              })}
-            </div>
-          </div>
-        )}
       </main>
     </div>
   );

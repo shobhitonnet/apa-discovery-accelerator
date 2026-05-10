@@ -18,17 +18,52 @@ model User {
   engagements  Engagement[]
 }
 
+model EngagementProcess {
+  id             String     @id @default(uuid())
+  engagement     Engagement @relation(fields: [engagementId], references: [id], onDelete: Cascade)
+  engagementId   String
+  lineOfBusiness String     // retail | sme | commercial | wealth
+  processKey     String     // e.g. "retail_mortgage"
+  processName    String     // e.g. "Home Mortgage Origination"
+  processMap     Json?      // Canvas state (nodes + edges)
+  dataRequest    Json?      // AI-generated MoSCoW data request
+  processMetrics       Json?  // Process-specific KPIs (volume, TAT, rates) — legacy hardcoded form
+  processCapabilities  Json?  // Digital maturity per sub-process: digital | partial | manual
+  metricOverrides      Json?  // Per-engagement overrides for ASSUMED metrics — { metricKey: numericValue }
+  findings             Json?  // Cached Stage 5 findings (Claude-generated narrative). Reused across visits to avoid extra API spend; user can Regenerate.
+  findingsGeneratedAt  DateTime?  // When the cached findings were last generated.
+  templateVersion      Int?   // Snapshot of ProcessTemplate.version this engagement was bootstrapped against
+  status         String     @default("created")
+  order          Int        @default(0)
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+}
+
 model Engagement {
-  id              String           @id @default(uuid())
-  name            String           // e.g. "Bank X — Mortgage Discovery"
+  id              String              @id @default(uuid())
+  name            String              // e.g. "Bank X — Mortgage Discovery"
   clientName      String
-  processTemplate String           // mortgage | sme_loan | dispute | onboarding
+  processTemplate String?             // legacy — superseded by EngagementProcess
   processMap      Json?            // Saved canvas state from ProcessModeler
+  dataRequest     Json?            // AI-generated data request from process map
   status          String           @default("created") // created | uploading | analyzing | completed
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
-  createdBy       User             @relation(fields: [createdById], references: [id])
+
+  // Client location
+  country         String?
+  region          String?          // auto-derived: Europe | Middle East | Africa | North America | Latin America | Asia Pacific
+
+  // Institution profile
+  institutionType String?          // bank | credit_union | neobank | insurance | building_society | cooperative | fintech
+  aum             String?          // e.g. "$50B" — free text to handle multi-currency
+  employees       String?          // stored as range string e.g. "2K–10K"
+  customers       String?          // stored as range string e.g. "1M–5M"
+  coreBankingSystem String?        // Temenos | SAP Fioneer | Finacle | Oracle FSS | Finastra | Mambu | Jack Henry | Thought Machine | Other
+
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+  createdBy       User                @relation(fields: [createdById], references: [id])
   createdById     String
+  processes       EngagementProcess[]
   uploads         Upload[]
   eventLogs       EventLog[]
   analysisResults AnalysisResult[]
@@ -44,10 +79,20 @@ model Upload {
   sizeBytes     Int?
   schemaInference Json?    // Stores the Claude-inferred schema
   rawData       Json?      // Full parsed CSV rows for correlation engine
-  status        String     @default("uploaded") // uploaded | inferring | inferred | correlated | error
+  status        String     @default("uploaded") // uploaded | inferring | inferred | matched | confirmed | correlated | error
   createdAt     DateTime   @default(now())
   engagement    Engagement @relation(fields: [engagementId], references: [id], onDelete: Cascade)
   engagementId  String
+
+  // Digital twin pipeline — process-scoped uploads
+  processId             String?  // Links to EngagementProcess
+  dataRequestFileName   String?  // Matches DataRequestItem.fileName (the slot this file fills)
+  caseIdColumn          String?  // Confirmed column for case_id
+  activityColumn        String?  // Confirmed column for activity (null if file = single activity)
+  activityFallback      String?  // Activity name when activityColumn is null
+  timestampColumn       String?  // Confirmed column for timestamp
+  actorColumn           String?  // Confirmed column for actor (optional)
+
   eventLogs     EventLog[]
 }
 
@@ -55,6 +100,7 @@ model EventLog {
   id            String     @id @default(uuid())
   caseId        String     // Correlated case identifier
   activity      String     // Activity/step name
+  activityKey   String?    // Stable key matching ideal model node IDs (Stage 4 overlay)
   timestamp     DateTime   // When the event occurred
   system        String     // Source system
   actor         String?    // Who performed the step
@@ -62,11 +108,13 @@ model EventLog {
   confidence    Float      @default(1.0) // Correlation confidence (0-1)
   engagement    Engagement @relation(fields: [engagementId], references: [id], onDelete: Cascade)
   engagementId  String
+  processId     String?    // Links to EngagementProcess (digital twin scope)
   upload        Upload?    @relation(fields: [uploadId], references: [id])
   uploadId      String?
 
   @@index([engagementId, caseId])
   @@index([engagementId, timestamp])
+  @@index([processId, caseId])
 }
 
 model ProcessStepTemplate {
@@ -97,6 +145,107 @@ model ApplicationSystem {
   processTemplates String[] // ["*"] = all, ["mortgage","sme_loan"] = specific
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// Process Repository — the curated knowledge base.
+// One ProcessTemplate per (processKey, version). Engagements snapshot the
+// version they were created against so updates don't retroactively change
+// historical work.
+// ──────────────────────────────────────────────────────────────────────────
+
+model ProcessTemplate {
+  id                  String   @id @default(uuid())
+  processKey          String   // e.g., "retail_onboarding" — same key across versions
+  version             Int      @default(1)
+  isActive            Boolean  @default(false)        // false = "coming soon" / draft
+  name                String
+  description         String   @default("")
+  lineOfBusiness      String                          // retail | sme | commercial | wealth
+  applicableInstTypes String[] @default([])           // [] = all institution types
+  defaultProcessMap   Json                            // BPMN nodes + edges
+  subProcesses        Json                            // Capability rows the consultant assesses
+  metricDefinitions   Json                            // Metrics this process collects
+  notes               String   @default("")
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@unique([processKey, version])
+  @@index([isActive, processKey])
+}
+
+// Country/institution-scoped value coefficients used by Stage 5 quantification.
+// Country wins for regulatory/value, institution-type optionally narrows further.
+model ValueCoefficient {
+  id              String   @id @default(uuid())
+  country         String                              // ISO country name (e.g., "United Kingdom")
+  institutionType String   @default("")               // "" = all institutions in that country
+  key             String                              // "fte_hourly_rate" | "kyc_breach_avg_fine" | ...
+  value           Float
+  unit            String                              // "GBP/hr" | "GBP/case" | "ratio"
+  category        String   @default("operational")    // operational | regulatory | risk
+  description     String   @default("")
+  source          String   @default("")               // citation, e.g. "FCA 2024 Annual Report"
+  validFrom       DateTime @default(now())
+  validTo         DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([country, institutionType, key, validFrom])
+  @@index([country, key])
+}
+
+// DB-backed deviation patterns (parallel to the in-code library; DB version
+// allows non-engineer admins to edit without code deploys).
+model DeviationPattern {
+  id              String   @id @default(uuid())
+  patternKey      String   @unique                    // "skip_kyc", "loop_kyc", etc.
+  type            String                              // skip | loop | out_of_order | extra_step
+  stepKeyword     String                              // regex source string
+  processKey      String?                             // null = applies to all processes
+  country         String?                             // null = all countries
+  reasons         Json                                // Array of { category, severity, title, description, ... }
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([type, processKey])
+}
+
+// Country × process activation. The consultant team curates per-country
+// process variants — picks a process from the canonical Process Repository,
+// customises it for that country (model, sub-processes, metrics), then
+// activates it. Engagements created with that (country, processKey) bootstrap
+// from the activated variant; if no variant is activated, they fall back to
+// the canonical ProcessTemplate.
+model CountryProcessActivation {
+  id                   String   @id @default(uuid())
+  country              String                              // e.g., "United Kingdom"
+  processKey           String                              // matches ProcessTemplate.processKey
+  basedOnTemplateVersion Int                               // which canonical version this was forked from
+  isActive             Boolean  @default(false)            // false = draft / in-progress
+  // Optional country-specific overrides (null = inherit from canonical template)
+  customProcessMap     Json?
+  customSubProcesses   Json?
+  customMetricDefinitions Json?
+  notes                String   @default("")
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@unique([country, processKey])
+  @@index([country, isActive])
+}
+
+// Pre-built data request template per process — used as a starting point;
+// AI may refine based on the consultant's capability assessment.
+model DataRequestTemplate {
+  id          String   @id @default(uuid())
+  processKey  String   @unique
+  version     Int      @default(1)
+  isActive    Boolean  @default(false)
+  items       Json                                    // Array of DataRequestItem
+  notes       String   @default("")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model AnalysisResult {

@@ -46,11 +46,19 @@ export async function PATCH(
   const { id } = await params;
   const body = await request.json();
 
+  const profileFields = ["name", "clientName", "country", "region", "institutionType", "aum", "employees", "customers", "coreBankingSystem"];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const profileData: Record<string, any> = {};
+  for (const key of profileFields) {
+    if (key in body) profileData[key] = body[key] ?? null;
+  }
+
   const updated = await prisma.engagement.update({
     where: { id },
     data: {
       ...(body.processMap !== undefined && { processMap: body.processMap }),
       ...(body.status !== undefined && { status: body.status }),
+      ...profileData,
     },
   });
 

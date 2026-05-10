@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>APA Discovery Accelerator — Contributor Brief</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #06080F;
+    color: #E2E8F0;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 48px;
+  }
+
+  /* ── Cover ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(51,102,255,0.12);
+    border: 1px solid rgba(51,102,255,0.3);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #3366FF;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .cover h1 {
+    font-size: 52px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+
+  .cover h1 span { color: #3366FF; }
+
+  .cover .subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.5);
+    max-width: 600px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 4px;
+  }
+
+  .meta-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  /* ── Sections ── */
+  .section {
+    margin-bottom: 72px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #3366FF;
+    margin-bottom: 12px;
+  }
+
+  .section h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .section p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+    max-width: 720px;
+    margin-bottom: 16px;
+  }
+
+  /* ── Cards ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .card .card-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Architecture Diagram ── */
+  .arch-diagram {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: 24px;
+  }
+
+  .arch-layer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .arch-layer-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    width: 100px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  .arch-boxes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .arch-box {
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .arch-arrow {
+    text-align: center;
+    color: rgba(255,255,255,0.15);
+    font-size: 20px;
+    margin: 4px 0 4px 116px;
+  }
+
+  .blue { background: rgba(51,102,255,0.15); border: 1px solid rgba(51,102,255,0.3); color: #3366FF; }
+  .green { background: rgba(38,188,113,0.15); border: 1px solid rgba(38,188,113,0.3); color: #26BC71; }
+  .amber { background: rgba(255,172,9,0.15); border: 1px solid rgba(255,172,9,0.3); color: #FFAC09; }
+  .purple { background: rgba(139,43,226,0.15); border: 1px solid rgba(139,43,226,0.3); color: #8B2BE2; }
+  .cyan { background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.3); color: #06B6D4; }
+  .red { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.3); color: #EF4444; }
+  .grey { background: rgba(100,116,139,0.15); border: 1px solid rgba(100,116,139,0.3); color: #94A3B8; }
+
+  /* ── Tech Stack Table ── */
+  .tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+
+  .tech-table th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .tech-table td {
+    padding: 12px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+  }
+
+  .tech-table td:first-child {
+    color: rgba(255,255,255,0.4);
+    font-weight: 600;
+    width: 180px;
+  }
+
+  .tech-table td:nth-child(2) {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .tech-table td:nth-child(3) {
+    color: rgba(255,255,255,0.4);
+    font-size: 12px;
+  }
+
+  /* ── Data Flow ── */
+  .flow-steps {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .flow-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .flow-step:last-child { border-bottom: none; }
+
+  .flow-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(51,102,255,0.15);
+    border: 1px solid rgba(51,102,255,0.3);
+    color: #3366FF;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .flow-step h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .flow-step p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Status Table ── */
+  .status-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+
+  .status-table th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .status-table td {
+    padding: 11px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .status-table td:first-child { color: #fff; font-weight: 600; }
+  .status-table td:nth-child(2) { color: rgba(255,255,255,0.4); font-size: 12px; }
+
+  .pill-done { background: rgba(38,188,113,0.12); border: 1px solid rgba(38,188,113,0.3); color: #26BC71; border-radius: 12px; padding: 2px 10px; font-size: 11px; font-weight: 700; }
+  .pill-wip { background: rgba(255,172,9,0.12); border: 1px solid rgba(255,172,9,0.3); color: #FFAC09; border-radius: 12px; padding: 2px 10px; font-size: 11px; font-weight: 700; }
+  .pill-todo { background: rgba(100,116,139,0.12); border: 1px solid rgba(100,116,139,0.3); color: #94A3B8; border-radius: 12px; padding: 2px 10px; font-size: 11px; font-weight: 700; }
+
+  /* ── Credentials ── */
+  .creds-box {
+    background: rgba(51,102,255,0.06);
+    border: 1px solid rgba(51,102,255,0.2);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-top: 24px;
+  }
+
+  .creds-box h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .cred-row {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+
+  .cred-row:last-child { margin-bottom: 0; }
+
+  .cred-key {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    width: 160px;
+    flex-shrink: 0;
+  }
+
+  .cred-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #fff;
+    word-break: break-all;
+  }
+
+  .cred-val.highlight { color: #26BC71; }
+
+  /* ── Setup Steps ── */
+  .setup-steps {
+    margin-top: 24px;
+    counter-reset: step;
+  }
+
+  .setup-step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .setup-step-num {
+    counter-increment: step;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #3366FF;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .setup-step h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .setup-step p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    margin: 0 0 8px 0;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    padding: 2px 7px;
+    color: #06B6D4;
+  }
+
+  pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 16px 20px;
+    color: #06B6D4;
+    line-height: 1.7;
+    overflow-x: auto;
+    margin-top: 8px;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin: 72px 0;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+  }
+
+  @media print {
+    body { background: #06080F; }
+    .cover { min-height: auto; page-break-after: always; }
+    .section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Cover ── -->
+  <div class="cover">
+    <div class="badge">Backbase Internal · Confidential</div>
+    <h1>APA Discovery<br/><span>Accelerator</span></h1>
+    <p class="subtitle">
+      A proprietary full-stack process mining tool that helps Backbase run faster, more credible discovery engagements with banking clients — replacing 2-day manual workshops with AI-powered process analysis.
+    </p>
+    <div class="meta-row">
+      <div class="meta-item">
+        <label>Product Owner</label>
+        <span>Shobhit Srivastava</span>
+      </div>
+      <div class="meta-item">
+        <label>Contributor</label>
+        <span>Mayur (you)</span>
+      </div>
+      <div class="meta-item">
+        <label>Status</label>
+        <span>Work in Progress</span>
+      </div>
+      <div class="meta-item">
+        <label>Date</label>
+        <span>May 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Problem ── -->
+  <div class="section">
+    <div class="section-label">01 — The Problem</div>
+    <h2>Why We're Building This</h2>
+    <p>
+      Traditional process mining tools like Celonis and Signavio work well for ERP-based processes where one order ID travels through one system's audit log. Banking is fundamentally different.
+    </p>
+    <p>
+      A single mortgage journey fragments across 10–12 systems — CRM, LOS, ID Verification, Credit Bureau, Document Management, Valuation, Decision Engine, E-Sign, Conveyancing, Core Banking, Payments, Land Registry — each generating its own ID with <strong style="color:#fff">no shared key</strong>. No existing tool handles this.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">⏱</div>
+        <h3>2-Day Workshops → 2 Hours</h3>
+        <p>Replace manual discovery workshops where consultants whiteboard processes by hand with automated analysis from raw system exports.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Cross-System Correlation</h3>
+        <p>Our Case Correlation Engine links events across 10+ systems using temporal proximity, customer spine, and cross-reference fields — no shared ID needed.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🕳</div>
+        <h3>Dark Process Detection</h3>
+        <p>Identify manual work happening between system timestamps — the "dark process zones" where Excel, phone calls, and email hide inefficiency.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>APA Opportunity Output</h3>
+        <p>Automatically surface which steps are candidates for Backbase APA agents — IDP, Flow 2.0, decision automation — with evidence from the data.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Shared Infrastructure ── -->
+  <div class="section">
+    <div class="section-label">02 — Collaboration Model</div>
+    <h2>How We Work Together</h2>
+    <p>Both developers work independently on their own laptops but share the same cloud database and deployment. No manual syncing needed.</p>
+
+    <div class="arch-diagram" style="padding: 48px 40px;">
+      <!-- Two laptops row -->
+      <div style="display: flex; justify-content: center; gap: 120px; margin-bottom: 0;">
+        <div style="text-align: center;">
+          <div style="background: rgba(51,102,255,0.12); border: 1px solid rgba(51,102,255,0.3); border-radius: 12px; padding: 16px 24px; display: inline-block;">
+            <div style="font-size: 28px; margin-bottom: 6px;">💻</div>
+            <div style="font-size: 12px; font-weight: 700; color: #fff;">Shobhit's Laptop</div>
+            <div style="font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 2px;">Product Owner</div>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <div style="background: rgba(38,188,113,0.12); border: 1px solid rgba(38,188,113,0.3); border-radius: 12px; padding: 16px 24px; display: inline-block;">
+            <div style="font-size: 28px; margin-bottom: 6px;">💻</div>
+            <div style="font-size: 12px; font-weight: 700; color: #fff;">Mayur's Laptop</div>
+            <div style="font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 2px;">Contributor</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lines going down to GitHub -->
+      <div style="display: flex; justify-content: center; gap: 120px; margin: 0;">
+        <div style="width: 2px; height: 40px; background: rgba(51,102,255,0.4); margin: 0 auto;"></div>
+        <div style="width: 2px; height: 40px; background: rgba(38,188,113,0.4); margin: 0 auto;"></div>
+      </div>
+
+      <!-- Merge lines -->
+      <div style="display: flex; justify-content: center; position: relative; height: 24px; margin-bottom: 0;">
+        <div style="position: absolute; top: 0; left: calc(50% - 62px); right: calc(50% - 62px); height: 2px; background: linear-gradient(to right, rgba(51,102,255,0.4), rgba(100,116,139,0.4), rgba(38,188,113,0.4));"></div>
+        <div style="width: 2px; height: 24px; background: rgba(255,255,255,0.2); margin: 0 auto; margin-top: 0;"></div>
+      </div>
+
+      <!-- GitHub -->
+      <div style="text-align: center; margin-bottom: 0;">
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 12px 28px; display: inline-block;">
+          <div style="font-size: 13px; font-weight: 700; color: #fff;">⑆ GitHub — Private Repository</div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; font-family: 'JetBrains Mono', monospace;">github.com/shobhitonnet/apa-discovery-accelerator</div>
+        </div>
+      </div>
+
+      <!-- Arrow down -->
+      <div style="text-align: center; color: rgba(255,255,255,0.2); font-size: 22px; margin: 6px 0;">↓</div>
+
+      <!-- Vercel -->
+      <div style="text-align: center; margin-bottom: 0;">
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 12px 28px; display: inline-block;">
+          <div style="font-size: 13px; font-weight: 700; color: #fff;">▲ Vercel — Auto-Deploy on Push</div>
+          <div style="font-size: 11px; color: rgba(38,188,113,0.8); margin-top: 2px; font-family: 'JetBrains Mono', monospace;">apa-discovery-accelerator.vercel.app</div>
+        </div>
+      </div>
+
+      <!-- Two arrows down -->
+      <div style="display: flex; justify-content: center; gap: 80px; margin: 6px 0 0 0;">
+        <div style="text-align: center; color: rgba(255,172,9,0.4); font-size: 18px;">↓</div>
+        <div style="text-align: center; color: rgba(239,68,68,0.4); font-size: 18px;">↓</div>
+      </div>
+
+      <!-- Neon + Anthropic -->
+      <div style="display: flex; justify-content: center; gap: 20px;">
+        <div style="background: rgba(38,188,113,0.08); border: 1px solid rgba(38,188,113,0.25); border-radius: 10px; padding: 12px 24px; text-align: center;">
+          <div style="font-size: 13px; font-weight: 700; color: #26BC71;">🐘 Neon PostgreSQL</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 2px;">Shared cloud database</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.2); margin-top: 1px;">AWS Frankfurt</div>
+        </div>
+        <div style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); border-radius: 10px; padding: 12px 24px; text-align: center;">
+          <div style="font-size: 13px; font-weight: 700; color: #EF4444;">✦ Anthropic Claude API</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 2px;">AI agents — schema, correlation, mining</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.2); margin-top: 1px;">Runs on Anthropic's servers</div>
+        </div>
+      </div>
+
+      <!-- Key insight -->
+      <div style="margin-top: 28px; background: rgba(51,102,255,0.06); border: 1px solid rgba(51,102,255,0.15); border-radius: 8px; padding: 14px 18px; text-align: center;">
+        <span style="font-size: 12px; color: rgba(255,255,255,0.5);">
+          Both laptops point to the <strong style="color: #fff;">same Neon database</strong> — you both see the same engagements, process maps, and generated data in real time.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Architecture ── -->
+  <div class="section">
+    <div class="section-label">02 — Architecture</div>
+    <h2>How the System is Structured</h2>
+    <p>A Next.js full-stack application with a PostgreSQL database, deployed on Vercel. Claude AI powers the intelligent agents. Everything is DB-driven and configurable.</p>
+
+    <div class="arch-diagram">
+
+      <!-- Users -->
+      <div class="arch-layer">
+        <div class="arch-layer-label">Users</div>
+        <div style="flex: 1;">
+          <div class="arch-boxes" style="margin-bottom: 6px;">
+            <div class="arch-box blue">Backbase Consultants</div>
+            <div class="arch-box green">Banking Clients (future)</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5;">
+            Backbase GTM and presales consultants running discovery engagements. In future, banking clients may access a read-only view of their own analysis.
+          </div>
+        </div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- Hosting -->
+      <div class="arch-layer">
+        <div class="arch-layer-label">Hosting</div>
+        <div style="flex: 1;">
+          <div class="arch-boxes" style="margin-bottom: 6px;">
+            <div class="arch-box grey">Vercel — apa-discovery-accelerator.vercel.app</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5;">
+            Vercel hosts the Next.js application on a global edge network. Every push to the GitHub <code style="font-size:10px;">main</code> branch triggers an automatic deployment in ~2 minutes. No manual server management needed.
+          </div>
+        </div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- Frontend -->
+      <div class="arch-layer">
+        <div class="arch-layer-label">Frontend</div>
+        <div style="flex: 1;">
+          <div class="arch-boxes" style="margin-bottom: 6px;">
+            <div class="arch-box blue">Next.js 16 App Router</div>
+            <div class="arch-box blue">React 19 + TypeScript</div>
+            <div class="arch-box cyan">@xyflow/react (BPMN Canvas)</div>
+            <div class="arch-box grey">Tailwind CSS</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5;">
+            <strong style="color:rgba(255,255,255,0.6);">Next.js App Router</strong> — pages are server components by default (fast, SEO-friendly, no client JS overhead). Only interactive parts (forms, canvas) are client components.<br/>
+            <strong style="color:rgba(255,255,255,0.6);">@xyflow/react</strong> — powers the BPMN Process Modeller canvas. Handles drag-drop, node rendering, edge connections, zoom/pan.<br/>
+            <strong style="color:rgba(255,255,255,0.6);">Tailwind CSS</strong> — utility-first CSS for layout. Custom dark-theme colours defined in config.
+          </div>
+        </div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- Backend -->
+      <div class="arch-layer">
+        <div class="arch-layer-label">Backend</div>
+        <div style="flex: 1;">
+          <div class="arch-boxes" style="margin-bottom: 6px;">
+            <div class="arch-box blue">Next.js API Routes</div>
+            <div class="arch-box green">NextAuth.js (Auth)</div>
+            <div class="arch-box purple">Prisma 7 ORM</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5;">
+            <strong style="color:rgba(255,255,255,0.6);">API Routes</strong> — all server-side logic lives in <code style="font-size:10px;">src/app/api/</code>. REST endpoints for engagements, uploads, admin config, AI agents. Session-protected.<br/>
+            <strong style="color:rgba(255,255,255,0.6);">NextAuth.js</strong> — handles login sessions, password hashing, JWT tokens. Users stored in the DB.<br/>
+            <strong style="color:rgba(255,255,255,0.6);">Prisma ORM</strong> — type-safe database client auto-generated from <code style="font-size:10px;">prisma/schema.prisma</code>. Run <code style="font-size:10px;">npm run db:generate</code> after any schema change.
+          </div>
+        </div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- AI Agents -->
+      <div class="arch-layer">
+        <div class="arch-layer-label">AI Agents</div>
+        <div style="flex: 1;">
+          <div class="arch-boxes" style="margin-bottom: 6px;">
+            <div class="arch-box amber">Schema Inference Agent</div>
+            <div class="arch-box amber">Case Correlation Agent</div>
+            <div class="arch-box amber">Process Mining Agent</div>
+            <div class="arch-box amber">Process Research Agent</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5;">
+            <strong style="color:rgba(255,255,255,0.6);">Schema Inference</strong> — reads CSV headers and sample rows, identifies which columns are case_id, activity, timestamp, actor.<br/>
+            <strong style="color:rgba(255,255,255,0.6);">Case Correlation</strong> — links events across systems with no shared key using temporal proximity + customer spine.<br/>
+            <strong style="color:rgba(255,255,255,0.6);">Process Mining</strong> — analyses the unified event log for bottlenecks, rework loops, cycle times, dark process zones.<br/>
+            <strong style="color:rgba(255,255,255,0.6);">Process Research</strong> — researches standard banking process steps, actors, and systems from Claude's training knowledge to populate the DB.
+          </div>
+        </div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- AI Provider -->
+      <div class="arch-layer">
+        <div class="arch-layer-label">AI Provider</div>
+        <div style="flex: 1;">
+          <div class="arch-boxes" style="margin-bottom: 6px;">
+            <div class="arch-box red">Anthropic Claude API (claude-sonnet-4)</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5;">
+            All AI agents call the Anthropic API via <code style="font-size:10px;">src/lib/anthropic.ts</code>. Claude runs on Anthropic's servers — we send a prompt, receive structured JSON back. The API key is stored in environment variables and never exposed to the browser.
+          </div>
+        </div>
+      </div>
+      <div class="arch-arrow">↓</div>
+
+      <!-- Database -->
+      <div class="arch-layer">
+        <div class="arch-layer-label">Database</div>
+        <div style="flex: 1;">
+          <div class="arch-boxes" style="margin-bottom: 6px;">
+            <div class="arch-box green">Neon PostgreSQL (cloud) — AWS Frankfurt</div>
+          </div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5;">
+            Cloud-hosted PostgreSQL on Neon. Stores all engagements, uploads, event logs, analysis results, users, and configuration (process steps, systems, actors). Both your local machine and Vercel production connect to the same database via <code style="font-size:10px;">DATABASE_URL</code>. Scales to zero when inactive on the free tier.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Tech Stack ── -->
+  <div class="section">
+    <div class="section-label">03 — Tech Stack</div>
+    <h2>Technologies Used</h2>
+
+    <table class="tech-table">
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Framework</td><td>Next.js 16 (App Router)</td><td>Full-stack React framework, server + client components</td></tr>
+        <tr><td>Language</td><td>TypeScript</td><td>Type safety across frontend and backend</td></tr>
+        <tr><td>UI</td><td>React 19 + Tailwind CSS</td><td>Component-based UI with utility styling</td></tr>
+        <tr><td>Canvas</td><td>@xyflow/react v12</td><td>BPMN process modeller with drag-drop nodes</td></tr>
+        <tr><td>Database</td><td>PostgreSQL (Neon)</td><td>Cloud-hosted relational DB — engagements, uploads, event logs</td></tr>
+        <tr><td>ORM</td><td>Prisma 7</td><td>Type-safe DB access, schema migrations, seeding</td></tr>
+        <tr><td>Auth</td><td>NextAuth.js</td><td>Email + password authentication, session management</td></tr>
+        <tr><td>AI</td><td>Anthropic Claude API</td><td>Schema inference, correlation strategy, process mining, research agent</td></tr>
+        <tr><td>Deployment</td><td>Vercel</td><td>Auto-deploy from GitHub, edge network, env var management</td></tr>
+        <tr><td>Version Control</td><td>GitHub (private)</td><td>Code collaboration between Shobhit and Mayur</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Database Schema ── -->
+  <div class="section">
+    <div class="section-label">04 — Database</div>
+    <h2>Data Models</h2>
+    <p>All data lives in Neon PostgreSQL. The schema is managed by Prisma and version controlled.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>User</h3>
+        <p>Backbase team members. Email + hashed password. Role: admin or analyst.</p>
+      </div>
+      <div class="card">
+        <h3>Engagement</h3>
+        <p>One discovery project per client. Stores process template, saved canvas map (JSON), status.</p>
+      </div>
+      <div class="card">
+        <h3>Upload</h3>
+        <p>CSV files uploaded per engagement. Stores inferred schema, raw data, system source.</p>
+      </div>
+      <div class="card">
+        <h3>EventLog</h3>
+        <p>Correlated events reconstructed from uploads. Case ID, activity, timestamp, actor, system.</p>
+      </div>
+      <div class="card">
+        <h3>AnalysisResult</h3>
+        <p>AI mining output — bottlenecks, cycle times, rework loops, APA opportunities.</p>
+      </div>
+      <div class="card">
+        <h3>Config Tables</h3>
+        <p>ProcessStepTemplate, ApplicationSystem, ProcessActor — all DB-driven and admin-configurable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Data Flow ── -->
+  <div class="section">
+    <div class="section-label">05 — Data Flow</div>
+    <h2>How a Discovery Engagement Works</h2>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-number">1</div>
+        <div>
+          <h4>Create Engagement</h4>
+          <p>Consultant creates an engagement (e.g. "BECU — Mortgage Discovery"), picks a process template. Templates are DB-driven — new ones can be generated by the AI Research Agent.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-number">2</div>
+        <div>
+          <h4>Model the Process</h4>
+          <p>Consultant opens the BPMN Process Modeller canvas. Drags Start Event, Task nodes (pre-populated from DB), Gateways, End Event. Assigns actors and systems per step. Saves the process map.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-number">3</div>
+        <div>
+          <h4>Upload CSV Data</h4>
+          <p>Consultant uploads raw CSV exports from the bank's operational systems (LOS, CRM, Core Banking, etc.). Up to multiple files from different systems.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-number">4</div>
+        <div>
+          <h4>Schema Inference Agent</h4>
+          <p>Claude reads each CSV, identifies which columns are case_id, activity, timestamp, actor, system references. Returns confidence-scored schema inference.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-number">5</div>
+        <div>
+          <h4>Case Correlation Engine</h4>
+          <p>Links events across systems using: explicit key matching → customer spine + temporal proximity → cross-reference field detection. Builds unified EventLog in DB.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-number">6</div>
+        <div>
+          <h4>Process Mining + APA Opportunities</h4>
+          <p>Claude analyses the EventLog for bottlenecks, rework loops, cycle time variance, dark process zones, process variants. Outputs APA automation recommendations per step.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Build Status ── -->
+  <div class="section">
+    <div class="section-label">06 — Current Status</div>
+    <h2>What's Built vs What's Next</h2>
+
+    <table class="status-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Authentication</td>
+          <td>Email + password login, session management, role-based access</td>
+          <td><span class="pill-done">Done</span></td>
+        </tr>
+        <tr>
+          <td>Engagement Management</td>
+          <td>Create, list, view engagements with client details</td>
+          <td><span class="pill-done">Done</span></td>
+        </tr>
+        <tr>
+          <td>Process Modeller (BPMN Canvas)</td>
+          <td>Drag-drop canvas with Start/End Events, Tasks, XOR/Parallel Gateways, multi-actor + multi-system assignment</td>
+          <td><span class="pill-done">Done</span></td>
+        </tr>
+        <tr>
+          <td>Admin Configuration Panel</td>
+          <td>Manage process steps, application systems, actors via UI</td>
+          <td><span class="pill-done">Done</span></td>
+        </tr>
+        <tr>
+          <td>AI Process Research Agent</td>
+          <td>Claude generates reference process steps/actors/systems for any banking process</td>
+          <td><span class="pill-done">Done</span></td>
+        </tr>
+        <tr>
+          <td>Dynamic Template Selection</td>
+          <td>Engagement creation pulls templates from DB — AI-generated templates appear automatically</td>
+          <td><span class="pill-done">Done</span></td>
+        </tr>
+        <tr>
+          <td>CSV Upload + Schema Inference</td>
+          <td>Upload CSVs, Claude identifies columns and source system</td>
+          <td><span class="pill-done">Done</span></td>
+        </tr>
+        <tr>
+          <td>Case Correlation Engine</td>
+          <td>Cross-system event linking with confidence scoring</td>
+          <td><span class="pill-done">Done</span></td>
+        </tr>
+        <tr>
+          <td>Analysis Output UI</td>
+          <td>Surfacing bottlenecks, cycle times, dark process zones, APA opportunities in the UI</td>
+          <td><span class="pill-wip">Next Up</span></td>
+        </tr>
+        <tr>
+          <td>Export (PDF / PowerPoint)</td>
+          <td>Client-ready output for discovery decks</td>
+          <td><span class="pill-todo">Pending</span></td>
+        </tr>
+        <tr>
+          <td>Role Management</td>
+          <td>Admin vs Analyst access controls, user management UI</td>
+          <td><span class="pill-todo">Pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Setup ── -->
+  <div class="section">
+    <div class="section-label">07 — Developer Setup</div>
+    <h2>How to Get Started, Mayur</h2>
+
+    <div class="setup-steps">
+      <div class="setup-step">
+        <div class="setup-step-num">1</div>
+        <div>
+          <h4>Accept GitHub Invitation</h4>
+          <p>You'll receive an email invite to the private repo. Accept it, then clone:</p>
+          <pre>git clone https://github.com/shobhitonnet/apa-discovery-accelerator.git
+cd apa-discovery-accelerator
+npm install</pre>
+        </div>
+      </div>
+      <div class="setup-step">
+        <div class="setup-step-num">2</div>
+        <div>
+          <h4>Create your .env.local file</h4>
+          <p>In the root of the project folder, create a new file called <code>.env.local</code> and paste exactly this — replacing nothing, these are the real credentials:</p>
+          <pre>DATABASE_URL="postgresql://neondb_owner:npg_c3Sy2uDzojKV@ep-proud-sunset-al6pv0yo.c-3.eu-central-1.aws.neon.tech/neondb?sslmode=require"
+NEXTAUTH_SECRET="3EMVL8nkpm3bm7MXXWmByCRDapyTIpq1BXu8kVVBb8w="
+NEXTAUTH_URL="http://localhost:3000"
+ANTHROPIC_API_KEY="sk-ant-api03-oGv1wZJWITfQ1T4XhQle_mBz8JcKlivxiKVNtvA_h7w16pyYnVabpFE6lege9rsvZjvxY-wsyqxFmoh_4bmQ-1sppVgAA"</pre>
+          <p style="margin-top: 8px;">⚠ This file is in <code>.gitignore</code> — it will never be committed to GitHub. It stays only on your machine.</p>
+        </div>
+      </div>
+      <div class="setup-step">
+        <div class="setup-step-num">3</div>
+        <div>
+          <h4>Generate Prisma Client</h4>
+          <p>The DB schema is already live on Neon — you just need to generate the local TypeScript client. Run this once after cloning and again whenever the schema changes:</p>
+          <pre>npm run db:generate</pre>
+          <p style="margin-top: 8px;">You should see: <code style="color: #26BC71;">✔ Generated Prisma Client to ./src/generated/prisma</code></p>
+        </div>
+      </div>
+      <div class="setup-step">
+        <div class="setup-step-num">4</div>
+        <div>
+          <h4>Run the App</h4>
+          <pre>npm run dev</pre>
+          <p>Open <code>http://localhost:3000</code> — you're connected to the shared Neon database.</p>
+        </div>
+      </div>
+      <div class="setup-step">
+        <div class="setup-step-num">5</div>
+        <div>
+          <h4>Working Together</h4>
+          <p>When you make changes, push to GitHub and Vercel auto-deploys:</p>
+          <pre>git add .
+git commit -m "your change description"
+git push</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Credentials ── -->
+  <div class="section">
+    <div class="section-label">08 — Access Credentials</div>
+    <h2>All the Keys You Need</h2>
+    <p style="color: rgba(239,68,68,0.8); font-size: 13px; margin-bottom: 0;">⚠ Keep this document confidential. Do not share externally.</p>
+
+    <div class="creds-box">
+      <h3>Live Application</h3>
+      <div class="cred-row">
+        <div class="cred-key">URL</div>
+        <div class="cred-val highlight">https://apa-discovery-accelerator.vercel.app</div>
+      </div>
+      <div class="cred-row">
+        <div class="cred-key">Login Email</div>
+        <div class="cred-val">admin@backbase.com</div>
+      </div>
+      <div class="cred-row">
+        <div class="cred-key">Password</div>
+        <div class="cred-val">discovery2026</div>
+      </div>
+    </div>
+
+    <div class="creds-box" style="margin-top: 16px;">
+      <h3>GitHub Repository</h3>
+      <div class="cred-row">
+        <div class="cred-key">Repo URL</div>
+        <div class="cred-val highlight">https://github.com/shobhitonnet/apa-discovery-accelerator</div>
+      </div>
+      <div class="cred-row">
+        <div class="cred-key">Visibility</div>
+        <div class="cred-val">Private — invite-only</div>
+      </div>
+    </div>
+
+    <div class="creds-box" style="margin-top: 16px;">
+      <h3>.env.local — paste these values</h3>
+      <div class="cred-row">
+        <div class="cred-key">DATABASE_URL</div>
+        <div class="cred-val">postgresql://neondb_owner:npg_c3Sy2uDzojKV@ep-proud-sunset-al6pv0yo.c-3.eu-central-1.aws.neon.tech/neondb?sslmode=require</div>
+      </div>
+      <div class="cred-row">
+        <div class="cred-key">NEXTAUTH_SECRET</div>
+        <div class="cred-val">3EMVL8nkpm3bm7MXXWmByCRDapyTIpq1BXu8kVVBb8w=</div>
+      </div>
+      <div class="cred-row">
+        <div class="cred-key">NEXTAUTH_URL</div>
+        <div class="cred-val">http://localhost:3000</div>
+      </div>
+      <div class="cred-row">
+        <div class="cred-key">ANTHROPIC_API_KEY</div>
+        <div class="cred-val">sk-ant-api03-oGv1wZJWITfQ1T4XhQle_mBz8JcKlivxiKVNtvA_h7w16pyYnVabpFE6lege9rsvZjvxY-wsyqxFmoh_4bmQ-1sppVgAA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <div class="footer">
+    <span>APA Discovery Accelerator — Backbase Internal</span>
+    <span>Confidential · May 2026</span>
+  </div>
+
+</div>
+</body>
+</html>

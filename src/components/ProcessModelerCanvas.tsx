@@ -72,7 +72,7 @@ interface GatewayData {
 function StartEventNode({ selected }: NodeProps) {
   return (
     <div style={{ position: "relative", width: 48, height: 48 }}>
-      <Handle type="source" position={Position.Right} style={handleStyle("#26BC71")} />
+      <Handle type="source" position={Position.Bottom} style={handleStyle("#26BC71")} />
       <div
         style={{
           width: 48, height: 48, borderRadius: "50%",
@@ -94,7 +94,8 @@ function StartEventNode({ selected }: NodeProps) {
 function EndEventNode({ selected }: NodeProps) {
   return (
     <div style={{ position: "relative", width: 48, height: 48 }}>
-      <Handle type="target" position={Position.Left} style={handleStyle("#EF4444")} />
+      <Handle type="target" position={Position.Top} style={handleStyle("#EF4444")} />
+      <Handle type="target" id="right-in" position={Position.Right} style={handleStyle("#EF4444")} />
       <div
         style={{
           width: 48, height: 48, borderRadius: "50%",
@@ -121,24 +122,26 @@ function TaskNode({ data, selected }: NodeProps) {
   return (
     <div
       style={{
-        background: selected ? "#112d5c" : "#0d2249",
-        border: `2px solid ${selected ? "#3366FF" : "#1a3668"}`,
+        background: selected ? "#F0F4FF" : "#fff",
+        border: `2px solid ${selected ? "#3366FF" : "#DDE3EC"}`,
         borderRadius: 10,
         minWidth: 210,
         maxWidth: 260,
         cursor: "grab",
-        boxShadow: selected ? "0 0 0 3px rgba(51,102,255,0.3)" : "0 4px 16px rgba(0,0,0,0.4)",
+        boxShadow: selected ? "0 0 0 3px rgba(51,102,255,0.15)" : "0 2px 8px rgba(0,28,61,0.08)",
         transition: "all 0.15s",
         overflow: "hidden",
       }}
     >
-      <Handle type="target" position={Position.Left} style={handleStyle("#3366FF")} />
+      <Handle type="target" position={Position.Top} style={handleStyle("#3366FF")} />
+      <Handle type="target" id="left-in" position={Position.Left} style={handleStyle("#3366FF")} />
 
       {/* Actor strip — multiple actors */}
       {actors.length > 0 ? (
         <div
           style={{
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
+            borderBottom: "1px solid #EEF2F8",
+            background: "#FAFBFC",
             padding: "5px 10px",
             display: "flex",
             flexWrap: "wrap",
@@ -167,17 +170,17 @@ function TaskNode({ data, selected }: NodeProps) {
           ))}
         </div>
       ) : (
-        <div style={{ borderBottom: "1px dashed rgba(255,255,255,0.07)", padding: "4px 10px", fontSize: 9, color: "rgba(255,255,255,0.2)" }}>
+        <div style={{ borderBottom: "1px dashed #EEF2F8", background: "#FAFBFC", padding: "4px 10px", fontSize: 9, color: "#9AAABB" }}>
           No actor assigned
         </div>
       )}
 
       {/* Body */}
       <div style={{ padding: "10px 12px" }}>
-        <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: 3 }}>
+        <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase", color: "#9AAABB", marginBottom: 3 }}>
           Task {d.order}
         </div>
-        <div style={{ fontSize: 13, fontWeight: 700, color: "#fff", lineHeight: 1.3 }}>{d.label}</div>
+        <div style={{ fontSize: 13, fontWeight: 700, color: "#001C3D", lineHeight: 1.3 }}>{d.label}</div>
 
         {/* System badges — multiple systems */}
         {systems.length > 0 ? (
@@ -186,8 +189,8 @@ function TaskNode({ data, selected }: NodeProps) {
               <span
                 key={s.name}
                 style={{
-                  background: s.color + "22",
-                  border: `1px solid ${s.color}55`,
+                  background: s.color + "18",
+                  border: `1px solid ${s.color}44`,
                   borderRadius: 5,
                   padding: "2px 7px",
                   fontSize: 10,
@@ -200,13 +203,14 @@ function TaskNode({ data, selected }: NodeProps) {
             ))}
           </div>
         ) : (
-          <div style={{ marginTop: 8, border: "1px dashed rgba(255,255,255,0.13)", borderRadius: 5, padding: "3px 8px", fontSize: 10, color: "rgba(255,255,255,0.22)", display: "inline-block" }}>
+          <div style={{ marginTop: 8, border: "1px dashed #DDE3EC", borderRadius: 5, padding: "3px 8px", fontSize: 10, color: "#9AAABB", display: "inline-block" }}>
             No system
           </div>
         )}
       </div>
 
-      <Handle type="source" position={Position.Right} style={handleStyle("#3366FF")} />
+      <Handle type="source" position={Position.Bottom} style={handleStyle("#3366FF")} />
+      <Handle type="source" id="right-out" position={Position.Right} style={handleStyle("#3366FF")} />
     </div>
   );
 }
@@ -217,9 +221,12 @@ function XorGatewayNode({ data, selected }: NodeProps) {
   const d = data as GatewayData;
   return (
     <div style={{ position: "relative", width: 52, height: 52 }}>
-      <Handle type="target" position={Position.Left} style={{ ...handleStyle("#FFAC09"), top: "50%", left: 0 }} />
-      <Handle type="source" position={Position.Right} style={{ ...handleStyle("#FFAC09"), top: "50%", right: 0 }} />
-      <Handle type="source" id="bottom" position={Position.Bottom} style={{ ...handleStyle("#FFAC09"), bottom: 0, left: "50%" }} />
+      <Handle type="target" position={Position.Top}    style={{ ...handleStyle("#FFAC09"), top: 0,    left: "50%" }} />
+      <Handle type="target" id="left-in"  position={Position.Left}   style={{ ...handleStyle("#FFAC09"), top: "50%", left: 0    }} />
+      <Handle type="target" id="right-in" position={Position.Right}  style={{ ...handleStyle("#FFAC09"), top: "50%", right: 0   }} />
+      <Handle type="source" position={Position.Bottom} style={{ ...handleStyle("#FFAC09"), bottom: 0,  left: "50%" }} />
+      <Handle type="source" id="right"    position={Position.Right}  style={{ ...handleStyle("#FFAC09"), top: "75%", right: 0   }} />
+      <Handle type="source" id="left"     position={Position.Left}   style={{ ...handleStyle("#FFAC09"), top: "75%", left: 0    }} />
       <svg width={52} height={52} viewBox="0 0 52 52" style={{ display: "block", filter: selected ? "drop-shadow(0 0 6px rgba(255,172,9,0.5))" : undefined }}>
         <polygon points="26,2 50,26 26,50 2,26" fill={selected ? "rgba(255,172,9,0.18)" : "rgba(255,172,9,0.08)"} stroke="#FFAC09" strokeWidth="2" />
         <text x="26" y="33" textAnchor="middle" fontSize="20" fontWeight="700" fill="#FFAC09" style={{ userSelect: "none" }}>×</text>
@@ -235,9 +242,12 @@ function ParallelGatewayNode({ data, selected }: NodeProps) {
   const d = data as GatewayData;
   return (
     <div style={{ position: "relative", width: 52, height: 52 }}>
-      <Handle type="target" position={Position.Left} style={{ ...handleStyle("#06B6D4"), top: "50%", left: 0 }} />
-      <Handle type="source" position={Position.Right} style={{ ...handleStyle("#06B6D4"), top: "50%", right: 0 }} />
-      <Handle type="source" id="bottom" position={Position.Bottom} style={{ ...handleStyle("#06B6D4"), bottom: 0, left: "50%" }} />
+      <Handle type="target" position={Position.Top}    style={{ ...handleStyle("#06B6D4"), top: 0,    left: "50%" }} />
+      <Handle type="target" id="left-in"  position={Position.Left}   style={{ ...handleStyle("#06B6D4"), top: "50%", left: 0    }} />
+      <Handle type="target" id="right-in" position={Position.Right}  style={{ ...handleStyle("#06B6D4"), top: "50%", right: 0   }} />
+      <Handle type="source" position={Position.Bottom} style={{ ...handleStyle("#06B6D4"), bottom: 0,  left: "50%" }} />
+      <Handle type="source" id="right"    position={Position.Right}  style={{ ...handleStyle("#06B6D4"), top: "75%", right: 0   }} />
+      <Handle type="source" id="left"     position={Position.Left}   style={{ ...handleStyle("#06B6D4"), top: "75%", left: 0    }} />
       <svg width={52} height={52} viewBox="0 0 52 52" style={{ display: "block", filter: selected ? "drop-shadow(0 0 6px rgba(6,182,212,0.5))" : undefined }}>
         <polygon points="26,2 50,26 26,50 2,26" fill={selected ? "rgba(6,182,212,0.18)" : "rgba(6,182,212,0.08)"} stroke="#06B6D4" strokeWidth="2" />
         <text x="26" y="33" textAnchor="middle" fontSize="20" fontWeight="700" fill="#06B6D4" style={{ userSelect: "none" }}>+</text>
@@ -272,6 +282,7 @@ const NODE_TYPES = {
 
 interface FlowCanvasProps {
   engagementId: string;
+  processId?: string;
   processTemplate: string;
   processName: string;
   initialProcessMap: { nodes: Node[]; edges: Edge[] } | null;
@@ -283,7 +294,8 @@ interface FlowCanvasProps {
 
 function FlowCanvas({
   engagementId,
-  processTemplate: _processTemplate,
+  processId,
+  processTemplate: processTemplate,
   processName,
   initialProcessMap,
   templateSteps,
@@ -293,7 +305,7 @@ function FlowCanvas({
 }: FlowCanvasProps) {
   const router = useRouter();
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
-  const { screenToFlowPosition } = useReactFlow();
+  const { screenToFlowPosition, fitView } = useReactFlow();
   const nodeIdCounter = useRef(initialProcessMap ? initialProcessMap.nodes.length + 1 : 1);
 
   const [nodes, setNodes, onNodesChange] = useNodesState<Node>(initialProcessMap?.nodes ?? []);
@@ -301,6 +313,10 @@ function FlowCanvas({
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [aiModalOpen, setAiModalOpen] = useState(false);
+  const [aiContext, setAiContext] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState("");
 
   const bpmnEdge = (source: string, target: string): Edge => ({
     id: `e-${source}-${target}`, source, target, type: "smoothstep",
@@ -392,14 +408,18 @@ function FlowCanvas({
     const endId = `node-${base + 1 + templateSteps.length}`;
     nodeIdCounter.current = base + 2 + templateSteps.length;
 
+    const cx = 380;   // centre X — nodes are ~200px wide so this centres nicely
+    const sy = 60;    // start Y
+    const gap = 180;  // vertical step gap
+
     const newNodes: Node[] = [
-      { id: startId, type: "startEvent", position: { x: 60, y: 200 }, data: { label: "Start" } },
+      { id: startId, type: "startEvent", position: { x: cx, y: sy }, data: { label: "Start" } },
       ...templateSteps.map((step, i) => ({
         id: taskIds[i], type: "task",
-        position: { x: 160 + i * 270, y: 176 },
+        position: { x: cx - 100, y: sy + 100 + i * gap },
         data: { label: step.label, actors: [], systems: [], order: i + 1 } as TaskData,
       })),
-      { id: endId, type: "endEvent", position: { x: 160 + templateSteps.length * 270, y: 200 }, data: { label: "End" } },
+      { id: endId, type: "endEvent", position: { x: cx, y: sy + 100 + templateSteps.length * gap }, data: { label: "End" } },
     ];
     const allIds = [startId, ...taskIds, endId];
     setNodes(newNodes);
@@ -418,7 +438,10 @@ function FlowCanvas({
         systems: [...new Set(taskNodes.flatMap((n) => ((n.data as TaskData).systems ?? []).map((s) => s.name)))],
       },
     };
-    await fetch(`/api/engagements/${engagementId}`, {
+    const saveUrl = processId
+      ? `/api/engagements/${engagementId}/processes/${processId}`
+      : `/api/engagements/${engagementId}`;
+    await fetch(saveUrl, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ processMap }),
@@ -426,12 +449,36 @@ function FlowCanvas({
     setSaving(false);
     setSaved(true);
     setTimeout(() => setSaved(false), 2500);
-  }, [nodes, edges, engagementId]);
+  }, [nodes, edges, engagementId, processId]);
 
   const saveAndContinue = useCallback(async () => {
     await saveMap();
     router.push(`/engagements/${engagementId}`);
   }, [saveMap, router, engagementId]);
+
+  const generateAiModel = useCallback(async () => {
+    setAiLoading(true);
+    setAiError("");
+    try {
+      const res = await fetch(`/api/engagements/${engagementId}/generate-model`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ context: aiContext, processId, processTemplate }),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      const model = await res.json() as { nodes: Node[]; edges: Edge[] };
+      setNodes(model.nodes);
+      setEdges(model.edges);
+      nodeIdCounter.current = model.nodes.length + 10;
+      setAiModalOpen(false);
+      setAiContext("");
+      setTimeout(() => fitView({ padding: 0.12, duration: 400 }), 100);
+    } catch (err) {
+      setAiError(err instanceof Error ? err.message : "Generation failed");
+    } finally {
+      setAiLoading(false);
+    }
+  }, [engagementId, aiContext, processId, processTemplate, setNodes, setEdges, fitView]);
 
   const selectedNode = nodes.find((n) => n.id === selectedNodeId);
   const isTaskSelected = selectedNode?.type === "task";
@@ -455,6 +502,12 @@ function FlowCanvas({
             {nodes.filter((n) => n.type === "task").length} tasks · {edges.length} connections
           </div>
         )}
+        <button
+          onClick={() => setAiModalOpen(true)}
+          style={{ background: "linear-gradient(135deg, rgba(139,92,246,0.2), rgba(51,102,255,0.2))", border: "1px solid rgba(139,92,246,0.4)", borderRadius: 7, color: "#a78bfa", fontSize: 12, fontWeight: 700, padding: "6px 14px", cursor: "pointer", display: "flex", alignItems: "center", gap: 5 }}
+        >
+          ✦ AI Model
+        </button>
         <button onClick={saveMap} disabled={saving || nodes.length === 0}
           style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 7, color: saved ? "#26BC71" : "rgba(255,255,255,0.7)", fontSize: 12, fontWeight: 600, padding: "6px 14px", cursor: nodes.length === 0 ? "not-allowed" : "pointer", opacity: nodes.length === 0 ? 0.4 : 1 }}>
           {saving ? "Saving…" : saved ? "✓ Saved" : "Save Map"}
@@ -507,17 +560,17 @@ function FlowCanvas({
             onNodesChange={onNodesChange} onEdgesChange={onEdgesChange}
             onConnect={onConnect} onDrop={onDrop} onDragOver={onDragOver}
             onNodeClick={onNodeClick} onPaneClick={onPaneClick}
-            nodeTypes={NODE_TYPES} fitView style={{ background: "#091C35" }}
+            nodeTypes={NODE_TYPES} fitView style={{ background: "#ffffff" }}
             defaultEdgeOptions={{ type: "smoothstep", markerEnd: { type: MarkerType.ArrowClosed, color: "#3366FF", width: 16, height: 16 }, style: { stroke: "#3366FF", strokeWidth: 2 } }}
           >
-            <Background variant={BackgroundVariant.Dots} gap={28} size={1} color="rgba(255,255,255,0.06)" />
-            <Controls style={{ background: "#0a1e35", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8 }} />
+            <Background variant={BackgroundVariant.Dots} gap={28} size={1} color="rgba(0,0,0,0.07)" />
+            <Controls style={{ background: "#fff", border: "1px solid #DDE3EC", borderRadius: 8, boxShadow: "0 2px 8px rgba(0,28,61,0.08)" }} />
           </ReactFlow>
           {nodes.length === 0 && (
             <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
-              <div style={{ fontSize: 38, marginBottom: 12, opacity: 0.25 }}>◇</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: "rgba(255,255,255,0.3)" }}>Drag BPMN elements here to model your process</div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.18)", marginTop: 6 }}>or use the Auto-layout shortcut on the left</div>
+              <div style={{ fontSize: 38, marginBottom: 12, opacity: 0.15, color: "#001C3D" }}>◇</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: "rgba(0,28,61,0.3)" }}>Drag BPMN elements here to model your process</div>
+              <div style={{ fontSize: 12, color: "rgba(0,28,61,0.2)", marginTop: 6 }}>or use the Auto-layout shortcut on the left</div>
             </div>
           )}
         </div>
@@ -616,6 +669,76 @@ function FlowCanvas({
           )}
         </div>
       </div>
+
+      {/* ── AI Model Modal ────────────────────────────────────────────── */}
+      {aiModalOpen && (
+        <div
+          style={{ position: "fixed", inset: 0, zIndex: 50, background: "rgba(0,0,0,0.7)", display: "flex", alignItems: "center", justifyContent: "center" }}
+          onClick={(e) => { if (e.target === e.currentTarget) setAiModalOpen(false); }}
+        >
+          <div style={{ background: "#0d2249", border: "1px solid rgba(139,92,246,0.3)", borderRadius: 14, padding: 28, width: 480, boxShadow: "0 24px 64px rgba(0,0,0,0.6)" }}>
+            {/* Header */}
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+              <div style={{ fontSize: 18, color: "#a78bfa" }}>✦</div>
+              <div style={{ fontSize: 16, fontWeight: 700, color: "#fff" }}>AI Process Modeller</div>
+            </div>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", marginBottom: 20, lineHeight: 1.6 }}>
+              Claude will analyse <strong style={{ color: "rgba(255,255,255,0.7)" }}>{processName}</strong> and generate a complete BPMN diagram — tasks, decision gateways, parallel flows, actors, and systems — directly on the canvas.
+            </p>
+
+            {/* Context textarea */}
+            <label style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "1px", textTransform: "uppercase", display: "block", marginBottom: 6 }}>
+              Additional context (optional)
+            </label>
+            <textarea
+              value={aiContext}
+              onChange={(e) => setAiContext(e.target.value)}
+              placeholder={`e.g. "Focus on the KYC compliance steps for EU regulatory requirements" or "Include a manual review branch for high-risk customers"`}
+              rows={4}
+              style={{ width: "100%", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8, color: "#fff", fontSize: 12, padding: "10px 12px", resize: "vertical", outline: "none", lineHeight: 1.5, boxSizing: "border-box" }}
+            />
+
+            {/* Warning if canvas has content */}
+            {nodes.length > 0 && (
+              <div style={{ marginTop: 12, padding: "8px 12px", background: "rgba(255,172,9,0.08)", border: "1px solid rgba(255,172,9,0.2)", borderRadius: 7, fontSize: 11, color: "#FFAC09" }}>
+                ⚠ This will replace the current canvas ({nodes.filter((n) => n.type === "task").length} tasks). Save first if you want to keep it.
+              </div>
+            )}
+
+            {aiError && (
+              <div style={{ marginTop: 12, padding: "8px 12px", background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.25)", borderRadius: 7, fontSize: 11, color: "#f87171" }}>
+                {aiError}
+              </div>
+            )}
+
+            {/* Actions */}
+            <div style={{ display: "flex", justifyContent: "flex-end", gap: 10, marginTop: 20 }}>
+              <button
+                onClick={() => { setAiModalOpen(false); setAiError(""); }}
+                style={{ background: "none", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 7, color: "rgba(255,255,255,0.5)", fontSize: 12, padding: "8px 16px", cursor: "pointer" }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={generateAiModel}
+                disabled={aiLoading}
+                style={{ background: aiLoading ? "rgba(139,92,246,0.4)" : "linear-gradient(135deg, #7c3aed, #3366FF)", border: "none", borderRadius: 7, color: "#fff", fontSize: 12, fontWeight: 700, padding: "8px 20px", cursor: aiLoading ? "wait" : "pointer", display: "flex", alignItems: "center", gap: 8 }}
+              >
+                {aiLoading ? (
+                  <>
+                    <span style={{ width: 12, height: 12, border: "2px solid rgba(255,255,255,0.3)", borderTopColor: "#fff", borderRadius: "50%", display: "inline-block", animation: "spin 0.7s linear infinite" }} />
+                    Generating…
+                  </>
+                ) : (
+                  "✦ Generate Model"
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   );
 }
@@ -682,6 +805,7 @@ const readonlyItem: React.CSSProperties = {
 
 export interface ProcessModelerCanvasProps {
   engagementId: string;
+  processId?: string;
   processTemplate: string;
   processName: string;
   initialProcessMap: { nodes: Node[]; edges: Edge[] } | null;

@@ -1,65 +1,123 @@
+"use client";
+
 import Link from "next/link";
 import { PROCESS_TEMPLATES } from "@/types";
 
 const STATUS_COLORS: Record<string, { bg: string; text: string; label: string }> = {
-  created: { bg: "bg-accent-blue/10", text: "text-accent-blue", label: "Created" },
-  uploading: { bg: "bg-accent-amber/10", text: "text-accent-amber", label: "Uploading" },
-  analyzing: { bg: "bg-accent-teal/10", text: "text-accent-teal", label: "Analyzing" },
-  completed: { bg: "bg-accent-green/10", text: "text-accent-green", label: "Completed" },
+  created:   { bg: "rgba(26,90,255,0.08)",   text: "#1A5AFF", label: "Created" },
+  uploading: { bg: "rgba(245,158,11,0.08)",  text: "#F59E0B", label: "Uploading" },
+  analyzing: { bg: "rgba(6,182,212,0.08)",   text: "#06B6D4", label: "Analyzing" },
+  completed: { bg: "rgba(46,204,113,0.08)",  text: "#2ECC71", label: "Completed" },
 };
+
+const STEPS = [
+  { key: "hasProcessMap",   label: "Process Map" },
+  { key: "hasDataRequest",  label: "Data Request" },
+  { key: "hasUploads",      label: "Data Uploaded" },
+  { key: "hasAnalysis",     label: "Analysed" },
+] as const;
 
 interface EngagementCardProps {
   engagement: {
     id: string;
     name: string;
     clientName: string;
-    processTemplate: string;
+    processTemplate?: string | null;
     status: string;
     createdAt: Date;
     createdBy: { name: string };
     _count: { uploads: number; eventLogs: number };
+    hasProcessMap: boolean;
+    hasDataRequest: boolean;
+    hasUploads: boolean;
+    hasAnalysis: boolean;
   };
 }
 
 export function EngagementCard({ engagement }: EngagementCardProps) {
   const status = STATUS_COLORS[engagement.status] ?? STATUS_COLORS.created;
-  const template = PROCESS_TEMPLATES.find(
-    (t) => t.id === engagement.processTemplate
-  );
+  const template = engagement.processTemplate
+    ? PROCESS_TEMPLATES.find((t) => t.id === engagement.processTemplate)
+    : undefined;
+  const doneCount = STEPS.filter((s) => engagement[s.key]).length;
 
   return (
     <Link
       href={`/engagements/${engagement.id}`}
-      className="group rounded-lg border border-border bg-bg-card p-5 hover:bg-bg-card-hover hover:border-border-light transition-all"
+      style={{ textDecoration: "none", display: "block" }}
     >
-      <div className="flex items-start justify-between mb-3">
-        <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-text-primary truncate group-hover:text-accent-blue transition-colors">
-            {engagement.name}
-          </h3>
-          <p className="text-xs text-text-muted mt-0.5">
-            {engagement.clientName}
-          </p>
+      <div style={{
+        background: "#fff",
+        border: "1px solid #DDE3EC",
+        borderRadius: 16,
+        padding: "20px 22px",
+        cursor: "pointer",
+        transition: "all 0.15s",
+        boxShadow: "0 1px 3px rgba(0,28,61,0.06)",
+      }}
+        onMouseEnter={(e) => {
+          const el = e.currentTarget as HTMLDivElement;
+          el.style.borderColor = "#1A5AFF";
+          el.style.boxShadow = "0 4px 16px rgba(26,90,255,0.12)";
+          el.style.transform = "translateY(-2px)";
+        }}
+        onMouseLeave={(e) => {
+          const el = e.currentTarget as HTMLDivElement;
+          el.style.borderColor = "#DDE3EC";
+          el.style.boxShadow = "0 1px 3px rgba(0,28,61,0.06)";
+          el.style.transform = "translateY(0)";
+        }}
+      >
+        {/* Top row */}
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 14 }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 700, color: "#001C3D", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              {engagement.name}
+            </h3>
+            <p style={{ fontSize: 12, color: "#5C6E84" }}>{engagement.clientName}</p>
+          </div>
+          <span style={{ marginLeft: 12, flexShrink: 0, fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 30, background: status.bg, color: status.text }}>
+            {status.label}
+          </span>
         </div>
-        <span
-          className={`ml-3 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${status.bg} ${status.text}`}
-        >
-          {status.label}
-        </span>
-      </div>
 
-      <div className="flex items-center gap-3 text-xs text-text-secondary">
-        <span className="inline-flex items-center gap-1">
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
-          </svg>
+        {/* Process template */}
+        <div style={{ fontSize: 11, color: "#374D6C", marginBottom: 16, display: "flex", alignItems: "center", gap: 6 }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#1A5AFF", display: "inline-block", flexShrink: 0 }} />
           {template?.name ?? engagement.processTemplate}
-        </span>
-      </div>
+        </div>
 
-      <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-xs text-text-muted">
-        <span>{engagement._count.uploads} file{engagement._count.uploads !== 1 ? "s" : ""}</span>
-        <span>{engagement._count.eventLogs.toLocaleString()} events</span>
+        {/* Progress steps */}
+        <div style={{ marginBottom: 14 }}>
+          <div style={{ display: "flex", gap: 4, marginBottom: 6 }}>
+            {STEPS.map((step) => {
+              const done = engagement[step.key];
+              return (
+                <div key={step.key} style={{ flex: 1, height: 3, borderRadius: 2, background: done ? "#1A5AFF" : "#E8EDF4", transition: "background 0.2s" }} />
+              );
+            })}
+          </div>
+          <div style={{ fontSize: 10, color: "#5C6E84" }}>
+            {doneCount === 0 && "Start by modelling the process"}
+            {doneCount === 1 && "Generate data request next"}
+            {doneCount === 2 && "Upload data from client"}
+            {doneCount === 3 && "Ready to analyse"}
+            {doneCount === 4 && "✓ Analysis complete"}
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div style={{ borderTop: "1px solid #EEF2F8", paddingTop: 12, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", gap: 14 }}>
+            <span style={{ fontSize: 11, color: "#5C6E84" }}>
+              {engagement._count.uploads} file{engagement._count.uploads !== 1 ? "s" : ""}
+            </span>
+            <span style={{ fontSize: 11, color: "#5C6E84" }}>
+              {engagement._count.eventLogs.toLocaleString()} events
+            </span>
+          </div>
+          <span style={{ fontSize: 11, fontWeight: 600, color: "#1A5AFF" }}>Open →</span>
+        </div>
       </div>
     </Link>
   );
