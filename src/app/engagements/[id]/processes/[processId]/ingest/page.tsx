@@ -58,7 +58,7 @@ export default async function IngestPage({
     <div style={{ minHeight: "100vh", background: "#F5F7F9" }}>
       <Header />
 
-      <main style={{ maxWidth: 860, margin: "0 auto", padding: "36px 28px 80px" }}>
+      <main style={{ padding: "28px 32px 80px" }}>
         {/* Breadcrumb */}
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "#9AAABB", marginBottom: 24 }}>
           <Link href="/engagements" style={{ color: "#9AAABB", textDecoration: "none" }}>Engagements</Link>

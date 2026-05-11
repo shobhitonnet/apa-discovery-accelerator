@@ -60,6 +60,16 @@ export type GraphEdge = {
   caseCountByConformance: ConformanceCounts;
 };
 
+/** A single bucket in the throughput-time histogram. */
+export type DurationHistogramBucket = {
+  /** Bucket lower bound, ms inclusive. */
+  fromMs: number;
+  /** Bucket upper bound, ms exclusive (except for the last bucket which is inclusive). */
+  toMs: number;
+  /** Cases whose total cycle time fell in this bucket. */
+  caseCount: number;
+};
+
 export type ProcessGraphSummary = {
   computed: boolean;
   totalCases: number;
@@ -72,6 +82,8 @@ export type ProcessGraphSummary = {
   // Engagement-wide duration breakdown + thresholds (ms) used to bucket cases.
   durationBreakdown: DurationCounts;
   durationQuartiles: { p25Ms: number; p50Ms: number; p75Ms: number };
+  // 10-bucket equal-width histogram of case cycle times — for the throughput chart.
+  durationHistogram: DurationHistogramBucket[];
   // Engagement-wide conformance breakdown.
   conformanceBreakdown: ConformanceCounts;
   // Earliest / latest case-start timestamps across the dataset (ISO strings).

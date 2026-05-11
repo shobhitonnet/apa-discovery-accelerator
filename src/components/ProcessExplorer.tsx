@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useCallback, useRef } from "react";
 import {
   ReactFlow, Background, Controls, type Node, type Edge, type NodeProps,
   Handle, Position, MarkerType,
@@ -230,19 +230,21 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
   const [colorMode, setColorMode] = useState<"frequency" | "duration">("frequency");
 
   // Lens filters — restrict the graph to a slice of cases.
-  // To keep the model simple and bucket counts independent, only ONE lens is
-  // active at a time. Selecting a non-"all" chip on any row resets the others.
-  const [outcomeFilter, setOutcomeFilter] = useState<OutcomeFilter>("all");
-  const [durationFilter, setDurationFilter] = useState<DurationFilter>("all");
-  const [conformanceFilter, setConformanceFilter] = useState<ConformanceFilter>("all");
+  // Multi-select within a dimension; mutual exclusion across dimensions.
+  // Empty array = no filter applied for that dimension.
+  const [outcomeFilter, setOutcomeFilter] = useState<Outcome[]>([]);
+  const [durationFilter, setDurationFilter] = useState<DurationBucket[]>([]);
+  const [conformanceFilter, setConformanceFilter] = useState<ConformanceBucket[]>([]);
 
-  const setExclusive = (which: "outcome" | "duration" | "conformance", value: string) => {
-    if (which !== "outcome") setOutcomeFilter("all");
-    if (which !== "duration") setDurationFilter("all");
-    if (which !== "conformance") setConformanceFilter("all");
-    if (which === "outcome") setOutcomeFilter(value as OutcomeFilter);
-    if (which === "duration") setDurationFilter(value as DurationFilter);
-    if (which === "conformance") setConformanceFilter(value as ConformanceFilter);
+  // Independent toggles — filters compose (AND/intersection across dimensions).
+  const toggleOutcome = (o: Outcome) => {
+    setOutcomeFilter((prev) => prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]);
+  };
+  const toggleDuration = (d: DurationBucket) => {
+    setDurationFilter((prev) => prev.includes(d) ? prev.filter((x) => x !== d) : [...prev, d]);
+  };
+  const toggleConformance = (c: ConformanceBucket) => {
+    setConformanceFilter((prev) => prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]);
   };
 
   // Time-period filter — fromDate/toDate. When changed, the graph is refetched
@@ -252,14 +254,14 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
 
   // Aggregate count of active lens filters (used for the "Clear all" affordance).
   const activeAdvancedFilterCount =
-    (outcomeFilter !== "all" ? 1 : 0) +
-    (durationFilter !== "all" ? 1 : 0) +
-    (conformanceFilter !== "all" ? 1 : 0) +
+    (outcomeFilter.length > 0 ? 1 : 0) +
+    (durationFilter.length > 0 ? 1 : 0) +
+    (conformanceFilter.length > 0 ? 1 : 0) +
     ((fromDateIso || toDateIso) ? 1 : 0);
   const clearAllAdvancedFilters = () => {
-    setOutcomeFilter("all");
-    setDurationFilter("all");
-    setConformanceFilter("all");
+    setOutcomeFilter([]);
+    setDurationFilter([]);
+    setConformanceFilter([]);
     setFromDateIso(null);
     setToDateIso(null);
   };
@@ -329,19 +331,49 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
   }, [variants, variantCount, topNVariants, graph.totalCases]);
 
   // Helper: how many cases of an entity are in the current lens scope.
-  // Whichever lens is active wins; "all" lenses fall back to total.
+  // Filters compose (intersection across dimensions). Each dimension's per-bucket
+  // counts are summed for multi-select within it. Because we only have per-bucket
+  // breakdowns (not per-bucket-COMBINATION), the intersection across dimensions
+  // is approximated as MIN of the per-dimension counts — the upper bound.
+  const hasOutcomeFilter = outcomeFilter.length > 0;
+  const hasDurationFilter = durationFilter.length > 0;
+  const hasConformanceFilter = conformanceFilter.length > 0;
+  const hasAnyDimensionFilter = hasOutcomeFilter || hasDurationFilter || hasConformanceFilter;
+
   const lensCaseCount = (entity: { caseCount: number; caseCountByOutcome: GraphActivity["caseCountByOutcome"]; caseCountByDuration: GraphActivity["caseCountByDuration"]; caseCountByConformance: GraphActivity["caseCountByConformance"] }): number => {
-    if (outcomeFilter !== "all") return entity.caseCountByOutcome[outcomeFilter] ?? 0;
-    if (durationFilter !== "all") return entity.caseCountByDuration[durationFilter] ?? 0;
-    if (conformanceFilter !== "all") return entity.caseCountByConformance[conformanceFilter] ?? 0;
-    return entity.caseCount;
+    if (!hasAnyDimensionFilter) return entity.caseCount;
+    let count = entity.caseCount;
+    if (hasOutcomeFilter) {
+      const c = outcomeFilter.reduce((s, o) => s + (entity.caseCountByOutcome[o] ?? 0), 0);
+      if (c === 0) return 0;
+      count = Math.min(count, c);
+    }
+    if (hasDurationFilter) {
+      const c = durationFilter.reduce((s, d) => s + (entity.caseCountByDuration[d] ?? 0), 0);
+      if (c === 0) return 0;
+      count = Math.min(count, c);
+    }
+    if (hasConformanceFilter) {
+      const c = conformanceFilter.reduce((s, c2) => s + (entity.caseCountByConformance[c2] ?? 0), 0);
+      if (c === 0) return 0;
+      count = Math.min(count, c);
+    }
+    return count;
   };
 
   const scopedTotalCases = (() => {
-    if (outcomeFilter !== "all") return graph.outcomeBreakdown[outcomeFilter] ?? 0;
-    if (durationFilter !== "all") return graph.durationBreakdown[durationFilter] ?? 0;
-    if (conformanceFilter !== "all") return graph.conformanceBreakdown[conformanceFilter] ?? 0;
-    return graph.totalCases;
+    if (!hasAnyDimensionFilter) return graph.totalCases;
+    let total = graph.totalCases;
+    if (hasOutcomeFilter) {
+      total = Math.min(total, outcomeFilter.reduce((s, o) => s + (graph.outcomeBreakdown[o] ?? 0), 0));
+    }
+    if (hasDurationFilter) {
+      total = Math.min(total, durationFilter.reduce((s, d) => s + (graph.durationBreakdown[d] ?? 0), 0));
+    }
+    if (hasConformanceFilter) {
+      total = Math.min(total, conformanceFilter.reduce((s, c) => s + (graph.conformanceBreakdown[c] ?? 0), 0));
+    }
+    return total;
   })();
 
   // Activity-coverage filter — driven by variant inclusion + current lens.
@@ -677,60 +709,36 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
     );
   }
 
+  // KPI strip values
+  const kpiCases = graph.totalCases;
+  const kpiActivities = graph.activities.length;
+  const kpiVariants = variants?.totalVariants ?? 0;
+  const kpiMedianMs = graph.durationQuartiles.p50Ms ?? 0;
+  const kpiConformingPct = graph.totalCases > 0
+    ? (graph.conformanceBreakdown.conforming / graph.totalCases) * 100
+    : 0;
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-      {/* Lens filters — Outcome / Duration / Conformance / Time period.
-          One chip-row lens active at a time; Time period is independent. */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 6, padding: "10px 12px", background: "#fff", border: "1px solid #EEF2F8", borderRadius: 10 }}>
-        <ChipRow
-          label="Outcome"
-          values={["all", ...ALL_OUTCOMES] as OutcomeFilter[]}
-          active={outcomeFilter}
-          meta={OUTCOME_META}
-          countOf={(v) => v === "all" ? graph.totalCases : (graph.outcomeBreakdown[v] ?? 0)}
-          totalCases={graph.totalCases}
-          onPick={(v) => setExclusive("outcome", v)}
-        />
-        <ChipRow
-          label="Duration"
-          values={["all", ...ALL_DURATION_BUCKETS] as DurationFilter[]}
-          active={durationFilter}
-          meta={DURATION_META}
-          countOf={(v) => v === "all" ? graph.totalCases : (graph.durationBreakdown[v] ?? 0)}
-          totalCases={graph.totalCases}
-          onPick={(v) => setExclusive("duration", v)}
-          tooltip={`Quartiles · p25 ${formatDuration(graph.durationQuartiles.p25Ms)} · p50 ${formatDuration(graph.durationQuartiles.p50Ms)} · p75 ${formatDuration(graph.durationQuartiles.p75Ms)}`}
-        />
-        <ChipRow
-          label="Conformance"
-          values={["all", ...ALL_CONFORMANCE_BUCKETS] as ConformanceFilter[]}
-          active={conformanceFilter}
-          meta={CONFORMANCE_META}
-          countOf={(v) => v === "all" ? graph.totalCases : (graph.conformanceBreakdown[v] ?? 0)}
-          totalCases={graph.totalCases}
-          onPick={(v) => setExclusive("conformance", v)}
-          tooltip="Conforming = case follows the discovered happy path exactly."
-        />
-        {graph.caseTimeRange.earliestIso && graph.caseTimeRange.latestIso && (
-          <TimePeriodRow
-            earliestIso={graph.caseTimeRange.earliestIso}
-            latestIso={graph.caseTimeRange.latestIso}
-            fromIso={fromDateIso}
-            toIso={toDateIso}
-            loading={graphLoading}
-            onChange={(from, to) => { setFromDateIso(from); setToDateIso(to); }}
-            onReset={() => { setFromDateIso(null); setToDateIso(null); }}
-          />
-        )}
-        {activeAdvancedFilterCount > 0 && (
-          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 4 }}>
-            <button onClick={clearAllAdvancedFilters}
-              style={{ fontSize: 10, fontWeight: 700, padding: "3px 10px", borderRadius: 12, background: "transparent", color: "#5C6E84", border: "1px solid #DDE3EC", cursor: "pointer" }}>
-              Clear all filters
-            </button>
-          </div>
-        )}
+      {/* Top KPI strip — Celonis-style at-a-glance numbers */}
+      <div style={{
+        display: "flex", gap: 8, padding: "16px 18px",
+        background: "linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)",
+        border: "1px solid #DDE3EC", borderRadius: 12,
+        flexWrap: "wrap", rowGap: 14, alignItems: "center",
+      }}>
+        <Kpi label="Cases"            value={kpiCases.toLocaleString()} />
+        <KpiDivider />
+        <Kpi label="Activities"       value={kpiActivities.toString()} />
+        <KpiDivider />
+        <Kpi label="Variants"         value={kpiVariants.toString()} sub={variants && variants.totalCases > 0 ? `top covers ${(variants.topVariants[0]?.pct ?? 0).toFixed(0)}%` : undefined} />
+        <KpiDivider />
+        <Kpi label="Median cycle"     value={formatDuration(kpiMedianMs)} sub={`p25 ${formatDuration(graph.durationQuartiles.p25Ms)} · p75 ${formatDuration(graph.durationQuartiles.p75Ms)}`} />
+        <KpiDivider />
+        <Kpi label="Conformance"      value={`${kpiConformingPct.toFixed(0)}%`} sub={`${graph.conformanceBreakdown.deviating.toLocaleString()} cases deviate`} accent={kpiConformingPct >= 75 ? "#1A8F4F" : kpiConformingPct >= 50 ? "#B07800" : "#C0392B"} />
       </div>
+
+      {/* FilterPanel is now rendered inside the canvas-row as a right rail (below). */}
 
       {/* Toolbar */}
       <div style={{ display: "flex", alignItems: "center", gap: 14, padding: "8px 12px", background: "#FAFBFC", border: "1px solid #EEF2F8", borderRadius: 10, flexWrap: "wrap" }}>
@@ -765,34 +773,7 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
           >Cycle Time</button>
         </div>
 
-        {/* Variants slider — discrete: each step adds the next most frequent case variant.
-            Last position ("all") falls back to the full graph including the long tail. */}
-        {variantCount > 0 && (() => {
-          const isAll = topNVariants > variantCount;
-          const coveragePct = variantInclusion ? variantInclusion.coveragePct : 100;
-          const totalVariants = variants?.totalVariants ?? variantCount;
-          return (
-            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span style={{ fontSize: 10, fontWeight: 700, color: "#5C6E84", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                  Variants
-                </span>
-                <input
-                  type="range" min={1} max={variantSliderMax} step={1}
-                  value={topNVariants}
-                  onChange={(e) => setTopNVariants(Number(e.target.value))}
-                  style={{ width: 100 }}
-                />
-                <span style={{ fontSize: 11, fontWeight: 700, color: "#1A5AFF", fontFamily: "monospace", width: 88, textAlign: "right" }}>
-                  {isAll ? `all · 100%` : `${topNVariants}/${variantCount} · ${coveragePct.toFixed(0)}%`}
-                </span>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#9AAABB", paddingLeft: 60, paddingRight: 92 }}>
-                <span>top variant</span><span>all ({totalVariants})</span>
-              </div>
-            </div>
-          );
-        })()}
+        {/* Variants slider moved into the canvas as a vertical control (see below). */}
       </div>
 
       {/* Heat-map gradient legend (only shown in duration mode) */}
@@ -805,8 +786,40 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
         </div>
       )}
 
-      {/* Canvas */}
-      <div style={{ position: "relative", height: 600, borderRadius: 12, border: "1px solid #DDE3EC", background: "#fff", overflow: "hidden" }}>
+      {/* Canvas + right-rail filter panel */}
+      <div style={{ display: "flex", gap: 10, alignItems: "stretch" }}>
+      <div style={{ flex: 1, minWidth: 0, height: 680, borderRadius: 12, border: "1px solid #DDE3EC", background: "#fff", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+        {/* Horizontal time-period slider — top strip of the canvas */}
+        {graph.caseTimeRange.earliestIso && graph.caseTimeRange.latestIso && (
+          <div style={{ padding: "8px 14px", borderBottom: "1px solid #EEF2F8", background: "#FAFBFC" }}>
+            <TimePeriodRow
+              earliestIso={graph.caseTimeRange.earliestIso}
+              latestIso={graph.caseTimeRange.latestIso}
+              fromIso={fromDateIso}
+              toIso={toDateIso}
+              loading={graphLoading}
+              onChange={(from, to) => { setFromDateIso(from); setToDateIso(to); }}
+              onReset={() => { setFromDateIso(null); setToDateIso(null); }}
+            />
+          </div>
+        )}
+
+        {/* Variants slider (left) + Graph (right) */}
+        <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
+        {/* Vertical variants slider — drag up to reveal more variants */}
+        {variantCount > 0 && (
+          <VerticalVariantSlider
+            value={topNVariants}
+            sliderMax={variantSliderMax}
+            variantCount={variantCount}
+            totalVariants={variants?.totalVariants ?? variantCount}
+            coveragePct={variantInclusion ? variantInclusion.coveragePct : 100}
+            onChange={setTopNVariants}
+          />
+        )}
+
+        {/* Graph + overlays */}
+        <div style={{ position: "relative", flex: 1, minWidth: 0 }}>
         <ReactFlow
           nodes={rfNodes}
           edges={rfEdges}
@@ -886,6 +899,24 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
             onClose={() => setSelectedActivityName(null)}
           />
         )}
+        </div>
+        </div>
+      </div>
+
+      {/* Right-rail filter panel */}
+      <div style={{ width: 360, flexShrink: 0 }}>
+        <FilterPanel
+          graph={graph}
+          outcomeFilter={outcomeFilter}
+          durationFilter={durationFilter}
+          conformanceFilter={conformanceFilter}
+          onToggleOutcome={toggleOutcome}
+          onToggleDuration={toggleDuration}
+          onToggleConformance={toggleConformance}
+          clearAll={clearAllAdvancedFilters}
+          activeCount={activeAdvancedFilterCount}
+        />
+      </div>
       </div>
 
       {/* Stats footer */}
@@ -941,6 +972,454 @@ function formatDuration(ms: number): string {
   if (hr < 24) return `${hr.toFixed(1)}h`;
   const d = hr / 24;
   return `${d.toFixed(1)}d`;
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// KPI strip — Celonis-style numbers at the top of the explorer
+// ──────────────────────────────────────────────────────────────────────────
+
+function Kpi({ label, value, sub, accent }: { label: string; value: string; sub?: string; accent?: string }) {
+  return (
+    <div style={{ flex: 1, minWidth: 110 }}>
+      <div style={{ fontSize: 9, fontWeight: 700, color: "#9AAABB", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>
+        {label}
+      </div>
+      <div style={{
+        fontSize: 22, fontWeight: 800, lineHeight: 1,
+        color: accent ?? "#001C3D", fontFamily: "monospace",
+      }}>
+        {value}
+      </div>
+      {sub && (
+        <div style={{ fontSize: 10, color: "#9AAABB", marginTop: 4 }}>
+          {sub}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function KpiDivider() {
+  return <div style={{ width: 1, alignSelf: "stretch", background: "#EEF2F8", margin: "0 4px" }} />;
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// Vertical variants slider — sits on the left edge of the canvas
+// Bottom = top 1 variant (happy path only); drag up to reveal more.
+// ──────────────────────────────────────────────────────────────────────────
+
+function VerticalVariantSlider({
+  value, sliderMax, variantCount, totalVariants, coveragePct, onChange,
+}: {
+  value: number;          // currently shown: 1..variantCount+1 (+1 = "all")
+  sliderMax: number;      // variantCount + 1
+  variantCount: number;   // number of top variants we have data for
+  totalVariants: number;  // total variants in the dataset (incl. long tail)
+  coveragePct: number;
+  onChange: (v: number) => void;
+}) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [dragging, setDragging] = useState(false);
+
+  const setFromClientY = useCallback((clientY: number) => {
+    if (!trackRef.current) return;
+    const rect = trackRef.current.getBoundingClientRect();
+    // Bottom of track = value 1; top = value sliderMax.
+    const pct = 1 - (clientY - rect.top) / rect.height;
+    const clamped = Math.max(0, Math.min(1, pct));
+    const newValue = Math.round(1 + clamped * (sliderMax - 1));
+    onChange(newValue);
+  }, [sliderMax, onChange]);
+
+  useEffect(() => {
+    if (!dragging) return;
+    const onMove = (e: MouseEvent) => setFromClientY(e.clientY);
+    const onUp = () => setDragging(false);
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+    };
+  }, [dragging, setFromClientY]);
+
+  const fillPct = ((value - 1) / Math.max(1, sliderMax - 1)) * 100;
+  const isAll = value > variantCount;
+
+  return (
+    <div style={{
+      width: 78, flexShrink: 0,
+      display: "flex", flexDirection: "column", alignItems: "center",
+      padding: "12px 4px",
+      borderRight: "1px solid #EEF2F8",
+      background: "#FAFBFC",
+    }}>
+      {/* Header */}
+      <div style={{ fontSize: 9, fontWeight: 800, color: "#5C6E84", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>
+        Variants
+      </div>
+      <div style={{ fontSize: 12, color: "#1A5AFF", fontFamily: "monospace", fontWeight: 800, lineHeight: 1.1 }}>
+        {isAll ? "all" : `${value}/${variantCount}`}
+      </div>
+      <div style={{ fontSize: 9, color: "#9AAABB", marginTop: 2 }}>
+        {coveragePct.toFixed(0)}% cases
+      </div>
+
+      {/* Top label — all variants */}
+      <div style={{ fontSize: 9, color: "#9AAABB", marginTop: 14, textAlign: "center", lineHeight: 1.2 }}>
+        all<br />
+        <span style={{ fontFamily: "monospace" }}>({totalVariants})</span>
+      </div>
+
+      {/* Vertical track */}
+      <div
+        ref={trackRef}
+        onMouseDown={(e) => { setDragging(true); setFromClientY(e.clientY); }}
+        style={{
+          position: "relative",
+          width: 8,
+          flex: 1,
+          minHeight: 200,
+          marginTop: 6, marginBottom: 6,
+          background: "#EEF2F8",
+          borderRadius: 4,
+          cursor: dragging ? "grabbing" : "pointer",
+        }}
+      >
+        {/* Filled portion (from bottom) */}
+        <div style={{
+          position: "absolute", left: 0, right: 0, bottom: 0,
+          height: `${fillPct}%`,
+          background: "linear-gradient(180deg, #06B6D4 0%, #1A5AFF 100%)",
+          borderRadius: 4,
+          transition: dragging ? "none" : "height 0.15s",
+        }} />
+        {/* Thumb */}
+        <div style={{
+          position: "absolute", left: "50%",
+          bottom: `calc(${fillPct}% - 9px)`,
+          transform: "translateX(-50%)",
+          width: 18, height: 18,
+          borderRadius: "50%",
+          background: "#fff",
+          border: "2.5px solid #1A5AFF",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.18)",
+          cursor: dragging ? "grabbing" : "grab",
+          transition: dragging ? "none" : "bottom 0.15s",
+        }} />
+      </div>
+
+      {/* Bottom label — top variant */}
+      <div style={{ fontSize: 9, color: "#9AAABB", textAlign: "center", lineHeight: 1.2 }}>
+        top<br />variant
+      </div>
+    </div>
+  );
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// Throughput-time histogram — distribution of case cycle times
+// ──────────────────────────────────────────────────────────────────────────
+
+function ThroughputHistogram({
+  buckets,
+  quartiles,
+  totalCases,
+}: {
+  buckets: Array<{ fromMs: number; toMs: number; caseCount: number }>;
+  quartiles: { p25Ms: number; p50Ms: number; p75Ms: number };
+  totalCases: number;
+}) {
+  const [collapsed, setCollapsed] = useState(false);
+  const maxCount = Math.max(...buckets.map((b) => b.caseCount), 1);
+
+  // Width range — used for the marker positions (p25 / p50 / p75)
+  const minMs = buckets[0]?.fromMs ?? 0;
+  const maxMs = buckets[buckets.length - 1]?.toMs ?? 1;
+  const totalRangeMs = Math.max(1, maxMs - minMs);
+  const markerPct = (ms: number) => Math.max(0, Math.min(100, ((ms - minMs) / totalRangeMs) * 100));
+
+  return (
+    <div style={{ background: "#fff", border: "1px solid #DDE3EC", borderRadius: 12, padding: "10px 14px" }}>
+      {/* Header */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: collapsed ? 0 : 10 }}>
+        <span style={{ fontSize: 10, fontWeight: 700, color: "#5C6E84", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+          Throughput time
+        </span>
+        <span style={{ fontSize: 10, color: "#9AAABB" }}>
+          {totalCases.toLocaleString()} cases · median {formatDuration(quartiles.p50Ms)}
+        </span>
+        <div style={{ flex: 1 }} />
+        <button
+          onClick={() => setCollapsed((s) => !s)}
+          style={{
+            background: "transparent", border: "none", cursor: "pointer",
+            fontSize: 10, fontWeight: 700, color: "#5C6E84",
+            display: "inline-flex", alignItems: "center", gap: 4,
+          }}
+        >
+          {collapsed ? "Expand" : "Collapse"}
+          <span style={{ fontSize: 9, transform: collapsed ? "rotate(0deg)" : "rotate(180deg)", transition: "transform 0.15s" }}>▾</span>
+        </button>
+      </div>
+
+      {!collapsed && (
+        <>
+          {/* Bars */}
+          <div style={{ position: "relative", display: "flex", alignItems: "flex-end", gap: 4, height: 80, paddingBottom: 4 }}>
+            {buckets.map((b, i) => {
+              const heightPct = (b.caseCount / maxCount) * 100;
+              const pct = totalCases > 0 ? (b.caseCount / totalCases) * 100 : 0;
+              return (
+                <div
+                  key={i}
+                  title={`${formatDuration(b.fromMs)} – ${formatDuration(b.toMs)} · ${b.caseCount.toLocaleString()} cases (${pct.toFixed(1)}%)`}
+                  style={{ flex: 1, height: "100%", display: "flex", alignItems: "flex-end", position: "relative" }}
+                >
+                  <div style={{
+                    width: "100%",
+                    height: `${heightPct}%`,
+                    minHeight: b.caseCount > 0 ? 2 : 0,
+                    background: "linear-gradient(180deg, #FFAC09 0%, #FBBF24 100%)",
+                    borderRadius: "3px 3px 0 0",
+                  }} />
+                </div>
+              );
+            })}
+
+            {/* Quartile markers — vertical dashed lines */}
+            {[
+              { label: "p25", ms: quartiles.p25Ms, color: "#26BC71" },
+              { label: "p50", ms: quartiles.p50Ms, color: "#1A5AFF" },
+              { label: "p75", ms: quartiles.p75Ms, color: "#EF4444" },
+            ].map((m) => (
+              <div
+                key={m.label}
+                style={{
+                  position: "absolute", top: 0, bottom: 0, left: `${markerPct(m.ms)}%`,
+                  borderLeft: `1.5px dashed ${m.color}`, pointerEvents: "none",
+                }}
+              />
+            ))}
+          </div>
+
+          {/* X-axis labels — first / median / last */}
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#9AAABB", fontFamily: "monospace", marginTop: 4 }}>
+            <span>{formatDuration(buckets[0].fromMs)}</span>
+            <span>{formatDuration(buckets[Math.floor(buckets.length / 2)].fromMs)}</span>
+            <span>{formatDuration(buckets[buckets.length - 1].toMs)}</span>
+          </div>
+
+          {/* Legend */}
+          <div style={{ display: "flex", gap: 16, marginTop: 8, fontSize: 9, color: "#5C6E84" }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
+              <span style={{ width: 10, height: 0, borderTop: "1.5px dashed #26BC71" }} />
+              p25 {formatDuration(quartiles.p25Ms)}
+            </span>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
+              <span style={{ width: 10, height: 0, borderTop: "1.5px dashed #1A5AFF" }} />
+              median {formatDuration(quartiles.p50Ms)}
+            </span>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
+              <span style={{ width: 10, height: 0, borderTop: "1.5px dashed #EF4444" }} />
+              p75 {formatDuration(quartiles.p75Ms)}
+            </span>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// Unified filter panel — dropdown + horizontal bar list (Celonis-style)
+// ──────────────────────────────────────────────────────────────────────────
+
+function FilterPanel({
+  graph,
+  outcomeFilter,
+  durationFilter,
+  conformanceFilter,
+  onToggleOutcome,
+  onToggleDuration,
+  onToggleConformance,
+  clearAll,
+  activeCount,
+}: {
+  graph: ProcessGraphSummary;
+  outcomeFilter: Outcome[];
+  durationFilter: DurationBucket[];
+  conformanceFilter: ConformanceBucket[];
+  onToggleOutcome: (v: Outcome) => void;
+  onToggleDuration: (v: DurationBucket) => void;
+  onToggleConformance: (v: ConformanceBucket) => void;
+  clearAll: () => void;
+  activeCount: number;
+}) {
+  return (
+    <div style={{ background: "#fff", border: "1px solid #DDE3EC", borderRadius: 12, padding: "12px 14px", height: 680, display: "flex", flexDirection: "column" }}>
+      {/* Header */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+        <span style={{ fontSize: 11, fontWeight: 800, color: "#001C3D", letterSpacing: "0.02em" }}>
+          Filters
+        </span>
+        <span style={{ fontSize: 10, color: "#9AAABB" }}>
+          combine across dimensions
+        </span>
+        <div style={{ flex: 1 }} />
+        {activeCount > 0 && (
+          <button onClick={clearAll}
+            style={{ fontSize: 10, fontWeight: 700, padding: "3px 10px", borderRadius: 12, background: "transparent", color: "#5C6E84", border: "1px solid #DDE3EC", cursor: "pointer" }}>
+            Clear ({activeCount})
+          </button>
+        )}
+      </div>
+
+      {/* All four sections, stacked, scrollable */}
+      <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", gap: 14, paddingRight: 2 }}>
+        <FilterSection title="Outcome">
+          <BarList
+            items={ALL_OUTCOMES.map((o) => ({
+              key: o,
+              label: OUTCOME_META[o].label,
+              color: OUTCOME_META[o].color,
+              count: graph.outcomeBreakdown[o] ?? 0,
+            }))}
+            totalCases={graph.totalCases}
+            activeKeys={outcomeFilter}
+            onToggle={(k) => onToggleOutcome(k as Outcome)}
+          />
+        </FilterSection>
+
+        <FilterSection title="Duration" subtitle={`p25 ${formatDuration(graph.durationQuartiles.p25Ms)} · p50 ${formatDuration(graph.durationQuartiles.p50Ms)} · p75 ${formatDuration(graph.durationQuartiles.p75Ms)}`}>
+          <BarList
+            items={ALL_DURATION_BUCKETS.map((d) => ({
+              key: d,
+              label: DURATION_META[d].label,
+              color: DURATION_META[d].color,
+              count: graph.durationBreakdown[d] ?? 0,
+            }))}
+            totalCases={graph.totalCases}
+            activeKeys={durationFilter}
+            onToggle={(k) => onToggleDuration(k as DurationBucket)}
+          />
+        </FilterSection>
+
+        <FilterSection title="Conformance" subtitle="conforming = follows happy path exactly">
+          <BarList
+            items={ALL_CONFORMANCE_BUCKETS.map((c) => ({
+              key: c,
+              label: CONFORMANCE_META[c].label,
+              color: CONFORMANCE_META[c].color,
+              count: graph.conformanceBreakdown[c] ?? 0,
+            }))}
+            totalCases={graph.totalCases}
+            activeKeys={conformanceFilter}
+            onToggle={(k) => onToggleConformance(k as ConformanceBucket)}
+          />
+        </FilterSection>
+
+      </div>
+
+      {/* Footer — active filter count */}
+      <div style={{ marginTop: 10, paddingTop: 8, borderTop: "1px solid #EEF2F8", fontSize: 10, color: "#9AAABB", lineHeight: 1.6 }}>
+        {activeCount === 0 ? (
+          <div>No filters active — showing all <strong style={{ color: "#001C3D" }}>{graph.totalCases.toLocaleString()}</strong> cases</div>
+        ) : (
+          <>
+            <div><strong style={{ color: "#001C3D" }}>{activeCount}</strong> filter{activeCount !== 1 ? "s" : ""} active across dimensions</div>
+            <div style={{ marginTop: 2 }}>Combined as <strong style={{ color: "#1A5AFF" }}>AND</strong> — graph shows cases matching every active filter</div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function FilterSection({ title, subtitle, children }: { title: string; subtitle?: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <div style={{ marginBottom: 6 }}>
+        <div style={{ fontSize: 10, fontWeight: 800, color: "#5C6E84", textTransform: "uppercase", letterSpacing: "0.08em" }}>{title}</div>
+        {subtitle && <div style={{ fontSize: 9, color: "#9AAABB", marginTop: 1 }}>{subtitle}</div>}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function BarList({
+  items, totalCases, activeKeys, onToggle, subtitle,
+}: {
+  items: Array<{ key: string; label: string; color: string; count: number }>;
+  totalCases: number;
+  activeKeys: string[];
+  onToggle: (key: string) => void;
+  subtitle?: string;
+}) {
+  // Bar width is the SHARE of total cases, not relative-to-max. This makes
+  // a 60% bucket clearly larger than a 10% one (and even quartiles show as ~25%).
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+      {subtitle && (
+        <div style={{ fontSize: 10, color: "#9AAABB", marginBottom: 4, lineHeight: 1.5 }}>{subtitle}</div>
+      )}
+      {items.map((it) => {
+        const sharePct = totalCases > 0 ? (it.count / totalCases) * 100 : 0;
+        const isActive = activeKeys.includes(it.key);
+        const isEmpty = it.count === 0;
+        return (
+          <button
+            key={it.key}
+            onClick={() => !isEmpty && onToggle(it.key)}
+            disabled={isEmpty}
+            style={{
+              display: "flex", flexDirection: "column", gap: 4,
+              background: isActive ? `${it.color}14` : "transparent",
+              border: `1px solid ${isActive ? it.color : "transparent"}`,
+              borderRadius: 6, padding: "6px 8px",
+              cursor: isEmpty ? "not-allowed" : "pointer", textAlign: "left",
+              opacity: isEmpty ? 0.4 : 1,
+              transition: "all 0.12s",
+            }}
+            onMouseEnter={(e) => { if (!isActive && !isEmpty) (e.currentTarget as HTMLElement).style.background = "#F5F7FB"; }}
+            onMouseLeave={(e) => { if (!isActive) (e.currentTarget as HTMLElement).style.background = "transparent"; }}
+          >
+            {/* Top row: label + count/% */}
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{
+                fontSize: 11, fontWeight: 700,
+                color: isActive ? it.color : "#001C3D",
+                display: "inline-flex", alignItems: "center", gap: 6,
+                flex: 1, minWidth: 0,
+                whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
+              }}>
+                <span style={{ width: 7, height: 7, borderRadius: "50%", background: it.color, opacity: isEmpty ? 0.3 : 1, flexShrink: 0 }} />
+                {it.label}
+              </span>
+              <span style={{ fontSize: 10, fontFamily: "monospace", color: isActive ? it.color : "#5C6E84", whiteSpace: "nowrap", flexShrink: 0 }}>
+                <strong>{it.count.toLocaleString()}</strong>
+                <span style={{ marginLeft: 4, color: "#9AAABB" }}>· {sharePct.toFixed(0)}%</span>
+              </span>
+            </div>
+
+            {/* Bar — share of total */}
+            <div style={{ position: "relative", height: 8, background: "#F5F7FB", borderRadius: 2, overflow: "hidden" }}>
+              <div style={{
+                position: "absolute", left: 0, top: 0, bottom: 0,
+                width: `${sharePct}%`,
+                background: isActive
+                  ? `linear-gradient(90deg, ${it.color}, ${it.color}CC)`
+                  : `linear-gradient(90deg, ${it.color}88, ${it.color}55)`,
+                borderRadius: 2,
+                transition: "width 0.18s, background 0.12s",
+              }} />
+            </div>
+          </button>
+        );
+      })}
+    </div>
+  );
 }
 
 // ──────────────────────────────────────────────────────────────────────────

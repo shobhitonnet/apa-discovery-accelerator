@@ -300,6 +300,7 @@ export function IngestionSection({ engagementId, processId, dataRequest, initial
         outcomeBreakdown: { approved: 0, declined: 0, withdrawn: 0, in_progress: 0 },
         durationBreakdown: { fastest_25: 0, q2: 0, q3: 0, slowest_25: 0 },
         durationQuartiles: { p25Ms: 0, p50Ms: 0, p75Ms: 0 },
+        durationHistogram: [],
         conformanceBreakdown: { conforming: 0, deviating: 0 },
         caseTimeRange: { earliestIso: null, latestIso: null },
       });

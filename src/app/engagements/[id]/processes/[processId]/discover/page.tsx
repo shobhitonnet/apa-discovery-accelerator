@@ -26,8 +26,27 @@ export default async function DiscoverPage({
   if (!process || !engagement) notFound();
 
   const lob = LOB_CATALOG[process.lineOfBusiness as keyof typeof LOB_CATALOG];
-  const processMap = process.processMap as { nodes?: { type: string; data?: { label?: string } }[] } | null;
-  const taskNodes = processMap?.nodes?.filter((n) => n.type === "task") ?? [];
+  type AssignedItem = { name: string; color?: string };
+  const processMapRaw = process.processMap as {
+    nodes?: Array<{
+      id: string;
+      type: string;
+      position: { x: number; y: number };
+      data?: { label?: string; actors?: AssignedItem[]; systems?: AssignedItem[] };
+    }>;
+    edges?: Array<{ id: string; source: string; target: string; label?: string }>;
+  } | null;
+  const allNodes = processMapRaw?.nodes ?? [];
+  const allEdges = processMapRaw?.edges ?? [];
+  const taskNodes = allNodes
+    .filter((n) => n.type === "task")
+    .map((n) => ({
+      data: {
+        label: n.data?.label,
+        actors: n.data?.actors ?? [],
+        systems: n.data?.systems ?? [],
+      },
+    }));
   const hasProcessMap = taskNodes.length > 0;
   const dataRequest = (process.dataRequest ?? null) as DataRequest | null;
 
@@ -35,7 +54,7 @@ export default async function DiscoverPage({
     <div style={{ minHeight: "100vh", background: "#F5F7F9" }}>
       <Header />
 
-      <main style={{ maxWidth: 860, margin: "0 auto", padding: "36px 28px 80px" }}>
+      <main style={{ padding: "28px 32px 80px" }}>
         {/* Breadcrumb */}
         <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "#9AAABB", marginBottom: 24 }}>
           <Link href="/engagements" style={{ color: "#9AAABB", textDecoration: "none" }}>Engagements</Link>
@@ -75,6 +94,8 @@ export default async function DiscoverPage({
           lobLabel={lob?.label ?? process.lineOfBusiness}
           lobColor={lob?.color ?? "#1A5AFF"}
           taskNodes={taskNodes}
+          mapNodes={allNodes}
+          mapEdges={allEdges}
           hasProcessMap={hasProcessMap}
           initialDataRequest={dataRequest}
         />

@@ -4,6 +4,66 @@ This file is the source of truth for version snapshots. Each version represents 
 
 ---
 
+## v1.2 — "Full-screen Explorer + US template seed" (locked 2026-05-11)
+
+**Purpose:** turn the Process Explorer into a full-screen, Celonis-grade workspace with a dedicated filter rail, vertical variants slider, and consolidated KPI strip — and seed three additional active US process templates (home_mortgage, commercial_onboarding, sme_loan_origination) so US demos have content beyond retail_onboarding.
+
+### Scope delivered
+
+**Process Explorer — layout overhaul**
+- Killed page-level `maxWidth: 860` constraint on the ingest page — Explorer now spans the full viewport with a 32px gutter
+- Canvas height: 600px → 680px
+- Right-rail filter panel (360px) sits next to the canvas — no more horizontal chip rows competing for space
+- Left-rail vertical variants slider (78px) — drag the thumb up to reveal more variants, bottom = top variant only, top = all variants; live label shows `X/N · Y% cases`
+
+**Process Explorer — KPI stats strip**
+- 5-stat strip across the top: **Cases · Activities · Variants · Median cycle · Conformance**
+- Monospace numbers, grey dividers
+- Variants stat includes "top covers X% of cases" subtitle; Median includes "p25 X · p75 Y"; Conformance is RAG-coloured (green ≥80%, amber 50-79%, red <50%) with "X cases deviate" subtitle
+
+**Process Explorer — unified filter panel**
+- Dimension dropdown: Outcome / Duration / Conformance / Time period
+- Horizontal-bar list ranked by case count, scaled by **share of total cases** (a 60%-of-total bucket fills 60% of the bar; small buckets visibly shrink)
+- Multi-select within a dimension (click bars to toggle in/out); switching dimensions resets the others (mutual exclusion)
+- Empty buckets dim and become unclickable
+- Time period uses the existing dual-thumb date-range slider
+- Live footer: "2 of 4 outcomes · 47% of cases covered"
+- One-click `Clear (N)` button shows whenever any filter is active
+
+**Backend — process graph**
+- `durationHistogram` computed server-side (10 equal-width buckets) — kept in payload for future use; histogram UI was prototyped then removed (the share-of-total bars do the same job more legibly)
+
+**US process templates seeded**
+- **Home Mortgage** v1 (active, USA) — 14 sub-processes, 21 metrics (TRID + HMDA + ECOA-aware), 9 actors (Mortgage Borrower, MLO, Loan Processor, Underwriter, Appraiser, Title Company, Closer, Compliance Officer, Automated Underwriting), 9 US-specific systems (Encompass, Fannie Mae DU, Freddie Mac LP, tri-merge bureaus, AppraisalPort, First American/Fidelity Title, DocuSign/Notarize, MERS, FIS IBS/Fiserv LoanServ), 5 deviation patterns
+- **Commercial Account Onboarding** v1 (active, USA) — 11 steps, 21 metrics, 8 actors, 7 systems (Salesforce FSC, nCino, LexisNexis Bridger, D&B, Refinitiv WorldCheck, FIS IBS/Fiserv Premier, Treasury Management Portal), 5 deviation patterns
+- **SME Loan Origination** v1 (active, USA) — full seed
+- **USA value coefficients**: 20 USD-denominated banking benchmarks (FTE rates, regulatory fines, risk/loss models, SME-specific)
+- All four templates activated for `country: United States` via `CountryProcessActivation`
+- `retail_onboarding` legacy step rows (14) migrated to the correct `processTemplate` key as part of the home_mortgage fix script
+
+**Scripts (new)**
+- `scripts/seed-demo-templates.ts` — offline seed for commercial_onboarding + sme_loan_origination + USA coefficients + US activations
+- `scripts/fix-home-mortgage.ts` — fixes the home_mortgage processKey/name swap and seeds full content
+- `scripts/audit-templates.ts` — high-level counts per template
+- `scripts/audit-seating.ts` — per-template seating audit (systems linked, actors in pool vs expected)
+- `scripts/list-repository.ts` — repository listing helper
+
+### Schema migrations
+None.
+
+### Known limitations (deliberately deferred)
+- `home_mortgage` has 26 `ProcessStepTemplate` rows where 14 should exist (duplicate seed passes) — cleanup pending
+- `home_mortgage` has 19 systems seated where 9 specific vendors are enough (10 generic-named carry-overs from earlier seed) — cleanup pending
+- `retail_onboarding` is missing 4 expected actors in the global pool (Retail Applicant, Branch CSR, Digital Onboarding Bot, KYC / AML Analyst) — cleanup pending
+- `retail_onboarding` has no US-specific vendor systems seated (only generic functional names) — decision pending: add US vendors or keep generic
+- `durationHistogram` is computed but unused — dead code, remove or wire to a future feature
+- Brush-drag multi-select in filter bars (currently click-to-toggle)
+
+### Rollback
+Tagged `v1.2` in git. To roll back: `git checkout v1.2`.
+
+---
+
 ## v1.1 — "Explorer interactivity + executive view" (locked 2026-05-10)
 
 **Purpose:** make the Process Explorer interactive at the edge/activity level, restructure the digital-twin page into a clean tab + sub-tab UX, auto-load the cockpit and findings, and surface an executive triangle on top of findings.

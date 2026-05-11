@@ -23,10 +23,31 @@ interface ProcessesSectionProps {
 export function ProcessesSection({ engagementId, initialProcesses }: ProcessesSectionProps) {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   function handleAdded() {
     setShowModal(false);
     router.refresh();
+  }
+
+  async function handleDelete(e: React.MouseEvent, p: Process) {
+    e.preventDefault();
+    e.stopPropagation();
+    const ok = window.confirm(`Delete process "${p.processName}"?\n\nThis permanently removes the process and its uploads, event logs, activity table, and findings. Cannot be undone.`);
+    if (!ok) return;
+    setDeletingId(p.id);
+    try {
+      const res = await fetch(`/api/engagements/${engagementId}/processes/${p.id}`, { method: "DELETE" });
+      if (!res.ok) {
+        setDeletingId(null);
+        alert("Delete failed. Check the server log.");
+        return;
+      }
+      router.refresh();
+    } catch {
+      setDeletingId(null);
+      alert("Delete failed. Network error.");
+    }
   }
 
   return (
@@ -98,7 +119,7 @@ export function ProcessesSection({ engagementId, initialProcesses }: ProcessesSe
                       el.style.transform = "translateY(0)";
                     }}
                   >
-                    {/* LOB badge + name */}
+                    {/* LOB badge + name + delete */}
                     <div style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 12 }}>
                       <span style={{
                         fontSize: 10, fontWeight: 700, padding: "3px 8px", borderRadius: 20, flexShrink: 0, marginTop: 1,
@@ -107,9 +128,30 @@ export function ProcessesSection({ engagementId, initialProcesses }: ProcessesSe
                       }}>
                         {lob?.label ?? p.lineOfBusiness}
                       </span>
-                      <span style={{ fontSize: 13, fontWeight: 700, color: "#001C3D", lineHeight: 1.3 }}>
+                      <span style={{ fontSize: 13, fontWeight: 700, color: "#001C3D", lineHeight: 1.3, flex: 1, minWidth: 0 }}>
                         {p.processName}
                       </span>
+                      <button
+                        type="button"
+                        onClick={(e) => handleDelete(e, p)}
+                        disabled={deletingId === p.id}
+                        aria-label="Delete process"
+                        title="Delete process"
+                        style={{
+                          width: 24, height: 24, borderRadius: 5, background: "transparent",
+                          border: "1px solid transparent",
+                          color: deletingId === p.id ? "#CBD5E1" : "#9AAABB",
+                          cursor: deletingId === p.id ? "wait" : "pointer",
+                          display: "inline-flex", alignItems: "center", justifyContent: "center",
+                          flexShrink: 0, transition: "all 0.15s",
+                        }}
+                        onMouseEnter={(e) => { if (deletingId !== p.id) { (e.currentTarget as HTMLButtonElement).style.color = "#C0392B"; (e.currentTarget as HTMLButtonElement).style.background = "rgba(239,68,68,0.06)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(239,68,68,0.2)"; } }}
+                        onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#9AAABB"; (e.currentTarget as HTMLButtonElement).style.background = "transparent"; (e.currentTarget as HTMLButtonElement).style.borderColor = "transparent"; }}
+                      >
+                        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                      </button>
                     </div>
 
                     {/* Status indicators */}

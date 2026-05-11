@@ -639,9 +639,77 @@
 
   <div class="v-card">
     <div class="head">
+      <div class="num">v1.2</div>
+      <div class="title">Full-screen Explorer + US template seed</div>
+      <div class="date">locked 2026-05-11 <span class="badge live">current</span></div>
+    </div>
+    <div class="tagline">Process Explorer goes full-screen with a dedicated right-rail filter panel, left-edge vertical variants slider, 5-stat KPI strip, and unified dropdown+bars filter. Three US process templates (home_mortgage, commercial_onboarding, sme_loan_origination) plus USA value coefficients seeded for US engagement demos.</div>
+
+    <h4>Process Explorer — full-screen layout</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Killed page-level <code>maxWidth: 860</code> on the ingest page — Explorer spans the viewport with a 32px gutter</div></li>
+      <li><span class="marker">·</span><div>Canvas height bumped 600 → 680px</div></li>
+      <li><span class="marker">·</span><div>Right rail (360px) hosts the filter panel; left edge (78px) hosts the vertical variants slider</div></li>
+    </ul>
+
+    <h4>Vertical variants slider</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Sits on the left edge of the canvas; drag the thumb up to reveal more variants</div></li>
+      <li><span class="marker">·</span><div>Bottom = top variant only, top = all variants (incl. long tail)</div></li>
+      <li><span class="marker">·</span><div>Live label: <code>X/N · Y% cases</code></div></li>
+    </ul>
+
+    <h4>KPI stats strip (top)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Cases · Activities · Variants · Median cycle · Conformance</div></li>
+      <li><span class="marker">·</span><div>Variants subtitle: "top covers X% of cases"; Median subtitle: "p25 X · p75 Y"</div></li>
+      <li><span class="marker">·</span><div>Conformance is RAG-coloured (green ≥80% / amber 50-79% / red &lt;50%)</div></li>
+    </ul>
+
+    <h4>Unified filter panel (right rail)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Dimension dropdown: Outcome / Duration / Conformance / Time period</div></li>
+      <li><span class="marker">·</span><div>Horizontal bars ranked by case count; bars scaled by <strong>share of total cases</strong> (not max-of-dimension)</div></li>
+      <li><span class="marker">·</span><div>Multi-select within a dimension; switching dimensions resets the others (mutual exclusion)</div></li>
+      <li><span class="marker">·</span><div>Empty buckets dim and become unclickable</div></li>
+      <li><span class="marker">·</span><div>Footer: "2 of 4 outcomes · 47% of cases covered" · one-click <code>Clear (N)</code> button</div></li>
+    </ul>
+
+    <h4>US process templates seeded</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div><strong>Home Mortgage</strong> v1 — 14 sub-processes, 21 metrics (TRID + HMDA + ECOA-aware), 9 actors, 9 US vendors (Encompass, Fannie Mae DU, Freddie Mac LP, AppraisalPort, MERS, FIS/Fiserv LoanServ…), 5 deviation patterns</div></li>
+      <li><span class="marker">·</span><div><strong>Commercial Account Onboarding</strong> v1 — 11 steps, 21 metrics, 8 actors, 7 vendors (Salesforce FSC, nCino, LexisNexis Bridger, D&amp;B, Refinitiv WorldCheck…), 5 deviation patterns</div></li>
+      <li><span class="marker">·</span><div><strong>SME Loan Origination</strong> v1 — full seed</div></li>
+      <li><span class="marker">·</span><div><strong>USA value coefficients</strong> — 20 USD-denominated banking benchmarks (FTE rates, regulatory exposure, risk/loss, SME-specific)</div></li>
+      <li><span class="marker">·</span><div>All four templates activated for <code>country: United States</code> via <code>CountryProcessActivation</code></div></li>
+    </ul>
+
+    <h4>Scripts (new)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div><code>scripts/seed-demo-templates.ts</code> — offline US seed</div></li>
+      <li><span class="marker">·</span><div><code>scripts/fix-home-mortgage.ts</code> — corrects processKey/name swap + full seed</div></li>
+      <li><span class="marker">·</span><div><code>scripts/audit-templates.ts</code> · <code>audit-seating.ts</code> · <code>list-repository.ts</code></div></li>
+    </ul>
+
+    <h4>Known gaps (deferred)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div><code>home_mortgage</code> — 26 step rows where 14 should exist (duplicate seed passes)</div></li>
+      <li><span class="marker">·</span><div><code>home_mortgage</code> — 19 systems seated where 9 specific vendors suffice (10 generic carry-overs)</div></li>
+      <li><span class="marker">·</span><div><code>retail_onboarding</code> — 4 expected actors missing from global pool; no US-specific vendor systems seated</div></li>
+      <li><span class="marker">·</span><div><code>durationHistogram</code> computed server-side but unused (UI removed) — dead code</div></li>
+    </ul>
+
+    <h4>Rollback</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Tagged <code>v1.2</code> in git. To roll back: <code>git checkout v1.2</code></div></li>
+    </ul>
+  </div>
+
+  <div class="v-card">
+    <div class="head">
       <div class="num">v1.1</div>
       <div class="title">Explorer interactivity + executive view</div>
-      <div class="date">locked 2026-05-10 <span class="badge live">current</span></div>
+      <div class="date">locked 2026-05-10</div>
     </div>
     <div class="tagline">Process Explorer becomes interactive (hover + click on edges/activities → pinned callouts), variants slider replaces % paths, full lens system (Outcome/Duration/Conformance/Time), tab restructure, cockpit + findings auto-load with caching, Elastic Ops triangle on findings.</div>
 
@@ -773,12 +841,36 @@
     </div>
   </div>
 
-  <h3>P1 — Stage closures</h3>
+  <h3>P1 — Close the process-map ↔ digital-twin loop</h3>
+  <div class="desc" style="font-size:12px; color:var(--muted); margin: -4px 0 10px; line-height:1.5;">
+    Today the canvas (Tile 1) only feeds the Data Request. Everything in the Digital Twin (variants, cockpit, findings) runs purely off the event log and ignores the canvas. That's the single biggest credibility gap when positioning this as a true digital twin — closing it sharpens findings, unlocks conformance overlay, and enables canvas-driven KPIs.
+  </div>
+  <div class="backlog-item">
+    <span class="prio p1">P1</span>
+    <div class="body">
+      <div class="title">Activity-key auto-mapping (actual events ↔ canvas nodes)</div>
+      <div class="desc">Run after Stage 2 build. Take EventLog activities + canvas task labels, fuzzy-match by name, populate <code>EventLog.activityKey</code>. This is the foundation that everything else below depends on. Today <code>activityKey</code> is null for nearly all events.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p1">P1</span>
+    <div class="body">
+      <div class="title">Findings prompt sees the ideal map</div>
+      <div class="desc">Extend <code>FindingsContext</code> to include the ideal step sequence + actor/system bindings from <code>processMap</code>. Update the Claude prompt so Stage 5 explicitly calls out deviations from <strong>intended design</strong>, not just from the discovered happy path. Example uplift: "KYC was bypassed on 26% of cases against the documented control" vs current generic observation.</div>
+    </div>
+  </div>
   <div class="backlog-item">
     <span class="prio p1">P1</span>
     <div class="body">
       <div class="title">Stage 4 visual conformance overlay</div>
-      <div class="desc">Render the actual discovered graph as a coloured overlay on the ideal BPMN canvas. Green = on path, amber = under-frequented, red = unknown step, pink = exception. Uses <code>EventLog.activityKey</code> to map actual events to ideal node IDs.</div>
+      <div class="desc">Render the actual discovered graph as a coloured overlay on the ideal BPMN canvas. Green = on path, amber = under-frequented, red = unknown step, pink = exception. Depends on activity-key mapping above. This is the demoable headline feature for v1.2 — the single biggest "digital twin" credibility moment.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio p1">P1</span>
+    <div class="body">
+      <div class="title">Canvas-driven KPI auto-derivation</div>
+      <div class="desc">Once activity-key mapping exists, some cockpit metrics can be auto-derived from the canvas (e.g. "KYC completion rate" = "events at KYC node / total cases"). Reduces consultant manual configuration.</div>
     </div>
   </div>
   <div class="backlog-item">

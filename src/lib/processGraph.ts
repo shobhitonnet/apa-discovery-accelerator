@@ -48,12 +48,37 @@ function emptySummary(earliest: Date | null, latest: Date | null): ProcessGraphS
     outcomeBreakdown: cloneOutcomeCounts(),
     durationBreakdown: cloneDurationCounts(),
     durationQuartiles: { p25Ms: 0, p50Ms: 0, p75Ms: 0 },
+    durationHistogram: [],
     conformanceBreakdown: cloneConformanceCounts(),
     caseTimeRange: {
       earliestIso: earliest ? earliest.toISOString() : null,
       latestIso: latest ? latest.toISOString() : null,
     },
   };
+}
+
+/** Build a 10-bucket equal-width histogram of case cycle times. */
+function buildDurationHistogram(durations: number[]): Array<{ fromMs: number; toMs: number; caseCount: number }> {
+  if (durations.length === 0) return [];
+  const min = Math.min(...durations);
+  const max = Math.max(...durations);
+  if (max === min) {
+    return [{ fromMs: min, toMs: max, caseCount: durations.length }];
+  }
+  const N = 10;
+  const width = (max - min) / N;
+  const buckets = Array.from({ length: N }, (_, i) => ({
+    fromMs: min + i * width,
+    toMs: min + (i + 1) * width,
+    caseCount: 0,
+  }));
+  for (const d of durations) {
+    let idx = Math.floor((d - min) / width);
+    if (idx >= N) idx = N - 1; // include the max in the last bucket
+    if (idx < 0) idx = 0;
+    buckets[idx].caseCount++;
+  }
+  return buckets;
 }
 
 export async function getProcessGraph(
@@ -304,6 +329,7 @@ export async function getProcessGraph(
     outcomeBreakdown,
     durationBreakdown,
     durationQuartiles: { p25Ms, p50Ms, p75Ms },
+    durationHistogram: buildDurationHistogram(caseDurations),
     conformanceBreakdown,
     caseTimeRange: {
       earliestIso: earliest ? earliest.toISOString() : null,

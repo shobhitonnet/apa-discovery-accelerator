@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { PROCESS_TEMPLATES } from "@/types";
 
 const STATUS_COLORS: Record<string, { bg: string; text: string; label: string }> = {
@@ -35,11 +37,33 @@ interface EngagementCardProps {
 }
 
 export function EngagementCard({ engagement }: EngagementCardProps) {
+  const router = useRouter();
   const status = STATUS_COLORS[engagement.status] ?? STATUS_COLORS.created;
   const template = engagement.processTemplate
     ? PROCESS_TEMPLATES.find((t) => t.id === engagement.processTemplate)
     : undefined;
   const doneCount = STEPS.filter((s) => engagement[s.key]).length;
+  const [deleting, setDeleting] = useState(false);
+
+  async function handleDelete(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
+    const ok = window.confirm(`Delete engagement "${engagement.name}"?\n\nThis permanently removes the engagement and all its processes, uploads, event logs, and analysis results. Cannot be undone.`);
+    if (!ok) return;
+    setDeleting(true);
+    try {
+      const res = await fetch(`/api/engagements/${engagement.id}`, { method: "DELETE" });
+      if (!res.ok) {
+        setDeleting(false);
+        alert("Delete failed. Check the server log.");
+        return;
+      }
+      router.refresh();
+    } catch {
+      setDeleting(false);
+      alert("Delete failed. Network error.");
+    }
+  }
 
   return (
     <Link
@@ -76,9 +100,32 @@ export function EngagementCard({ engagement }: EngagementCardProps) {
             </h3>
             <p style={{ fontSize: 12, color: "#5C6E84" }}>{engagement.clientName}</p>
           </div>
-          <span style={{ marginLeft: 12, flexShrink: 0, fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 30, background: status.bg, color: status.text }}>
-            {status.label}
-          </span>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginLeft: 12, flexShrink: 0 }}>
+            <span style={{ fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 30, background: status.bg, color: status.text }}>
+              {status.label}
+            </span>
+            <button
+              type="button"
+              onClick={handleDelete}
+              disabled={deleting}
+              aria-label="Delete engagement"
+              title="Delete engagement"
+              style={{
+                width: 28, height: 28, borderRadius: 6, background: "transparent",
+                border: "1px solid transparent",
+                color: deleting ? "#CBD5E1" : "#9AAABB",
+                cursor: deleting ? "wait" : "pointer",
+                display: "inline-flex", alignItems: "center", justifyContent: "center",
+                flexShrink: 0, transition: "all 0.15s",
+              }}
+              onMouseEnter={(e) => { if (!deleting) { (e.currentTarget as HTMLButtonElement).style.color = "#C0392B"; (e.currentTarget as HTMLButtonElement).style.background = "rgba(239,68,68,0.06)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(239,68,68,0.2)"; } }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#9AAABB"; (e.currentTarget as HTMLButtonElement).style.background = "transparent"; (e.currentTarget as HTMLButtonElement).style.borderColor = "transparent"; }}
+            >
+              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Process template */}
