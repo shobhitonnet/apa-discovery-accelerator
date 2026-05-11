@@ -639,9 +639,80 @@
 
   <div class="v-card">
     <div class="head">
+      <div class="num">v1.3</div>
+      <div class="title">Brand-aligned product surfaces + demo-ready Fifth Third</div>
+      <div class="date">locked 2026-05-11 <span class="badge live">current</span></div>
+    </div>
+    <div class="tagline">Major redesign of every navigation surface (Home, My Workspace, Engagement, Process detail) aligned to the Backbase Frontline 2026 design system. Fifth Third Bank demo engagement seeded end-to-end (2 processes · 1,850 cases · 21,910 events · cached findings) for tomorrow's CEO presentation. Cockpit regex engine + currency country-awareness fixed so US engagements display in $ and metrics compute correctly against the seed's process-specific keys.</div>
+
+    <h4>Homepage — Option B (signature visual hero)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Replaced 3-stage pipeline pills with an animated <strong>vertical pipe-flow variant graph</strong> (Celonis aesthetic) — centred spine, exceptions branching right in pink, animated case "balls" flowing down + through exceptions, edge volume tags interrupting the spine line</div></li>
+      <li><span class="marker">·</span><div>5-stat strip below: Engagements · Processes mapped · Events analysed · Variants found · Value leak detected</div></li>
+      <li><span class="marker">·</span><div>Recent-engagements section removed (lives in My Workspace)</div></li>
+    </ul>
+
+    <h4>My Workspace</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Header link renamed Engagements → <strong>My Workspace</strong></div></li>
+      <li><span class="marker">·</span><div>Time-aware personalised greeting · 5-card pulse strip (cases · engagements · variants · leak · APA opportunities)</div></li>
+      <li><span class="marker">·</span><div>New <code>WorkspaceCard</code> with deterministic mini variant-graph thumbnails (seeded by engagement id), status pills, cycle/leak/cases stats, "✓ findings" badge</div></li>
+    </ul>
+
+    <h4>Process detail page</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Compact single-row process header with ⚙ Edit details drawer (replaces inline forms)</div></li>
+      <li><span class="marker">·</span><div><strong>Discovery Phases tiles</strong> — STEP 1/2/3 labels, brand colour accents (Action Blue · Primary Navy · Success Green), status badges (✓ Done · ! Next to do · ◔ Coming soon)</div></li>
+      <li><span class="marker">·</span><div><strong>Executive Summary</strong> — grey-tinted block with Annual Value Leak, Elastic Ops vertex split, Capability Mix bar, Integration, and Top Findings from cached Stage 5</div></li>
+      <li><span class="marker">·</span><div>Legacy <code>UploadSection</code> + <code>AnalysisPanel</code> removed from engagement detail (per-process flow has been canonical since v1.0)</div></li>
+    </ul>
+
+    <h4>Process Explorer</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Right-rail filter panel is now <strong>collapsible</strong> (36px strip ↔ 360px full panel) — frees space for the canvas + variants slider</div></li>
+    </ul>
+
+    <h4>Cockpit metrics engine — regex permissivity overhaul</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Lead time / cycle time no longer require <code>avg|average|mean</code> in the key — matches <code>commercial_onboarding_lead_time_days</code> etc.</div></li>
+      <li><span class="marker">·</span><div><code>cost_per</code> relaxed to allow process-specific suffixes</div></li>
+      <li><span class="marker">·</span><div><code>annual_*_cost</code> pattern-searches <code>allComputed</code> for any <code>cost_per_X</code> × any <code>monthly_X_volume</code> × 12</div></li>
+      <li><span class="marker">·</span><div>Decision-time accepts <code>days</code>/<code>turn</code> suffixes</div></li>
+      <li><span class="marker">·</span><div>New: <code>compliance_touch_rate</code>, <code>audit_flagged_rate</code>, withdrawal rate, application volume</div></li>
+      <li><span class="marker">·</span><div><strong>Completion detection</strong> recognises real seed activity labels (Provision, Disburse, Fund &amp; Record, Generate Account) — fixes Abandonment Rate (was 91%, now ~5%)</div></li>
+      <li><span class="marker">·</span><div><strong>Drop-off step</strong> — text-typed metric returns the activity name + % share, e.g. "Run Sanctions &amp; PEP Screening (38%)"</div></li>
+    </ul>
+
+    <h4>Currency country-awareness</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div><code>currencyForCountry()</code> helper — USA → $, UK → £, EU → €</div></li>
+      <li><span class="marker">·</span><div><code>FindingsContext</code> + <code>FindingsResult</code> carry <code>currency</code>; Claude prompt uses country-aware symbol/code; <code>FindingsSection</code> display reads <code>result.currency.symbol</code> (defaults $)</div></li>
+    </ul>
+
+    <h4>Fifth Third demo engagement (for tomorrow's CEO demo)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div><code>scripts/seed-fifth-third-engagement.ts</code> — full end-to-end seed: bank profile, 2 processes (Commercial Onboarding + SME Loan), processMap, dataRequest with 7 system slots each, capabilities + metrics, <strong>600 + 1,250 cases</strong> with realistic deviations, per-system CSVs, Upload rows, <strong>21,910 EventLog rows</strong>, optional Claude findings pre-gen</div></li>
+      <li><span class="marker">·</span><div><code>scripts/verify-fifth-third.ts</code> · <code>scripts/test-anthropic-key.ts</code></div></li>
+    </ul>
+
+    <h4>Known gaps (deferred)</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Findings cached pre-v1.3 still have £ in Claude's narrative copy — numbers redisplay with $, but Regenerate refreshes the text</div></li>
+      <li><span class="marker">·</span><div><code>.env.local</code> ANTHROPIC_API_KEY mismatch with running dev server (in backlog)</div></li>
+      <li><span class="marker">·</span><div>Orphan <code>Core Banking System</code> row from v1.2.1 untag; harmless</div></li>
+    </ul>
+
+    <h4>Rollback</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Tagged <code>v1.3</code> in git. To roll back: <code>git checkout v1.3</code></div></li>
+    </ul>
+  </div>
+
+  <div class="v-card">
+    <div class="head">
       <div class="num">v1.2.1</div>
       <div class="title">Template seating cleanup</div>
-      <div class="date">locked 2026-05-11 <span class="badge live">current</span></div>
+      <div class="date">locked 2026-05-11</div>
     </div>
     <div class="tagline">Closes out the seating gaps from the v1.2 audit: retail_onboarding gets 4 missing actors and 11 vendor-aware systems (Salesforce, FIS, Marqeta, Experian, Onfido, LexisNexis, etc. — incumbent stack only, no Backbase); home_mortgage gets canonical TRID-aware steps and a clean 9-vendor list.</div>
 
@@ -879,6 +950,13 @@
     <div class="body">
       <div class="title">Sample CSV simulator: actors uniformly random per row</div>
       <div class="desc">In <code>sample-csvs/route.ts:99-100</code> the actor cell for every event is picked uniformly at random from a fixed 6-name pool (<code>customer, front_office_agent, compliance_officer, underwriter, system, fraud_analyst</code>) regardless of which activity the row represents. Result: every activity in the explorer shows ~17% across all 6 actors instead of one or two dominant actors. Fix: make the generator activity-aware (e.g. KYC → 60% system, 30% compliance_officer, 10% customer) and reflect realistic banking data quality (heavy <code>SYSTEM</code> / service-account share, occasional named users). Doesn't affect production data — only the demo / sample CSVs.</div>
+    </div>
+  </div>
+  <div class="backlog-item">
+    <span class="prio bug">Bug</span>
+    <div class="body">
+      <div class="title">.env.local ANTHROPIC_API_KEY mismatch with running dev server</div>
+      <div class="desc">Logged 2026-05-11 during Fifth Third demo seed. The running <code>next-server</code> process has a valid key loaded in memory (Process Analysis generates findings fine via the UI), but the key stored on disk in <code>.env.local</code> is rejected by Anthropic with <code>401 invalid x-api-key</code> — confirmed via standalone <code>scripts/test-anthropic-key.ts</code>. Anything that reads from the file (seed scripts via <code>dotenv.config</code>; a fresh <code>npm run dev</code> after restart; <code>vercel env</code> sync to production) will fail. Blast radius: any dev-server restart will start 401-ing Process Analysis; Vercel deploy may carry the bad key; the Fifth Third seed script (<code>scripts/seed-fifth-third-engagement.ts</code>) cannot pre-generate findings. <strong>Fix:</strong> retrieve the working key (dump from the running process env, or grab a fresh one from the Anthropic console), update <code>.env.local</code>, restart <code>next dev</code>, run <code>npx tsx scripts/test-anthropic-key.ts</code> to confirm a 200 response. Then sync the same key to Vercel before the next deploy.</div>
     </div>
   </div>
 

@@ -1,0 +1,1115 @@
+case_id,activity,event_timestamp,actor,case_attributes
+FT-COM-2025-00001,Submit Commercial Application,2025-05-01 11:21:46,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00001,Conduct RM Welcome & Handoff,2025-05-07 11:21:46,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00002,Submit Commercial Application,2025-05-01 10:51:12,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00002,Conduct RM Welcome & Handoff,2025-05-12 16:51:12,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00003,Submit Commercial Application,2025-05-03 19:39:04,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00003,Conduct RM Welcome & Handoff,2025-05-09 17:39:04,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00004,Submit Commercial Application,2025-05-03 23:33:57,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00004,Conduct RM Welcome & Handoff,2025-05-10 22:33:57,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00005,Submit Commercial Application,2025-05-04 04:16:55,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00005,Conduct RM Welcome & Handoff,2025-05-11 13:16:55,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00006,Submit Commercial Application,2025-05-05 16:56:02,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00006,Conduct RM Welcome & Handoff,2025-05-14 07:56:02,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00007,Submit Commercial Application,2025-05-03 14:43:45,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00007,Conduct RM Welcome & Handoff,2025-05-11 23:43:45,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00008,Submit Commercial Application,2025-05-04 04:55:15,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00008,Conduct RM Welcome & Handoff,2025-05-17 06:55:15,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00009,Submit Commercial Application,2025-05-06 23:08:11,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00010,Submit Commercial Application,2025-05-07 05:55:34,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00010,Conduct RM Welcome & Handoff,2025-05-10 22:55:34,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00011,Submit Commercial Application,2025-05-07 00:01:30,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00011,Conduct RM Welcome & Handoff,2025-05-11 07:01:30,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00012,Submit Commercial Application,2025-05-08 04:03:57,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00012,Conduct RM Welcome & Handoff,2025-05-15 13:03:57,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00013,Submit Commercial Application,2025-05-08 17:56:12,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00013,Conduct RM Welcome & Handoff,2025-05-14 00:56:12,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00014,Submit Commercial Application,2025-05-08 04:35:24,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00014,Conduct RM Welcome & Handoff,2025-05-15 11:35:24,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00015,Submit Commercial Application,2025-05-09 07:53:33,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00015,Conduct RM Welcome & Handoff,2025-05-15 07:53:33,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00016,Submit Commercial Application,2025-05-11 08:59:09,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00016,Conduct RM Welcome & Handoff,2025-05-16 08:59:09,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00017,Submit Commercial Application,2025-05-10 00:01:08,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00017,Conduct RM Welcome & Handoff,2025-05-15 20:01:08,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00018,Submit Commercial Application,2025-05-12 19:32:30,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00018,Conduct RM Welcome & Handoff,2025-05-18 18:32:30,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00019,Submit Commercial Application,2025-05-13 08:43:09,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00019,Conduct RM Welcome & Handoff,2025-05-19 02:43:09,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00020,Submit Commercial Application,2025-05-12 05:00:02,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00020,Conduct RM Welcome & Handoff,2025-05-18 02:00:02,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00021,Submit Commercial Application,2025-05-13 15:30:24,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00021,Conduct RM Welcome & Handoff,2025-05-18 21:30:24,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00022,Submit Commercial Application,2025-05-14 03:42:37,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00022,Conduct RM Welcome & Handoff,2025-05-18 09:42:37,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00023,Submit Commercial Application,2025-05-15 05:36:42,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00023,Conduct RM Welcome & Handoff,2025-05-19 10:36:42,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00024,Submit Commercial Application,2025-05-15 19:41:47,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00025,Submit Commercial Application,2025-05-16 12:02:44,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00025,Conduct RM Welcome & Handoff,2025-05-22 15:02:44,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00026,Submit Commercial Application,2025-05-15 15:33:16,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00026,Conduct RM Welcome & Handoff,2025-05-21 18:33:16,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00027,Submit Commercial Application,2025-05-16 00:07:02,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00027,Conduct RM Welcome & Handoff,2025-05-22 18:07:02,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00028,Submit Commercial Application,2025-05-16 23:20:22,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00028,Conduct RM Welcome & Handoff,2025-05-23 05:20:22,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00029,Submit Commercial Application,2025-05-18 14:06:11,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00029,Conduct RM Welcome & Handoff,2025-05-24 23:06:11,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00030,Submit Commercial Application,2025-05-18 09:57:18,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00030,Conduct RM Welcome & Handoff,2025-05-26 03:57:18,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00031,Submit Commercial Application,2025-05-18 21:52:25,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00031,Conduct RM Welcome & Handoff,2025-05-25 03:52:25,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00032,Submit Commercial Application,2025-05-21 12:33:04,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00032,Conduct RM Welcome & Handoff,2025-05-26 22:33:04,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00033,Submit Commercial Application,2025-05-21 13:51:29,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00033,Conduct RM Welcome & Handoff,2025-05-26 12:51:29,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00034,Submit Commercial Application,2025-05-21 19:48:04,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00034,Conduct RM Welcome & Handoff,2025-05-28 06:48:04,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00035,Submit Commercial Application,2025-05-20 20:12:14,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00035,Conduct RM Welcome & Handoff,2025-05-30 16:12:14,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00036,Submit Commercial Application,2025-05-22 04:59:01,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00037,Submit Commercial Application,2025-05-23 09:25:39,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00037,Conduct RM Welcome & Handoff,2025-05-27 22:25:39,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00038,Submit Commercial Application,2025-05-22 10:15:40,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00038,Conduct RM Welcome & Handoff,2025-05-28 15:15:40,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00039,Submit Commercial Application,2025-05-23 02:46:31,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00039,Conduct RM Welcome & Handoff,2025-05-27 20:46:31,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00040,Submit Commercial Application,2025-05-25 13:51:47,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00040,Conduct RM Welcome & Handoff,2025-05-31 15:51:47,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00041,Submit Commercial Application,2025-05-26 21:04:21,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00041,Conduct RM Welcome & Handoff,2025-06-07 10:04:21,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00042,Submit Commercial Application,2025-05-26 14:34:34,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00043,Submit Commercial Application,2025-05-26 19:33:06,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00043,Conduct RM Welcome & Handoff,2025-06-11 18:33:06,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00044,Submit Commercial Application,2025-05-27 08:55:23,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00044,Conduct RM Welcome & Handoff,2025-06-02 17:55:23,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00045,Submit Commercial Application,2025-05-27 05:55:08,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00045,Conduct RM Welcome & Handoff,2025-06-02 10:55:08,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00046,Submit Commercial Application,2025-05-27 05:42:33,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00046,Conduct RM Welcome & Handoff,2025-06-01 15:42:33,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00047,Submit Commercial Application,2025-05-29 00:20:46,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00047,Conduct RM Welcome & Handoff,2025-06-11 21:20:46,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00048,Submit Commercial Application,2025-05-30 16:24:14,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00048,Conduct RM Welcome & Handoff,2025-06-08 16:24:14,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00049,Submit Commercial Application,2025-05-29 16:40:28,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00049,Conduct RM Welcome & Handoff,2025-06-04 06:40:28,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00050,Submit Commercial Application,2025-05-30 12:37:18,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00050,Conduct RM Welcome & Handoff,2025-06-05 23:37:18,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00051,Submit Commercial Application,2025-05-31 15:31:03,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00051,Conduct RM Welcome & Handoff,2025-06-17 01:31:03,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00052,Submit Commercial Application,2025-06-01 10:04:26,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00052,Conduct RM Welcome & Handoff,2025-06-08 07:04:26,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00053,Submit Commercial Application,2025-06-02 03:28:58,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00053,Conduct RM Welcome & Handoff,2025-06-11 17:28:58,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00054,Submit Commercial Application,2025-06-02 10:06:32,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00054,Conduct RM Welcome & Handoff,2025-06-08 20:06:32,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00055,Submit Commercial Application,2025-06-03 01:19:20,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00055,Conduct RM Welcome & Handoff,2025-06-10 16:19:20,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00056,Submit Commercial Application,2025-06-02 10:17:03,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00056,Conduct RM Welcome & Handoff,2025-06-07 04:17:03,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00057,Submit Commercial Application,2025-06-04 18:45:55,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00057,Conduct RM Welcome & Handoff,2025-06-12 02:45:55,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00058,Submit Commercial Application,2025-06-06 02:52:44,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00058,Conduct RM Welcome & Handoff,2025-06-12 23:52:44,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00059,Submit Commercial Application,2025-06-04 15:49:31,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00059,Conduct RM Welcome & Handoff,2025-06-08 19:49:31,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00060,Submit Commercial Application,2025-06-04 21:32:58,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00060,Conduct RM Welcome & Handoff,2025-06-11 14:32:58,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00061,Submit Commercial Application,2025-06-06 06:16:15,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00061,Conduct RM Welcome & Handoff,2025-06-12 23:16:15,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00062,Submit Commercial Application,2025-06-06 17:00:35,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00062,Conduct RM Welcome & Handoff,2025-06-12 23:00:35,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00063,Submit Commercial Application,2025-06-06 19:21:21,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00063,Conduct RM Welcome & Handoff,2025-06-12 22:21:21,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00064,Submit Commercial Application,2025-06-09 23:13:58,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00064,Conduct RM Welcome & Handoff,2025-06-17 04:13:58,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00065,Submit Commercial Application,2025-06-09 19:53:03,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00065,Conduct RM Welcome & Handoff,2025-06-15 01:53:03,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00066,Submit Commercial Application,2025-06-10 08:36:44,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00066,Conduct RM Welcome & Handoff,2025-06-24 14:36:44,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00067,Submit Commercial Application,2025-06-10 14:47:53,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00067,Conduct RM Welcome & Handoff,2025-06-18 00:47:53,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00068,Submit Commercial Application,2025-06-10 23:29:55,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00068,Conduct RM Welcome & Handoff,2025-06-18 06:29:55,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00069,Submit Commercial Application,2025-06-12 21:50:43,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00070,Submit Commercial Application,2025-06-12 19:21:39,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00070,Conduct RM Welcome & Handoff,2025-06-18 08:21:39,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00071,Submit Commercial Application,2025-06-14 07:47:11,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00072,Submit Commercial Application,2025-06-12 16:03:47,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00072,Conduct RM Welcome & Handoff,2025-06-22 08:03:47,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00073,Submit Commercial Application,2025-06-13 13:46:37,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00074,Submit Commercial Application,2025-06-15 02:11:40,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00074,Conduct RM Welcome & Handoff,2025-06-21 16:11:40,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00075,Submit Commercial Application,2025-06-14 02:06:04,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00075,Conduct RM Welcome & Handoff,2025-06-20 16:06:04,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00076,Submit Commercial Application,2025-06-15 07:38:13,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00076,Conduct RM Welcome & Handoff,2025-06-29 19:38:13,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00077,Submit Commercial Application,2025-06-16 09:01:57,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00078,Submit Commercial Application,2025-06-16 17:03:43,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00078,Conduct RM Welcome & Handoff,2025-06-22 13:03:43,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00079,Submit Commercial Application,2025-06-17 08:11:28,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00079,Conduct RM Welcome & Handoff,2025-06-22 07:11:28,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00080,Submit Commercial Application,2025-06-17 01:09:41,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00081,Submit Commercial Application,2025-06-19 21:31:20,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00081,Conduct RM Welcome & Handoff,2025-07-03 13:31:20,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00082,Submit Commercial Application,2025-06-20 05:49:10,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00082,Conduct RM Welcome & Handoff,2025-06-26 17:49:10,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00083,Submit Commercial Application,2025-06-19 07:49:48,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00083,Conduct RM Welcome & Handoff,2025-07-03 00:49:48,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00084,Submit Commercial Application,2025-06-21 13:47:54,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00084,Conduct RM Welcome & Handoff,2025-06-27 00:47:54,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00085,Submit Commercial Application,2025-06-21 08:31:05,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00085,Conduct RM Welcome & Handoff,2025-06-30 11:31:05,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00086,Submit Commercial Application,2025-06-22 12:51:28,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00086,Conduct RM Welcome & Handoff,2025-07-09 16:51:28,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00087,Submit Commercial Application,2025-06-21 15:25:51,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00087,Conduct RM Welcome & Handoff,2025-06-26 18:25:51,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00088,Submit Commercial Application,2025-06-22 20:37:38,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00088,Conduct RM Welcome & Handoff,2025-06-28 07:37:38,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00089,Submit Commercial Application,2025-06-24 21:08:44,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00089,Conduct RM Welcome & Handoff,2025-07-04 21:08:44,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00090,Submit Commercial Application,2025-06-23 05:15:11,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00090,Conduct RM Welcome & Handoff,2025-06-30 11:15:11,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00091,Submit Commercial Application,2025-06-25 11:12:36,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00091,Conduct RM Welcome & Handoff,2025-07-02 00:12:36,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00092,Submit Commercial Application,2025-06-24 22:19:59,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00093,Submit Commercial Application,2025-06-26 09:13:22,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00094,Submit Commercial Application,2025-06-27 22:11:24,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00094,Conduct RM Welcome & Handoff,2025-07-03 16:11:24,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00095,Submit Commercial Application,2025-06-25 23:17:28,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00095,Conduct RM Welcome & Handoff,2025-07-08 17:17:28,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00096,Submit Commercial Application,2025-06-27 12:48:21,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00096,Conduct RM Welcome & Handoff,2025-07-04 03:48:21,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00097,Submit Commercial Application,2025-06-28 00:50:07,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00097,Conduct RM Welcome & Handoff,2025-07-09 19:50:07,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00098,Submit Commercial Application,2025-06-29 14:05:21,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00098,Conduct RM Welcome & Handoff,2025-07-05 21:05:21,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00099,Submit Commercial Application,2025-06-29 01:09:17,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00099,Conduct RM Welcome & Handoff,2025-07-05 17:09:17,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00100,Submit Commercial Application,2025-07-01 02:10:27,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00100,Conduct RM Welcome & Handoff,2025-07-06 22:10:27,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00101,Submit Commercial Application,2025-07-02 13:31:44,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00102,Submit Commercial Application,2025-07-02 00:24:37,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00103,Submit Commercial Application,2025-07-02 01:08:12,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00103,Conduct RM Welcome & Handoff,2025-07-07 22:08:12,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00104,Submit Commercial Application,2025-07-03 16:12:35,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00104,Conduct RM Welcome & Handoff,2025-07-08 14:12:35,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00105,Submit Commercial Application,2025-07-03 22:03:56,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00105,Conduct RM Welcome & Handoff,2025-07-10 09:03:56,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00106,Submit Commercial Application,2025-07-04 19:32:05,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00107,Submit Commercial Application,2025-07-03 17:11:03,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00107,Conduct RM Welcome & Handoff,2025-07-10 06:11:03,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00108,Submit Commercial Application,2025-07-05 16:01:37,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00108,Conduct RM Welcome & Handoff,2025-07-16 20:01:37,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00109,Submit Commercial Application,2025-07-04 21:38:57,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00109,Conduct RM Welcome & Handoff,2025-07-10 03:38:57,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00110,Submit Commercial Application,2025-07-05 18:49:07,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00110,Conduct RM Welcome & Handoff,2025-07-12 21:49:07,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00111,Submit Commercial Application,2025-07-06 05:36:37,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00111,Conduct RM Welcome & Handoff,2025-07-11 15:36:37,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00112,Submit Commercial Application,2025-07-06 18:18:34,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00112,Conduct RM Welcome & Handoff,2025-07-13 09:18:34,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00113,Submit Commercial Application,2025-07-08 08:51:27,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00113,Conduct RM Welcome & Handoff,2025-07-14 04:51:27,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00114,Submit Commercial Application,2025-07-09 03:55:44,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00114,Conduct RM Welcome & Handoff,2025-07-15 10:55:44,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00115,Submit Commercial Application,2025-07-09 01:00:19,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00115,Conduct RM Welcome & Handoff,2025-07-16 20:00:19,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00116,Submit Commercial Application,2025-07-09 05:55:57,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00116,Conduct RM Welcome & Handoff,2025-07-15 06:55:57,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00117,Submit Commercial Application,2025-07-10 11:48:56,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00117,Conduct RM Welcome & Handoff,2025-07-15 13:48:56,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00118,Submit Commercial Application,2025-07-10 13:46:07,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00118,Conduct RM Welcome & Handoff,2025-07-15 23:46:07,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00119,Submit Commercial Application,2025-07-11 14:30:08,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00120,Submit Commercial Application,2025-07-14 02:33:33,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00120,Conduct RM Welcome & Handoff,2025-07-19 12:33:33,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00121,Submit Commercial Application,2025-07-12 02:37:11,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00121,Conduct RM Welcome & Handoff,2025-07-16 03:37:11,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00122,Submit Commercial Application,2025-07-13 10:58:55,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00123,Submit Commercial Application,2025-07-15 09:05:52,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00123,Conduct RM Welcome & Handoff,2025-07-21 19:05:52,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00124,Submit Commercial Application,2025-07-14 15:13:45,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00124,Conduct RM Welcome & Handoff,2025-07-19 06:13:45,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00125,Submit Commercial Application,2025-07-16 20:41:02,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00125,Conduct RM Welcome & Handoff,2025-07-21 17:41:02,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00126,Submit Commercial Application,2025-07-14 18:52:00,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00126,Conduct RM Welcome & Handoff,2025-07-20 21:52:00,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00127,Submit Commercial Application,2025-07-17 18:16:21,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00127,Conduct RM Welcome & Handoff,2025-07-24 09:16:21,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00128,Submit Commercial Application,2025-07-16 17:33:28,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00128,Conduct RM Welcome & Handoff,2025-07-24 00:33:28,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00129,Submit Commercial Application,2025-07-19 07:20:00,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00129,Conduct RM Welcome & Handoff,2025-07-31 15:20:00,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00130,Submit Commercial Application,2025-07-19 05:56:27,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00130,Conduct RM Welcome & Handoff,2025-08-02 14:56:27,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00131,Submit Commercial Application,2025-07-20 09:45:16,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00132,Submit Commercial Application,2025-07-19 04:59:56,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00132,Conduct RM Welcome & Handoff,2025-07-26 12:59:56,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00133,Submit Commercial Application,2025-07-20 02:44:40,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00133,Conduct RM Welcome & Handoff,2025-07-27 08:44:40,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00134,Submit Commercial Application,2025-07-21 00:49:27,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00135,Submit Commercial Application,2025-07-21 18:46:30,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00135,Conduct RM Welcome & Handoff,2025-08-04 22:46:30,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00136,Submit Commercial Application,2025-07-22 11:22:08,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00137,Submit Commercial Application,2025-07-21 21:37:49,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00137,Conduct RM Welcome & Handoff,2025-07-28 01:37:49,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00138,Submit Commercial Application,2025-07-24 04:56:49,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00138,Conduct RM Welcome & Handoff,2025-07-28 03:56:49,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00139,Submit Commercial Application,2025-07-24 07:14:43,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00140,Submit Commercial Application,2025-07-25 19:52:44,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00140,Conduct RM Welcome & Handoff,2025-08-01 15:52:44,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00141,Submit Commercial Application,2025-07-24 18:54:33,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00141,Conduct RM Welcome & Handoff,2025-07-29 08:54:33,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00142,Submit Commercial Application,2025-07-26 22:13:06,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00143,Submit Commercial Application,2025-07-27 23:14:23,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00143,Conduct RM Welcome & Handoff,2025-08-12 05:14:23,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00144,Submit Commercial Application,2025-07-26 04:15:43,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00144,Conduct RM Welcome & Handoff,2025-08-12 20:15:43,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00145,Submit Commercial Application,2025-07-29 00:52:37,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00145,Conduct RM Welcome & Handoff,2025-08-05 12:52:37,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00146,Submit Commercial Application,2025-07-28 22:02:33,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00146,Conduct RM Welcome & Handoff,2025-08-05 22:02:33,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00147,Submit Commercial Application,2025-07-27 20:56:03,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00147,Conduct RM Welcome & Handoff,2025-08-02 18:56:03,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00148,Submit Commercial Application,2025-07-28 04:02:48,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00148,Conduct RM Welcome & Handoff,2025-08-04 07:02:48,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00149,Submit Commercial Application,2025-07-30 05:23:18,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00149,Conduct RM Welcome & Handoff,2025-08-05 20:23:18,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00150,Submit Commercial Application,2025-07-31 13:57:36,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00150,Conduct RM Welcome & Handoff,2025-08-14 18:57:36,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00151,Submit Commercial Application,2025-07-31 11:55:52,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00152,Submit Commercial Application,2025-08-02 11:21:07,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00152,Conduct RM Welcome & Handoff,2025-08-12 21:21:07,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00153,Submit Commercial Application,2025-08-01 18:58:12,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00153,Conduct RM Welcome & Handoff,2025-08-06 21:58:12,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00154,Submit Commercial Application,2025-08-02 19:02:01,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00154,Conduct RM Welcome & Handoff,2025-08-11 15:02:01,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00155,Submit Commercial Application,2025-08-02 08:13:20,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00156,Submit Commercial Application,2025-08-04 03:20:30,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00156,Conduct RM Welcome & Handoff,2025-08-09 22:20:30,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00157,Submit Commercial Application,2025-08-03 12:12:00,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00157,Conduct RM Welcome & Handoff,2025-08-12 17:12:00,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00158,Submit Commercial Application,2025-08-04 07:05:13,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00158,Conduct RM Welcome & Handoff,2025-08-10 13:05:13,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00159,Submit Commercial Application,2025-08-05 09:35:25,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00160,Submit Commercial Application,2025-08-06 20:45:54,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00160,Conduct RM Welcome & Handoff,2025-08-14 15:45:54,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00161,Submit Commercial Application,2025-08-05 20:06:19,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00161,Conduct RM Welcome & Handoff,2025-08-09 17:06:19,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00162,Submit Commercial Application,2025-08-06 09:26:50,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00162,Conduct RM Welcome & Handoff,2025-08-12 17:26:50,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00163,Submit Commercial Application,2025-08-08 06:42:05,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00163,Conduct RM Welcome & Handoff,2025-08-15 13:42:05,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00164,Submit Commercial Application,2025-08-06 21:21:53,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00164,Conduct RM Welcome & Handoff,2025-08-12 02:21:53,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00165,Submit Commercial Application,2025-08-09 00:26:18,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00165,Conduct RM Welcome & Handoff,2025-08-14 14:26:18,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00166,Submit Commercial Application,2025-08-10 23:04:11,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00166,Conduct RM Welcome & Handoff,2025-08-17 16:04:11,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00167,Submit Commercial Application,2025-08-09 01:38:20,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00167,Conduct RM Welcome & Handoff,2025-08-15 23:38:20,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00168,Submit Commercial Application,2025-08-10 13:42:46,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00168,Conduct RM Welcome & Handoff,2025-08-24 22:42:46,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00169,Submit Commercial Application,2025-08-10 11:19:59,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00169,Conduct RM Welcome & Handoff,2025-08-15 20:19:59,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00170,Submit Commercial Application,2025-08-11 23:25:09,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00170,Conduct RM Welcome & Handoff,2025-08-27 16:25:09,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00171,Submit Commercial Application,2025-08-12 08:30:03,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00171,Conduct RM Welcome & Handoff,2025-08-19 19:30:03,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00172,Submit Commercial Application,2025-08-12 21:04:53,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00172,Conduct RM Welcome & Handoff,2025-08-19 02:04:53,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00173,Submit Commercial Application,2025-08-14 19:57:39,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00173,Conduct RM Welcome & Handoff,2025-08-20 03:57:39,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00174,Submit Commercial Application,2025-08-13 21:19:44,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00174,Conduct RM Welcome & Handoff,2025-08-20 11:19:44,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00175,Submit Commercial Application,2025-08-14 22:06:10,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00175,Conduct RM Welcome & Handoff,2025-08-21 04:06:10,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00176,Submit Commercial Application,2025-08-14 04:16:21,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00176,Conduct RM Welcome & Handoff,2025-08-18 17:16:21,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00177,Submit Commercial Application,2025-08-17 03:35:38,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00177,Conduct RM Welcome & Handoff,2025-08-23 07:35:38,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00178,Submit Commercial Application,2025-08-16 21:33:28,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00178,Conduct RM Welcome & Handoff,2025-08-20 15:33:28,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00179,Submit Commercial Application,2025-08-18 17:04:32,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00179,Conduct RM Welcome & Handoff,2025-08-25 06:04:32,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00180,Submit Commercial Application,2025-08-16 15:02:30,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00180,Conduct RM Welcome & Handoff,2025-08-26 14:02:30,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00181,Submit Commercial Application,2025-08-19 19:36:54,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00181,Conduct RM Welcome & Handoff,2025-08-27 16:36:54,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00182,Submit Commercial Application,2025-08-17 22:44:51,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00183,Submit Commercial Application,2025-08-19 21:15:14,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00183,Conduct RM Welcome & Handoff,2025-08-25 11:15:14,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00184,Submit Commercial Application,2025-08-19 17:03:07,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00184,Conduct RM Welcome & Handoff,2025-08-23 18:03:07,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00185,Submit Commercial Application,2025-08-22 05:28:57,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00185,Conduct RM Welcome & Handoff,2025-08-28 11:28:57,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00186,Submit Commercial Application,2025-08-21 08:24:48,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00186,Conduct RM Welcome & Handoff,2025-09-06 07:24:48,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00187,Submit Commercial Application,2025-08-21 10:31:09,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00187,Conduct RM Welcome & Handoff,2025-08-28 09:31:09,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00188,Submit Commercial Application,2025-08-21 12:56:55,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00189,Submit Commercial Application,2025-08-22 11:04:53,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00189,Conduct RM Welcome & Handoff,2025-08-31 05:04:53,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00190,Submit Commercial Application,2025-08-23 13:24:37,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00190,Conduct RM Welcome & Handoff,2025-08-29 17:24:37,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00191,Submit Commercial Application,2025-08-24 02:15:54,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00192,Submit Commercial Application,2025-08-24 12:13:07,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00192,Conduct RM Welcome & Handoff,2025-08-30 13:13:07,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00193,Submit Commercial Application,2025-08-24 16:09:17,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00193,Conduct RM Welcome & Handoff,2025-08-30 02:09:17,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00194,Submit Commercial Application,2025-08-27 12:09:36,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00194,Conduct RM Welcome & Handoff,2025-09-01 23:09:36,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00195,Submit Commercial Application,2025-08-25 23:48:49,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00195,Conduct RM Welcome & Handoff,2025-09-02 15:48:49,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00196,Submit Commercial Application,2025-08-28 08:29:09,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00196,Conduct RM Welcome & Handoff,2025-09-03 00:29:09,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00197,Submit Commercial Application,2025-08-27 02:44:30,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00197,Conduct RM Welcome & Handoff,2025-09-01 07:44:30,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00198,Submit Commercial Application,2025-08-30 07:23:14,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00198,Conduct RM Welcome & Handoff,2025-09-05 04:23:14,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00199,Submit Commercial Application,2025-08-31 02:44:04,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00199,Conduct RM Welcome & Handoff,2025-09-05 16:44:04,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00200,Submit Commercial Application,2025-08-30 16:51:57,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00200,Conduct RM Welcome & Handoff,2025-09-04 20:51:57,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00201,Submit Commercial Application,2025-08-31 03:27:20,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00201,Conduct RM Welcome & Handoff,2025-09-04 15:27:20,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00202,Submit Commercial Application,2025-08-30 15:27:21,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00202,Conduct RM Welcome & Handoff,2025-09-07 14:27:21,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00203,Submit Commercial Application,2025-09-01 22:52:41,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00203,Conduct RM Welcome & Handoff,2025-09-06 08:52:41,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00204,Submit Commercial Application,2025-08-31 17:27:09,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00204,Conduct RM Welcome & Handoff,2025-09-12 13:27:09,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00205,Submit Commercial Application,2025-09-01 03:53:41,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00205,Conduct RM Welcome & Handoff,2025-09-09 20:53:41,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00206,Submit Commercial Application,2025-09-02 11:08:39,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00206,Conduct RM Welcome & Handoff,2025-09-11 08:08:39,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00207,Submit Commercial Application,2025-09-03 21:41:57,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00207,Conduct RM Welcome & Handoff,2025-09-15 12:41:57,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00208,Submit Commercial Application,2025-09-05 12:30:13,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00208,Conduct RM Welcome & Handoff,2025-09-13 05:30:13,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00209,Submit Commercial Application,2025-09-04 23:13:57,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00209,Conduct RM Welcome & Handoff,2025-09-10 16:13:57,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00210,Submit Commercial Application,2025-09-06 07:00:04,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00211,Submit Commercial Application,2025-09-04 12:33:36,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00211,Conduct RM Welcome & Handoff,2025-09-10 01:33:36,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00212,Submit Commercial Application,2025-09-06 18:10:30,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00212,Conduct RM Welcome & Handoff,2025-09-13 04:10:30,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00213,Submit Commercial Application,2025-09-06 14:15:23,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00213,Conduct RM Welcome & Handoff,2025-09-13 05:15:23,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00214,Submit Commercial Application,2025-09-08 18:10:40,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00214,Conduct RM Welcome & Handoff,2025-09-13 05:10:40,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00215,Submit Commercial Application,2025-09-06 21:19:24,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00215,Conduct RM Welcome & Handoff,2025-09-13 17:19:24,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00216,Submit Commercial Application,2025-09-10 08:19:55,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00216,Conduct RM Welcome & Handoff,2025-09-14 12:19:55,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00217,Submit Commercial Application,2025-09-10 21:33:17,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00218,Submit Commercial Application,2025-09-08 17:35:31,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00218,Conduct RM Welcome & Handoff,2025-09-14 14:35:31,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00219,Submit Commercial Application,2025-09-09 23:58:02,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00219,Conduct RM Welcome & Handoff,2025-09-14 22:58:02,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00220,Submit Commercial Application,2025-09-11 19:15:07,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00221,Submit Commercial Application,2025-09-13 07:32:44,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00221,Conduct RM Welcome & Handoff,2025-09-18 12:32:44,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00222,Submit Commercial Application,2025-09-12 21:09:45,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00222,Conduct RM Welcome & Handoff,2025-09-25 08:09:45,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00223,Submit Commercial Application,2025-09-13 06:49:12,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00223,Conduct RM Welcome & Handoff,2025-09-19 12:49:12,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00224,Submit Commercial Application,2025-09-13 07:34:21,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00224,Conduct RM Welcome & Handoff,2025-09-18 17:34:21,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00225,Submit Commercial Application,2025-09-15 17:52:28,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00225,Conduct RM Welcome & Handoff,2025-09-19 12:52:28,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00226,Submit Commercial Application,2025-09-13 18:48:25,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00226,Conduct RM Welcome & Handoff,2025-09-21 02:48:25,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00227,Submit Commercial Application,2025-09-14 18:37:39,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00227,Conduct RM Welcome & Handoff,2025-09-19 07:37:39,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00228,Submit Commercial Application,2025-09-15 05:13:12,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00228,Conduct RM Welcome & Handoff,2025-09-20 20:13:12,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00229,Submit Commercial Application,2025-09-17 12:35:38,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00229,Conduct RM Welcome & Handoff,2025-09-23 14:35:38,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00230,Submit Commercial Application,2025-09-18 09:26:52,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00230,Conduct RM Welcome & Handoff,2025-09-24 08:26:52,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00231,Submit Commercial Application,2025-09-17 18:41:14,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00231,Conduct RM Welcome & Handoff,2025-09-26 12:41:14,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00232,Submit Commercial Application,2025-09-18 14:37:35,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00233,Submit Commercial Application,2025-09-18 01:36:37,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00233,Conduct RM Welcome & Handoff,2025-09-25 14:36:37,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00234,Submit Commercial Application,2025-09-20 14:49:43,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00235,Submit Commercial Application,2025-09-20 20:24:38,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00235,Conduct RM Welcome & Handoff,2025-09-26 18:24:38,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00236,Submit Commercial Application,2025-09-20 02:50:46,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00236,Conduct RM Welcome & Handoff,2025-09-27 06:50:46,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00237,Submit Commercial Application,2025-09-23 01:09:34,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00237,Conduct RM Welcome & Handoff,2025-09-28 23:09:34,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00238,Submit Commercial Application,2025-09-23 19:04:21,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00238,Conduct RM Welcome & Handoff,2025-10-01 01:04:21,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00239,Submit Commercial Application,2025-09-24 02:23:28,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00239,Conduct RM Welcome & Handoff,2025-09-29 07:23:28,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00240,Submit Commercial Application,2025-09-23 18:22:39,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00241,Submit Commercial Application,2025-09-22 19:58:10,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00241,Conduct RM Welcome & Handoff,2025-09-27 22:58:10,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00242,Submit Commercial Application,2025-09-24 00:42:38,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00242,Conduct RM Welcome & Handoff,2025-10-07 10:42:38,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00243,Submit Commercial Application,2025-09-24 01:20:11,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00243,Conduct RM Welcome & Handoff,2025-10-11 02:20:11,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00244,Submit Commercial Application,2025-09-25 09:06:43,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00244,Conduct RM Welcome & Handoff,2025-10-02 15:06:43,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00245,Submit Commercial Application,2025-09-25 03:31:00,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00245,Conduct RM Welcome & Handoff,2025-09-30 17:31:00,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00246,Submit Commercial Application,2025-09-28 12:15:41,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00246,Conduct RM Welcome & Handoff,2025-10-03 20:15:41,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00247,Submit Commercial Application,2025-09-27 10:23:22,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00248,Submit Commercial Application,2025-09-28 10:30:14,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00249,Submit Commercial Application,2025-09-28 09:02:09,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00249,Conduct RM Welcome & Handoff,2025-10-03 20:02:09,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00250,Submit Commercial Application,2025-09-28 08:46:28,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00250,Conduct RM Welcome & Handoff,2025-10-03 05:46:28,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00251,Submit Commercial Application,2025-09-29 19:55:12,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00251,Conduct RM Welcome & Handoff,2025-10-16 00:55:12,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00252,Submit Commercial Application,2025-09-29 21:21:18,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00252,Conduct RM Welcome & Handoff,2025-10-06 00:21:18,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00253,Submit Commercial Application,2025-10-02 11:27:53,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00253,Conduct RM Welcome & Handoff,2025-10-07 16:27:53,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00254,Submit Commercial Application,2025-10-02 03:12:31,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00255,Submit Commercial Application,2025-10-02 06:34:20,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00255,Conduct RM Welcome & Handoff,2025-10-08 04:34:20,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00256,Submit Commercial Application,2025-10-01 23:53:49,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00256,Conduct RM Welcome & Handoff,2025-10-15 08:53:49,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00257,Submit Commercial Application,2025-10-02 09:12:06,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00257,Conduct RM Welcome & Handoff,2025-10-08 08:12:06,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00258,Submit Commercial Application,2025-10-03 11:53:29,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00258,Conduct RM Welcome & Handoff,2025-10-09 02:53:29,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00259,Submit Commercial Application,2025-10-03 13:57:27,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00259,Conduct RM Welcome & Handoff,2025-10-17 15:57:27,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00260,Submit Commercial Application,2025-10-04 07:53:30,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00260,Conduct RM Welcome & Handoff,2025-10-08 23:53:30,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00261,Submit Commercial Application,2025-10-04 21:53:02,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00261,Conduct RM Welcome & Handoff,2025-10-15 08:53:02,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00262,Submit Commercial Application,2025-10-06 13:24:12,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00262,Conduct RM Welcome & Handoff,2025-10-14 00:24:12,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00263,Submit Commercial Application,2025-10-07 18:00:33,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00263,Conduct RM Welcome & Handoff,2025-10-16 06:00:33,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00264,Submit Commercial Application,2025-10-07 20:38:12,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00264,Conduct RM Welcome & Handoff,2025-10-12 03:38:12,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00265,Submit Commercial Application,2025-10-10 00:26:08,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00265,Conduct RM Welcome & Handoff,2025-10-17 10:26:08,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00266,Submit Commercial Application,2025-10-10 10:31:30,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00267,Submit Commercial Application,2025-10-09 00:44:32,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00267,Conduct RM Welcome & Handoff,2025-10-13 09:44:32,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00268,Submit Commercial Application,2025-10-09 12:13:25,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00268,Conduct RM Welcome & Handoff,2025-10-14 06:13:25,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00269,Submit Commercial Application,2025-10-12 07:52:10,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00269,Conduct RM Welcome & Handoff,2025-10-16 15:52:10,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00270,Submit Commercial Application,2025-10-12 01:52:18,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00270,Conduct RM Welcome & Handoff,2025-10-18 08:52:18,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00271,Submit Commercial Application,2025-10-13 17:21:54,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00271,Conduct RM Welcome & Handoff,2025-10-18 17:21:54,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00272,Submit Commercial Application,2025-10-13 18:20:17,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00272,Conduct RM Welcome & Handoff,2025-10-20 13:20:17,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00273,Submit Commercial Application,2025-10-14 12:19:32,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00273,Conduct RM Welcome & Handoff,2025-10-21 22:19:32,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00274,Submit Commercial Application,2025-10-14 11:06:18,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00274,Conduct RM Welcome & Handoff,2025-10-20 04:06:18,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00275,Submit Commercial Application,2025-10-14 15:53:24,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00275,Conduct RM Welcome & Handoff,2025-10-20 14:53:24,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00276,Submit Commercial Application,2025-10-15 20:12:25,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00276,Conduct RM Welcome & Handoff,2025-10-21 04:12:25,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00277,Submit Commercial Application,2025-10-14 20:34:03,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00277,Conduct RM Welcome & Handoff,2025-10-29 11:34:03,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00278,Submit Commercial Application,2025-10-17 05:23:13,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00279,Submit Commercial Application,2025-10-18 05:57:25,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00279,Conduct RM Welcome & Handoff,2025-10-23 08:57:25,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00280,Submit Commercial Application,2025-10-17 18:51:58,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00281,Submit Commercial Application,2025-10-19 17:47:35,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00281,Conduct RM Welcome & Handoff,2025-10-24 12:47:35,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00282,Submit Commercial Application,2025-10-18 12:29:27,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00282,Conduct RM Welcome & Handoff,2025-10-25 07:29:27,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00283,Submit Commercial Application,2025-10-18 21:34:29,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00283,Conduct RM Welcome & Handoff,2025-10-29 11:34:29,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00284,Submit Commercial Application,2025-10-21 07:20:46,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00284,Conduct RM Welcome & Handoff,2025-10-26 09:20:46,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00285,Submit Commercial Application,2025-10-20 15:10:43,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00285,Conduct RM Welcome & Handoff,2025-10-29 00:10:43,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00286,Submit Commercial Application,2025-10-20 00:59:51,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00286,Conduct RM Welcome & Handoff,2025-10-26 11:59:51,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00287,Submit Commercial Application,2025-10-23 00:52:21,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00287,Conduct RM Welcome & Handoff,2025-11-05 09:52:21,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00288,Submit Commercial Application,2025-10-24 03:33:39,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00288,Conduct RM Welcome & Handoff,2025-10-29 19:33:39,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00289,Submit Commercial Application,2025-10-24 04:17:19,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00289,Conduct RM Welcome & Handoff,2025-10-29 00:17:19,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00290,Submit Commercial Application,2025-10-22 15:35:03,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00290,Conduct RM Welcome & Handoff,2025-10-27 23:35:03,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00291,Submit Commercial Application,2025-10-24 21:54:04,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00291,Conduct RM Welcome & Handoff,2025-10-30 20:54:04,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00292,Submit Commercial Application,2025-10-26 10:20:09,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00292,Conduct RM Welcome & Handoff,2025-11-01 02:20:09,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00293,Submit Commercial Application,2025-10-26 04:33:35,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00293,Conduct RM Welcome & Handoff,2025-11-01 14:33:35,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00294,Submit Commercial Application,2025-10-26 03:54:46,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00294,Conduct RM Welcome & Handoff,2025-11-03 10:54:46,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00295,Submit Commercial Application,2025-10-27 11:36:40,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00295,Conduct RM Welcome & Handoff,2025-11-12 19:36:40,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00296,Submit Commercial Application,2025-10-28 23:19:31,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00296,Conduct RM Welcome & Handoff,2025-11-04 20:19:31,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00297,Submit Commercial Application,2025-10-28 20:35:20,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00297,Conduct RM Welcome & Handoff,2025-11-05 07:35:20,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00298,Submit Commercial Application,2025-10-27 08:13:03,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00299,Submit Commercial Application,2025-10-28 02:19:15,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00299,Conduct RM Welcome & Handoff,2025-11-11 23:19:15,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00300,Submit Commercial Application,2025-10-31 08:26:45,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00300,Conduct RM Welcome & Handoff,2025-11-14 05:26:45,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00301,Submit Commercial Application,2025-10-31 23:54:18,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00301,Conduct RM Welcome & Handoff,2025-11-09 11:54:18,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00302,Submit Commercial Application,2025-11-01 13:24:41,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00302,Conduct RM Welcome & Handoff,2025-11-12 21:24:41,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00303,Submit Commercial Application,2025-10-31 21:06:01,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00303,Conduct RM Welcome & Handoff,2025-11-07 15:06:01,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00304,Submit Commercial Application,2025-11-01 11:06:43,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00305,Submit Commercial Application,2025-11-02 11:04:24,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00305,Conduct RM Welcome & Handoff,2025-11-08 16:04:24,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00306,Submit Commercial Application,2025-11-03 09:53:49,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00306,Conduct RM Welcome & Handoff,2025-11-08 16:53:49,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00307,Submit Commercial Application,2025-11-02 12:38:35,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00307,Conduct RM Welcome & Handoff,2025-11-09 06:38:35,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00308,Submit Commercial Application,2025-11-04 05:54:26,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00308,Conduct RM Welcome & Handoff,2025-11-10 15:54:26,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00309,Submit Commercial Application,2025-11-05 06:26:37,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00309,Conduct RM Welcome & Handoff,2025-11-11 01:26:37,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00310,Submit Commercial Application,2025-11-04 09:27:41,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00310,Conduct RM Welcome & Handoff,2025-11-13 16:27:41,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00311,Submit Commercial Application,2025-11-05 14:38:42,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00311,Conduct RM Welcome & Handoff,2025-11-20 12:38:42,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00312,Submit Commercial Application,2025-11-04 19:58:16,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00312,Conduct RM Welcome & Handoff,2025-11-11 16:58:16,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00313,Submit Commercial Application,2025-11-07 16:43:07,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00313,Conduct RM Welcome & Handoff,2025-11-16 08:43:07,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00314,Submit Commercial Application,2025-11-06 21:41:39,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00314,Conduct RM Welcome & Handoff,2025-11-13 05:41:39,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00315,Submit Commercial Application,2025-11-08 10:29:03,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00315,Conduct RM Welcome & Handoff,2025-11-15 11:29:03,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00316,Submit Commercial Application,2025-11-09 15:29:53,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00316,Conduct RM Welcome & Handoff,2025-11-15 02:29:53,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00317,Submit Commercial Application,2025-11-09 03:13:53,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00317,Conduct RM Welcome & Handoff,2025-11-14 18:13:53,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00318,Submit Commercial Application,2025-11-10 13:06:21,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00318,Conduct RM Welcome & Handoff,2025-11-18 08:06:21,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00319,Submit Commercial Application,2025-11-10 22:09:10,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00319,Conduct RM Welcome & Handoff,2025-11-19 03:09:10,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00320,Submit Commercial Application,2025-11-10 18:34:12,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00321,Submit Commercial Application,2025-11-11 08:56:15,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00321,Conduct RM Welcome & Handoff,2025-11-15 14:56:15,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00322,Submit Commercial Application,2025-11-12 21:02:06,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00322,Conduct RM Welcome & Handoff,2025-11-20 10:02:06,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00323,Submit Commercial Application,2025-11-13 06:36:07,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00323,Conduct RM Welcome & Handoff,2025-11-20 13:36:07,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00324,Submit Commercial Application,2025-11-12 20:42:51,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00324,Conduct RM Welcome & Handoff,2025-11-19 22:42:51,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00325,Submit Commercial Application,2025-11-14 05:39:07,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00326,Submit Commercial Application,2025-11-13 14:58:04,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00326,Conduct RM Welcome & Handoff,2025-11-19 14:58:04,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00327,Submit Commercial Application,2025-11-16 14:31:07,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00327,Conduct RM Welcome & Handoff,2025-11-22 21:31:07,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00328,Submit Commercial Application,2025-11-16 00:53:54,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00328,Conduct RM Welcome & Handoff,2025-11-20 10:53:54,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00329,Submit Commercial Application,2025-11-16 18:40:40,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00330,Submit Commercial Application,2025-11-16 00:58:57,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00330,Conduct RM Welcome & Handoff,2025-11-23 06:58:57,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00331,Submit Commercial Application,2025-11-18 21:28:20,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00331,Conduct RM Welcome & Handoff,2025-11-23 18:28:20,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00332,Submit Commercial Application,2025-11-19 06:28:44,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00332,Conduct RM Welcome & Handoff,2025-11-24 08:28:44,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00333,Submit Commercial Application,2025-11-17 19:56:29,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00334,Submit Commercial Application,2025-11-19 12:51:55,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00335,Submit Commercial Application,2025-11-21 11:28:13,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00335,Conduct RM Welcome & Handoff,2025-11-26 20:28:13,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00336,Submit Commercial Application,2025-11-19 23:02:01,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00336,Conduct RM Welcome & Handoff,2025-12-04 12:02:01,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00337,Submit Commercial Application,2025-11-20 23:33:34,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00337,Conduct RM Welcome & Handoff,2025-12-05 02:33:34,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00338,Submit Commercial Application,2025-11-23 09:52:28,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00338,Conduct RM Welcome & Handoff,2025-11-29 06:52:28,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00339,Submit Commercial Application,2025-11-22 16:30:54,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00339,Conduct RM Welcome & Handoff,2025-11-28 02:30:54,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00340,Submit Commercial Application,2025-11-24 04:10:53,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00340,Conduct RM Welcome & Handoff,2025-11-30 09:10:53,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00341,Submit Commercial Application,2025-11-23 16:54:53,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00341,Conduct RM Welcome & Handoff,2025-11-30 06:54:53,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00342,Submit Commercial Application,2025-11-24 13:51:01,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00342,Conduct RM Welcome & Handoff,2025-12-03 21:51:01,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00343,Submit Commercial Application,2025-11-24 22:18:58,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00343,Conduct RM Welcome & Handoff,2025-12-03 17:18:58,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00344,Submit Commercial Application,2025-11-26 03:33:06,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00344,Conduct RM Welcome & Handoff,2025-12-04 12:33:06,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00345,Submit Commercial Application,2025-11-27 18:12:50,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00345,Conduct RM Welcome & Handoff,2025-12-12 14:12:50,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00346,Submit Commercial Application,2025-11-26 23:38:04,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00346,Conduct RM Welcome & Handoff,2025-12-02 05:38:04,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00347,Submit Commercial Application,2025-11-26 14:56:56,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00347,Conduct RM Welcome & Handoff,2025-12-06 15:56:56,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00348,Submit Commercial Application,2025-11-29 05:23:57,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00349,Submit Commercial Application,2025-11-29 00:48:15,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00350,Submit Commercial Application,2025-11-30 17:53:46,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00350,Conduct RM Welcome & Handoff,2025-12-06 16:53:46,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00351,Submit Commercial Application,2025-12-01 04:16:00,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00351,Conduct RM Welcome & Handoff,2025-12-18 08:16:00,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00352,Submit Commercial Application,2025-12-01 18:50:39,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00352,Conduct RM Welcome & Handoff,2025-12-07 03:50:39,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00353,Submit Commercial Application,2025-11-29 19:41:35,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00353,Conduct RM Welcome & Handoff,2025-12-04 16:41:35,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00354,Submit Commercial Application,2025-12-02 11:55:44,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00354,Conduct RM Welcome & Handoff,2025-12-09 15:55:44,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00355,Submit Commercial Application,2025-12-03 11:10:41,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00355,Conduct RM Welcome & Handoff,2025-12-10 15:10:41,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00356,Submit Commercial Application,2025-12-01 18:36:14,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00356,Conduct RM Welcome & Handoff,2025-12-06 12:36:14,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00357,Submit Commercial Application,2025-12-05 00:27:57,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00358,Submit Commercial Application,2025-12-04 23:51:18,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00358,Conduct RM Welcome & Handoff,2025-12-13 01:51:18,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00359,Submit Commercial Application,2025-12-05 13:21:40,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00359,Conduct RM Welcome & Handoff,2025-12-10 18:21:40,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00360,Submit Commercial Application,2025-12-04 06:39:54,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00361,Submit Commercial Application,2025-12-07 06:40:52,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00362,Submit Commercial Application,2025-12-05 10:13:02,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00362,Conduct RM Welcome & Handoff,2025-12-09 12:13:02,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00363,Submit Commercial Application,2025-12-08 11:38:10,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00364,Submit Commercial Application,2025-12-07 20:11:58,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00364,Conduct RM Welcome & Handoff,2025-12-21 11:11:58,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00365,Submit Commercial Application,2025-12-07 09:24:27,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00365,Conduct RM Welcome & Handoff,2025-12-13 21:24:27,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00366,Submit Commercial Application,2025-12-09 23:38:36,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00366,Conduct RM Welcome & Handoff,2025-12-16 15:38:36,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00367,Submit Commercial Application,2025-12-08 13:36:22,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00367,Conduct RM Welcome & Handoff,2025-12-13 05:36:22,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00368,Submit Commercial Application,2025-12-10 20:44:57,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00368,Conduct RM Welcome & Handoff,2025-12-16 02:44:57,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00369,Submit Commercial Application,2025-12-11 11:09:13,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00369,Conduct RM Welcome & Handoff,2025-12-18 16:09:13,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00370,Submit Commercial Application,2025-12-10 06:37:15,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00371,Submit Commercial Application,2025-12-12 07:15:08,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00371,Conduct RM Welcome & Handoff,2025-12-19 04:15:08,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00372,Submit Commercial Application,2025-12-12 07:30:34,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00372,Conduct RM Welcome & Handoff,2025-12-17 11:30:34,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00373,Submit Commercial Application,2025-12-13 18:46:29,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00373,Conduct RM Welcome & Handoff,2025-12-17 23:46:29,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00374,Submit Commercial Application,2025-12-14 22:15:21,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00374,Conduct RM Welcome & Handoff,2025-12-21 15:15:21,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00375,Submit Commercial Application,2025-12-15 14:00:08,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00375,Conduct RM Welcome & Handoff,2025-12-21 07:00:08,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00376,Submit Commercial Application,2025-12-14 03:01:41,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00376,Conduct RM Welcome & Handoff,2025-12-18 21:01:41,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00377,Submit Commercial Application,2025-12-15 01:14:08,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00378,Submit Commercial Application,2025-12-17 16:40:10,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00378,Conduct RM Welcome & Handoff,2025-12-25 13:40:10,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00379,Submit Commercial Application,2025-12-18 09:52:47,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00380,Submit Commercial Application,2025-12-18 01:35:06,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00380,Conduct RM Welcome & Handoff,2025-12-24 08:35:06,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00381,Submit Commercial Application,2025-12-17 21:16:06,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00381,Conduct RM Welcome & Handoff,2025-12-24 05:16:06,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00382,Submit Commercial Application,2025-12-19 15:43:14,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00382,Conduct RM Welcome & Handoff,2025-12-25 03:43:14,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00383,Submit Commercial Application,2025-12-19 07:35:40,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00384,Submit Commercial Application,2025-12-20 03:21:32,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00384,Conduct RM Welcome & Handoff,2025-12-25 07:21:32,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00385,Submit Commercial Application,2025-12-21 01:09:17,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00386,Submit Commercial Application,2025-12-21 23:53:50,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00387,Submit Commercial Application,2025-12-21 04:16:50,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00387,Conduct RM Welcome & Handoff,2025-12-28 09:16:50,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00388,Submit Commercial Application,2025-12-22 17:39:00,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00388,Conduct RM Welcome & Handoff,2025-12-27 13:39:00,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00389,Submit Commercial Application,2025-12-23 16:01:31,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00389,Conduct RM Welcome & Handoff,2025-12-29 11:01:31,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00390,Submit Commercial Application,2025-12-23 16:27:22,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00390,Conduct RM Welcome & Handoff,2025-12-30 20:27:22,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00391,Submit Commercial Application,2025-12-23 16:19:27,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00391,Conduct RM Welcome & Handoff,2025-12-28 08:19:27,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00392,Submit Commercial Application,2025-12-25 20:48:53,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00393,Submit Commercial Application,2025-12-25 15:44:37,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00393,Conduct RM Welcome & Handoff,2026-01-10 18:44:37,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00394,Submit Commercial Application,2025-12-24 22:12:41,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00394,Conduct RM Welcome & Handoff,2026-01-11 20:12:41,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00395,Submit Commercial Application,2025-12-26 05:50:00,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00395,Conduct RM Welcome & Handoff,2026-01-02 20:50:00,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00396,Submit Commercial Application,2025-12-28 13:28:13,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00397,Submit Commercial Application,2025-12-29 02:04:56,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00397,Conduct RM Welcome & Handoff,2026-01-02 03:04:56,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00398,Submit Commercial Application,2025-12-29 22:17:53,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00399,Submit Commercial Application,2025-12-30 13:01:01,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00399,Conduct RM Welcome & Handoff,2026-01-07 13:01:01,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00400,Submit Commercial Application,2025-12-29 21:56:56,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00400,Conduct RM Welcome & Handoff,2026-01-03 22:56:56,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00401,Submit Commercial Application,2025-12-30 08:39:30,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00401,Conduct RM Welcome & Handoff,2026-01-03 22:39:30,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00402,Submit Commercial Application,2025-12-29 22:31:48,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00402,Conduct RM Welcome & Handoff,2026-01-05 00:31:48,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00403,Submit Commercial Application,2025-12-30 09:51:35,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00403,Conduct RM Welcome & Handoff,2026-01-05 14:51:35,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00404,Submit Commercial Application,2026-01-01 04:41:16,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00404,Conduct RM Welcome & Handoff,2026-01-09 19:41:16,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00405,Submit Commercial Application,2025-12-31 22:12:04,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00405,Conduct RM Welcome & Handoff,2026-01-06 23:12:04,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00406,Submit Commercial Application,2026-01-01 06:42:04,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00406,Conduct RM Welcome & Handoff,2026-01-07 20:42:04,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00407,Submit Commercial Application,2026-01-04 03:47:30,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00407,Conduct RM Welcome & Handoff,2026-01-09 03:47:30,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00408,Submit Commercial Application,2026-01-04 07:06:37,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00409,Submit Commercial Application,2026-01-05 15:37:20,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00409,Conduct RM Welcome & Handoff,2026-01-12 09:37:20,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00410,Submit Commercial Application,2026-01-03 22:27:12,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00411,Submit Commercial Application,2026-01-04 19:51:29,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00411,Conduct RM Welcome & Handoff,2026-01-10 14:51:29,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00412,Submit Commercial Application,2026-01-06 10:31:31,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00412,Conduct RM Welcome & Handoff,2026-01-14 20:31:31,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00413,Submit Commercial Application,2026-01-07 03:21:55,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00413,Conduct RM Welcome & Handoff,2026-01-16 12:21:55,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00414,Submit Commercial Application,2026-01-07 14:30:36,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00414,Conduct RM Welcome & Handoff,2026-01-21 13:30:36,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00415,Submit Commercial Application,2026-01-08 20:59:51,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00415,Conduct RM Welcome & Handoff,2026-01-13 09:59:51,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00416,Submit Commercial Application,2026-01-09 07:36:41,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00417,Submit Commercial Application,2026-01-08 19:57:44,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00417,Conduct RM Welcome & Handoff,2026-01-14 16:57:44,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00418,Submit Commercial Application,2026-01-10 00:31:31,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00418,Conduct RM Welcome & Handoff,2026-01-18 05:31:31,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00419,Submit Commercial Application,2026-01-11 07:38:57,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00419,Conduct RM Welcome & Handoff,2026-01-20 15:38:57,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00420,Submit Commercial Application,2026-01-09 13:54:15,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00420,Conduct RM Welcome & Handoff,2026-01-15 22:54:15,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00421,Submit Commercial Application,2026-01-10 04:41:01,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00421,Conduct RM Welcome & Handoff,2026-01-15 08:41:01,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00422,Submit Commercial Application,2026-01-11 08:04:13,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00423,Submit Commercial Application,2026-01-13 09:16:54,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00423,Conduct RM Welcome & Handoff,2026-01-20 21:16:54,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00424,Submit Commercial Application,2026-01-12 03:24:34,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00424,Conduct RM Welcome & Handoff,2026-01-18 11:24:34,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00425,Submit Commercial Application,2026-01-13 03:44:11,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00425,Conduct RM Welcome & Handoff,2026-01-17 14:44:11,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00426,Submit Commercial Application,2026-01-14 11:04:56,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00426,Conduct RM Welcome & Handoff,2026-01-20 10:04:56,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00427,Submit Commercial Application,2026-01-15 01:19:39,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00427,Conduct RM Welcome & Handoff,2026-01-21 12:19:39,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00428,Submit Commercial Application,2026-01-15 12:13:31,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00428,Conduct RM Welcome & Handoff,2026-01-27 19:13:31,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00429,Submit Commercial Application,2026-01-15 11:23:31,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00429,Conduct RM Welcome & Handoff,2026-01-24 17:23:31,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00430,Submit Commercial Application,2026-01-17 06:38:42,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00430,Conduct RM Welcome & Handoff,2026-01-22 10:38:42,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00431,Submit Commercial Application,2026-01-16 05:13:22,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00431,Conduct RM Welcome & Handoff,2026-01-21 15:13:22,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00432,Submit Commercial Application,2026-01-18 10:04:09,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00432,Conduct RM Welcome & Handoff,2026-01-24 19:04:09,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00433,Submit Commercial Application,2026-01-17 22:18:23,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00433,Conduct RM Welcome & Handoff,2026-01-23 21:18:23,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00434,Submit Commercial Application,2026-01-19 18:05:28,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00434,Conduct RM Welcome & Handoff,2026-01-24 15:05:28,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00435,Submit Commercial Application,2026-01-19 20:48:35,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00435,Conduct RM Welcome & Handoff,2026-01-24 18:48:35,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00436,Submit Commercial Application,2026-01-20 04:35:00,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00436,Conduct RM Welcome & Handoff,2026-01-25 14:35:00,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00437,Submit Commercial Application,2026-01-22 16:09:49,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00438,Submit Commercial Application,2026-01-22 00:58:29,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00438,Conduct RM Welcome & Handoff,2026-01-26 06:58:29,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00439,Submit Commercial Application,2026-01-22 05:16:06,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00439,Conduct RM Welcome & Handoff,2026-02-02 04:16:06,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00440,Submit Commercial Application,2026-01-23 02:10:18,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00441,Submit Commercial Application,2026-01-24 02:11:30,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00441,Conduct RM Welcome & Handoff,2026-01-30 12:11:30,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00442,Submit Commercial Application,2026-01-23 18:45:24,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00442,Conduct RM Welcome & Handoff,2026-01-28 12:45:24,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00443,Submit Commercial Application,2026-01-25 22:28:51,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00443,Conduct RM Welcome & Handoff,2026-01-30 23:28:51,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00444,Submit Commercial Application,2026-01-26 17:59:19,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00444,Conduct RM Welcome & Handoff,2026-02-03 01:59:19,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00445,Submit Commercial Application,2026-01-26 17:55:34,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00445,Conduct RM Welcome & Handoff,2026-02-04 04:55:34,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00446,Submit Commercial Application,2026-01-27 15:50:04,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00446,Conduct RM Welcome & Handoff,2026-02-05 06:50:04,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00447,Submit Commercial Application,2026-01-27 02:02:46,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00447,Conduct RM Welcome & Handoff,2026-02-08 05:02:46,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00448,Submit Commercial Application,2026-01-26 12:49:47,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00448,Conduct RM Welcome & Handoff,2026-01-30 22:49:47,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00449,Submit Commercial Application,2026-01-28 03:02:22,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00449,Conduct RM Welcome & Handoff,2026-02-03 15:02:22,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00450,Submit Commercial Application,2026-01-29 04:29:16,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00450,Conduct RM Welcome & Handoff,2026-02-15 13:29:16,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00451,Submit Commercial Application,2026-01-30 16:09:51,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00451,Conduct RM Welcome & Handoff,2026-02-07 09:09:51,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00452,Submit Commercial Application,2026-01-31 17:08:42,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00452,Conduct RM Welcome & Handoff,2026-02-06 13:08:42,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00453,Submit Commercial Application,2026-01-29 17:56:23,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00453,Conduct RM Welcome & Handoff,2026-02-07 08:56:23,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00454,Submit Commercial Application,2026-02-01 16:26:04,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00454,Conduct RM Welcome & Handoff,2026-02-14 01:26:04,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00455,Submit Commercial Application,2026-01-30 17:16:01,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00455,Conduct RM Welcome & Handoff,2026-02-04 12:16:01,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00456,Submit Commercial Application,2026-01-31 10:30:18,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00456,Conduct RM Welcome & Handoff,2026-02-07 01:30:18,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00457,Submit Commercial Application,2026-02-02 21:53:34,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00457,Conduct RM Welcome & Handoff,2026-02-08 19:53:34,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00458,Submit Commercial Application,2026-02-04 02:41:48,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00458,Conduct RM Welcome & Handoff,2026-02-12 01:41:48,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00459,Submit Commercial Application,2026-02-02 22:01:05,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00459,Conduct RM Welcome & Handoff,2026-02-09 09:01:05,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00460,Submit Commercial Application,2026-02-04 07:17:17,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00461,Submit Commercial Application,2026-02-03 10:44:37,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00461,Conduct RM Welcome & Handoff,2026-02-09 12:44:37,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00462,Submit Commercial Application,2026-02-04 23:10:31,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00462,Conduct RM Welcome & Handoff,2026-02-09 00:10:31,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00463,Submit Commercial Application,2026-02-07 10:45:19,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00463,Conduct RM Welcome & Handoff,2026-02-13 15:45:19,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00464,Submit Commercial Application,2026-02-05 13:30:49,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00464,Conduct RM Welcome & Handoff,2026-02-11 15:30:49,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00465,Submit Commercial Application,2026-02-07 09:59:23,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00466,Submit Commercial Application,2026-02-08 09:49:34,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00466,Conduct RM Welcome & Handoff,2026-02-14 16:49:34,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00467,Submit Commercial Application,2026-02-07 01:20:28,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00467,Conduct RM Welcome & Handoff,2026-02-13 20:20:28,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00468,Submit Commercial Application,2026-02-07 23:49:54,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00468,Conduct RM Welcome & Handoff,2026-02-14 17:49:54,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00469,Submit Commercial Application,2026-02-08 07:20:00,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00470,Submit Commercial Application,2026-02-11 10:03:35,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00470,Conduct RM Welcome & Handoff,2026-02-17 13:03:35,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00471,Submit Commercial Application,2026-02-09 21:19:34,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00471,Conduct RM Welcome & Handoff,2026-02-16 15:19:34,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00472,Submit Commercial Application,2026-02-11 12:04:52,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00472,Conduct RM Welcome & Handoff,2026-02-18 04:04:52,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00473,Submit Commercial Application,2026-02-12 10:52:39,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00473,Conduct RM Welcome & Handoff,2026-02-19 12:52:39,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00474,Submit Commercial Application,2026-02-13 08:18:01,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00474,Conduct RM Welcome & Handoff,2026-02-18 13:18:01,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00475,Submit Commercial Application,2026-02-12 20:59:17,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00475,Conduct RM Welcome & Handoff,2026-02-19 09:59:17,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00476,Submit Commercial Application,2026-02-13 14:44:31,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00476,Conduct RM Welcome & Handoff,2026-02-28 16:44:31,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00477,Submit Commercial Application,2026-02-14 00:38:33,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00477,Conduct RM Welcome & Handoff,2026-02-20 00:38:33,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00478,Submit Commercial Application,2026-02-15 22:09:26,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00479,Submit Commercial Application,2026-02-16 23:14:47,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00479,Conduct RM Welcome & Handoff,2026-02-21 12:14:47,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00480,Submit Commercial Application,2026-02-17 15:36:44,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00480,Conduct RM Welcome & Handoff,2026-02-22 19:36:44,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00481,Submit Commercial Application,2026-02-16 03:21:48,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00481,Conduct RM Welcome & Handoff,2026-02-22 16:21:48,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00482,Submit Commercial Application,2026-02-16 11:01:19,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00482,Conduct RM Welcome & Handoff,2026-02-21 17:01:19,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00483,Submit Commercial Application,2026-02-17 10:03:57,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00483,Conduct RM Welcome & Handoff,2026-02-25 15:03:57,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00484,Submit Commercial Application,2026-02-17 15:36:43,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00484,Conduct RM Welcome & Handoff,2026-02-21 23:36:43,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00485,Submit Commercial Application,2026-02-19 23:50:28,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00485,Conduct RM Welcome & Handoff,2026-02-26 12:50:28,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00486,Submit Commercial Application,2026-02-19 22:04:41,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00486,Conduct RM Welcome & Handoff,2026-03-06 19:04:41,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00487,Submit Commercial Application,2026-02-20 13:23:12,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00487,Conduct RM Welcome & Handoff,2026-02-26 07:23:12,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00488,Submit Commercial Application,2026-02-20 06:01:14,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00488,Conduct RM Welcome & Handoff,2026-02-27 15:01:14,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00489,Submit Commercial Application,2026-02-20 16:21:52,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00489,Conduct RM Welcome & Handoff,2026-02-25 02:21:52,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00490,Submit Commercial Application,2026-02-23 09:10:10,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00490,Conduct RM Welcome & Handoff,2026-02-28 02:10:10,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00491,Submit Commercial Application,2026-02-21 16:47:08,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00491,Conduct RM Welcome & Handoff,2026-02-25 09:47:08,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00492,Submit Commercial Application,2026-02-22 09:39:07,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00492,Conduct RM Welcome & Handoff,2026-02-26 09:39:07,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00493,Submit Commercial Application,2026-02-24 02:08:37,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00493,Conduct RM Welcome & Handoff,2026-03-01 01:08:37,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00494,Submit Commercial Application,2026-02-25 02:39:52,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00494,Conduct RM Welcome & Handoff,2026-03-02 07:39:52,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00495,Submit Commercial Application,2026-02-26 10:07:10,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00495,Conduct RM Welcome & Handoff,2026-03-03 08:07:10,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00496,Submit Commercial Application,2026-02-26 14:20:42,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00496,Conduct RM Welcome & Handoff,2026-03-05 21:20:42,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00497,Submit Commercial Application,2026-02-26 16:56:47,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00497,Conduct RM Welcome & Handoff,2026-03-04 19:56:47,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00498,Submit Commercial Application,2026-02-28 00:59:02,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00498,Conduct RM Welcome & Handoff,2026-03-05 15:59:02,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00499,Submit Commercial Application,2026-02-28 08:27:09,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00499,Conduct RM Welcome & Handoff,2026-03-05 22:27:09,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00500,Submit Commercial Application,2026-02-28 07:55:01,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00500,Conduct RM Welcome & Handoff,2026-03-04 14:55:01,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00501,Submit Commercial Application,2026-03-01 00:41:29,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00501,Conduct RM Welcome & Handoff,2026-03-07 04:41:29,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00502,Submit Commercial Application,2026-03-02 10:08:32,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00502,Conduct RM Welcome & Handoff,2026-03-06 09:08:32,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00503,Submit Commercial Application,2026-03-03 09:31:20,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00503,Conduct RM Welcome & Handoff,2026-03-09 09:31:20,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00504,Submit Commercial Application,2026-03-03 13:41:06,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00504,Conduct RM Welcome & Handoff,2026-03-10 08:41:06,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00505,Submit Commercial Application,2026-03-04 14:51:53,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00505,Conduct RM Welcome & Handoff,2026-03-09 17:51:53,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00506,Submit Commercial Application,2026-03-02 22:06:38,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00507,Submit Commercial Application,2026-03-04 21:37:02,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00507,Conduct RM Welcome & Handoff,2026-03-11 14:37:02,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00508,Submit Commercial Application,2026-03-06 05:36:54,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00509,Submit Commercial Application,2026-03-04 11:30:24,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00509,Conduct RM Welcome & Handoff,2026-03-21 00:30:24,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00510,Submit Commercial Application,2026-03-05 03:26:14,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00510,Conduct RM Welcome & Handoff,2026-03-10 20:26:14,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00511,Submit Commercial Application,2026-03-06 02:44:13,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00512,Submit Commercial Application,2026-03-06 09:44:13,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00512,Conduct RM Welcome & Handoff,2026-03-12 04:44:13,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00513,Submit Commercial Application,2026-03-09 06:53:52,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00514,Submit Commercial Application,2026-03-09 15:10:37,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00515,Submit Commercial Application,2026-03-09 17:13:45,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00515,Conduct RM Welcome & Handoff,2026-03-15 06:13:45,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00516,Submit Commercial Application,2026-03-11 10:24:10,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00516,Conduct RM Welcome & Handoff,2026-03-18 13:24:10,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00517,Submit Commercial Application,2026-03-10 15:29:59,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00517,Conduct RM Welcome & Handoff,2026-03-15 10:29:59,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00518,Submit Commercial Application,2026-03-11 14:43:12,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00519,Submit Commercial Application,2026-03-13 05:44:17,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=edd_failed
+FT-COM-2025-00520,Submit Commercial Application,2026-03-12 10:36:07,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00520,Conduct RM Welcome & Handoff,2026-03-20 16:36:07,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00521,Submit Commercial Application,2026-03-12 07:51:53,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00521,Conduct RM Welcome & Handoff,2026-03-24 20:51:53,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00522,Submit Commercial Application,2026-03-14 19:36:39,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00522,Conduct RM Welcome & Handoff,2026-03-21 04:36:39,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00523,Submit Commercial Application,2026-03-14 23:28:09,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=credit_risk
+FT-COM-2025-00524,Submit Commercial Application,2026-03-14 13:16:53,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00524,Conduct RM Welcome & Handoff,2026-03-19 22:16:53,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00525,Submit Commercial Application,2026-03-15 01:03:43,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00525,Conduct RM Welcome & Handoff,2026-03-22 01:03:43,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00526,Submit Commercial Application,2026-03-17 14:20:28,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00526,Conduct RM Welcome & Handoff,2026-03-30 15:20:28,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00527,Submit Commercial Application,2026-03-16 21:53:14,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00527,Conduct RM Welcome & Handoff,2026-03-22 12:53:14,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00528,Submit Commercial Application,2026-03-17 07:37:09,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00528,Conduct RM Welcome & Handoff,2026-03-24 02:37:09,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00529,Submit Commercial Application,2026-03-18 12:15:20,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00529,Conduct RM Welcome & Handoff,2026-03-24 11:15:20,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00530,Submit Commercial Application,2026-03-19 06:05:08,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00530,Conduct RM Welcome & Handoff,2026-03-24 20:05:08,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00531,Submit Commercial Application,2026-03-18 13:39:01,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00531,Conduct RM Welcome & Handoff,2026-03-23 19:39:01,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00532,Submit Commercial Application,2026-03-21 09:41:20,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00532,Conduct RM Welcome & Handoff,2026-03-26 21:41:20,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00533,Submit Commercial Application,2026-03-20 16:29:13,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00533,Conduct RM Welcome & Handoff,2026-03-29 23:29:13,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00534,Submit Commercial Application,2026-03-22 02:02:04,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00534,Conduct RM Welcome & Handoff,2026-03-27 18:02:04,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00535,Submit Commercial Application,2026-03-22 18:12:42,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00535,Conduct RM Welcome & Handoff,2026-03-27 17:12:42,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00536,Submit Commercial Application,2026-03-21 10:54:39,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00536,Conduct RM Welcome & Handoff,2026-03-28 02:54:39,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00537,Submit Commercial Application,2026-03-23 06:05:24,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00537,Conduct RM Welcome & Handoff,2026-03-29 02:05:24,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00538,Submit Commercial Application,2026-03-24 23:00:48,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00538,Conduct RM Welcome & Handoff,2026-04-02 21:00:48,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00539,Submit Commercial Application,2026-03-24 02:53:03,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00539,Conduct RM Welcome & Handoff,2026-03-31 08:53:03,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00540,Submit Commercial Application,2026-03-24 06:29:52,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00540,Conduct RM Welcome & Handoff,2026-03-31 09:29:52,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00541,Submit Commercial Application,2026-03-24 18:49:40,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00541,Conduct RM Welcome & Handoff,2026-03-30 00:49:40,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00542,Submit Commercial Application,2026-03-26 18:16:48,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00542,Conduct RM Welcome & Handoff,2026-03-31 11:16:48,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00543,Submit Commercial Application,2026-03-26 00:56:18,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00543,Conduct RM Welcome & Handoff,2026-04-01 07:56:18,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00544,Submit Commercial Application,2026-03-27 20:34:15,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00544,Conduct RM Welcome & Handoff,2026-04-01 14:34:15,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00545,Submit Commercial Application,2026-03-27 20:56:35,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00545,Conduct RM Welcome & Handoff,2026-04-09 04:56:35,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00546,Submit Commercial Application,2026-03-29 20:10:31,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00546,Conduct RM Welcome & Handoff,2026-04-06 19:10:31,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00547,Submit Commercial Application,2026-03-29 02:08:22,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00547,Conduct RM Welcome & Handoff,2026-04-04 01:08:22,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00548,Submit Commercial Application,2026-03-30 22:26:04,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00548,Conduct RM Welcome & Handoff,2026-04-06 10:26:04,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00549,Submit Commercial Application,2026-03-31 01:21:51,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00549,Conduct RM Welcome & Handoff,2026-04-06 20:21:51,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00550,Submit Commercial Application,2026-03-31 13:56:29,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00550,Conduct RM Welcome & Handoff,2026-04-06 15:56:29,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00551,Submit Commercial Application,2026-03-30 16:44:07,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00551,Conduct RM Welcome & Handoff,2026-04-06 09:44:07,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00552,Submit Commercial Application,2026-03-30 22:17:13,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00552,Conduct RM Welcome & Handoff,2026-04-09 11:17:13,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00553,Submit Commercial Application,2026-04-02 03:27:41,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00553,Conduct RM Welcome & Handoff,2026-04-06 00:27:41,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00554,Submit Commercial Application,2026-04-02 01:43:44,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00554,Conduct RM Welcome & Handoff,2026-04-09 11:43:44,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00555,Submit Commercial Application,2026-04-03 11:32:52,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00555,Conduct RM Welcome & Handoff,2026-04-08 21:32:52,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00556,Submit Commercial Application,2026-04-04 19:43:25,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00556,Conduct RM Welcome & Handoff,2026-04-11 11:43:25,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00557,Submit Commercial Application,2026-04-03 05:23:22,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00557,Conduct RM Welcome & Handoff,2026-04-12 04:23:22,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00558,Submit Commercial Application,2026-04-06 04:51:28,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00558,Conduct RM Welcome & Handoff,2026-04-14 00:51:28,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00559,Submit Commercial Application,2026-04-06 02:02:23,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00560,Submit Commercial Application,2026-04-04 12:17:06,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00560,Conduct RM Welcome & Handoff,2026-04-08 19:17:06,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00561,Submit Commercial Application,2026-04-07 12:46:22,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00561,Conduct RM Welcome & Handoff,2026-04-17 21:46:22,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00562,Submit Commercial Application,2026-04-07 20:07:12,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00562,Conduct RM Welcome & Handoff,2026-04-14 17:07:12,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00563,Submit Commercial Application,2026-04-08 21:36:29,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00563,Conduct RM Welcome & Handoff,2026-04-13 00:36:29,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00564,Submit Commercial Application,2026-04-08 20:16:55,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00564,Conduct RM Welcome & Handoff,2026-04-16 19:16:55,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00565,Submit Commercial Application,2026-04-08 21:18:30,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00565,Conduct RM Welcome & Handoff,2026-04-19 09:18:30,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00566,Submit Commercial Application,2026-04-08 17:25:31,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00567,Submit Commercial Application,2026-04-10 09:34:09,Corporate Client,entity_type=LLC;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00568,Submit Commercial Application,2026-04-10 20:04:19,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00568,Conduct RM Welcome & Handoff,2026-04-16 05:04:19,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00569,Submit Commercial Application,2026-04-11 08:03:52,Corporate Client,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00569,Conduct RM Welcome & Handoff,2026-04-22 22:03:52,Relationship Manager,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00570,Submit Commercial Application,2026-04-11 16:59:56,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00570,Conduct RM Welcome & Handoff,2026-04-16 06:59:56,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00571,Submit Commercial Application,2026-04-12 12:16:51,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00571,Conduct RM Welcome & Handoff,2026-04-18 11:16:51,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00572,Submit Commercial Application,2026-04-13 18:30:08,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00572,Conduct RM Welcome & Handoff,2026-04-19 19:30:08,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00573,Submit Commercial Application,2026-04-13 15:45:47,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00573,Conduct RM Welcome & Handoff,2026-04-19 09:45:47,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00574,Submit Commercial Application,2026-04-14 22:54:38,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00574,Conduct RM Welcome & Handoff,2026-04-20 05:54:38,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00575,Submit Commercial Application,2026-04-14 18:30:26,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00575,Conduct RM Welcome & Handoff,2026-04-22 18:30:26,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00576,Submit Commercial Application,2026-04-16 01:07:20,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00576,Conduct RM Welcome & Handoff,2026-04-21 20:07:20,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00577,Submit Commercial Application,2026-04-16 12:20:08,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00578,Submit Commercial Application,2026-04-17 17:15:28,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00578,Conduct RM Welcome & Handoff,2026-04-26 01:15:28,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00579,Submit Commercial Application,2026-04-18 15:05:38,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00579,Conduct RM Welcome & Handoff,2026-04-24 01:05:38,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00580,Submit Commercial Application,2026-04-18 23:39:44,Corporate Client,entity_type=Corp;outcome=abandoned
+FT-COM-2025-00581,Submit Commercial Application,2026-04-19 13:31:56,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00581,Conduct RM Welcome & Handoff,2026-04-24 15:31:56,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00582,Submit Commercial Application,2026-04-19 13:51:21,Corporate Client,entity_type=Corp;outcome=declined;decline_reason=industry_blocked
+FT-COM-2025-00583,Submit Commercial Application,2026-04-20 18:17:00,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00583,Conduct RM Welcome & Handoff,2026-04-28 05:17:00,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00584,Submit Commercial Application,2026-04-19 19:08:40,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00584,Conduct RM Welcome & Handoff,2026-05-07 05:08:40,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00585,Submit Commercial Application,2026-04-21 23:04:22,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00585,Conduct RM Welcome & Handoff,2026-04-28 05:04:22,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00586,Submit Commercial Application,2026-04-22 18:14:58,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00586,Conduct RM Welcome & Handoff,2026-04-28 11:14:58,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00587,Submit Commercial Application,2026-04-21 08:52:50,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00587,Conduct RM Welcome & Handoff,2026-04-27 07:52:50,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00588,Submit Commercial Application,2026-04-23 09:57:23,Corporate Client,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00588,Conduct RM Welcome & Handoff,2026-05-10 02:57:23,Relationship Manager,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00589,Submit Commercial Application,2026-04-24 04:58:52,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00589,Conduct RM Welcome & Handoff,2026-04-30 10:58:52,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00590,Submit Commercial Application,2026-04-23 02:59:17,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00590,Conduct RM Welcome & Handoff,2026-04-27 08:59:17,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00591,Submit Commercial Application,2026-04-23 23:35:44,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00591,Conduct RM Welcome & Handoff,2026-04-30 07:35:44,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00592,Submit Commercial Application,2026-04-26 04:13:50,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00592,Conduct RM Welcome & Handoff,2026-05-02 11:13:50,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00593,Submit Commercial Application,2026-04-25 23:22:08,Corporate Client,entity_type=LLC;outcome=approved
+FT-COM-2025-00593,Conduct RM Welcome & Handoff,2026-05-06 02:22:08,Relationship Manager,entity_type=LLC;outcome=approved
+FT-COM-2025-00594,Submit Commercial Application,2026-04-27 23:42:48,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00594,Conduct RM Welcome & Handoff,2026-05-03 06:42:48,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00595,Submit Commercial Application,2026-04-25 17:01:41,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00595,Conduct RM Welcome & Handoff,2026-04-29 23:01:41,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00596,Submit Commercial Application,2026-04-27 19:17:45,Corporate Client,entity_type=LLC;outcome=abandoned
+FT-COM-2025-00597,Submit Commercial Application,2026-04-27 07:12:55,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00597,Conduct RM Welcome & Handoff,2026-05-04 18:12:55,Relationship Manager,entity_type=Partnership;outcome=approved
+FT-COM-2025-00598,Submit Commercial Application,2026-04-28 09:29:07,Corporate Client,entity_type=Corp;outcome=approved
+FT-COM-2025-00598,Conduct RM Welcome & Handoff,2026-05-07 06:29:07,Relationship Manager,entity_type=Corp;outcome=approved
+FT-COM-2025-00599,Submit Commercial Application,2026-04-28 04:20:08,Corporate Client,entity_type=LP;outcome=approved
+FT-COM-2025-00599,Conduct RM Welcome & Handoff,2026-05-05 01:20:08,Relationship Manager,entity_type=LP;outcome=approved
+FT-COM-2025-00600,Submit Commercial Application,2026-04-28 23:36:46,Corporate Client,entity_type=Partnership;outcome=approved
+FT-COM-2025-00600,Conduct RM Welcome & Handoff,2026-05-03 06:36:46,Relationship Manager,entity_type=Partnership;outcome=approved

@@ -38,7 +38,7 @@ export function Header() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#fff"; (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
             >
-              Engagements
+              My Workspace
             </Link>
 
             <Link href="/admin"

@@ -3,8 +3,6 @@ import { redirect, notFound } from "next/navigation";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { Header } from "@/components/Header";
-import { UploadSection } from "@/components/UploadSection";
-import { AnalysisPanel } from "@/components/AnalysisPanel";
 import { ProcessesSection } from "@/components/ProcessesSection";
 import { EditEngagementProfile } from "@/components/EditEngagementProfile";
 import Link from "next/link";
@@ -139,35 +137,6 @@ export default async function EngagementDetailPage({
             dataRequest: p.dataRequest,
             status: p.status,
           }))}
-        />
-
-        {/* Upload section */}
-        <UploadSection
-          engagementId={engagement.id}
-          processTemplate={engagement.processTemplate ?? ""}
-          uploads={engagement.uploads.map((u) => ({
-            id: u.id,
-            originalName: u.originalName,
-            systemSource: u.systemSource,
-            rowCount: u.rowCount,
-            status: u.status,
-            schemaInference: u.schemaInference as Record<string, unknown> | null,
-          }))}
-        />
-
-        {/* Analysis panel — correlation, process mining, APA opportunities */}
-        <AnalysisPanel
-          engagementId={engagement.id}
-          uploadCount={engagement.uploads.length}
-          initialResults={engagement.analysisResults.map((r) => ({
-            id: r.id,
-            type: r.type,
-            title: r.title,
-            description: r.description,
-            severity: r.severity,
-            data: r.data as Record<string, unknown>,
-          }))}
-          initialEventCount={engagement._count.eventLogs}
         />
 
       </main>

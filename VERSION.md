@@ -4,6 +4,74 @@ This file is the source of truth for version snapshots. Each version represents 
 
 ---
 
+## v1.3 — "Brand-aligned product surfaces + demo-ready Fifth Third" (locked 2026-05-11)
+
+**Purpose:** redesign the navigation surfaces (home, workspace, engagement, process detail) around the Backbase Frontline 2026 design system, seed a full demo engagement for tomorrow's CEO presentation, and tighten the cockpit + findings engines so the demo data displays correctly.
+
+### Scope delivered
+
+**Homepage** — Option B (signature visual hero)
+- Replaced 3-stage pipeline pill diagram with an animated **vertical signature variant graph** (Celonis-style): centred spine with main process steps on the left, exceptions branching right, animated case "balls" flowing down the pipe + through exceptions, edge volume tags interrupting the spine line
+- 5-stat strip below: Engagements / Processes mapped / Events analysed / Variants found / Value leak detected
+- Removed recent-engagements section to keep the home page lean (live data lives in My Workspace)
+
+**My Workspace** (renamed from Engagements in the nav)
+- Time-aware personalised greeting ("Good evening, Shobhit.")
+- 5-card pulse strip: cases · engagements · variants · leak · APA opportunities (all global aggregations)
+- Engagement grid using new `WorkspaceCard` with **deterministic mini variant-graph thumbnails** (seeded by engagement id, scales richness by variant count), status pills, cycle/leak/cases stats, and a green "✓ findings" badge when Stage 5 is cached
+- Empty-state messaging for draft engagements
+
+**Engagement detail** — removed legacy `UploadSection` and `AnalysisPanel` (replaced by per-process flow back in v1.0); page now shows just the bank profile + processes list
+
+**Process detail page** — full restructure
+- Compact single-row process header (LOB pill · name · client · metrics indicator · status · ⚙ Edit details drawer)
+- **Discovery Phases** with redesigned tiles: STEP 1/2/3 labels, brand colour accents (Action Blue / Primary Navy / Success Green), status badges (✓ Done · ! Next to do · ◔ Coming soon), subtitle in parens under the big uppercase title
+- **Executive Summary** block — visually distinct grey-tinted container with: big Annual Value Leak, Elastic Ops vertex split (Growth / Efficiency / Control), Capability Mix bar, Integration status, and a Top Findings list pulled from cached Stage 5 results (sorted by leak $)
+- `ProcessEditDrawer` — right-side modal drawer for editing metrics + capabilities (replaces the inline forms that used to sprawl down the page)
+
+**Header**
+- "Engagements" link → renamed to **"My Workspace"**
+
+**Process Explorer**
+- Right-rail filter panel is now **collapsible** (36px thin strip when collapsed, 360px full panel when expanded)
+
+**Cockpit metrics engine** — regex permissivity overhaul
+- Lead time / cycle time no longer requires `avg/average/mean` in the key — matches seed's process-prefixed `commercial_onboarding_lead_time_days`, `sme_lead_time_days`, `mortgage_lead_time_days`
+- `cost_per` patterns relaxed to allow process-specific suffixes (`cost_per_commercial_onboarding`)
+- `annual_*_cost` now pattern-searches `allComputed` map for any `cost_per_X` × any `monthly_X_volume` × 12
+- Decision-time patterns accept `days`/`turn` suffixes (`underwriting_decision_days`, `clear_to_close_days`)
+- New patterns: `compliance_touch_rate`, `audit_flagged_rate`, withdrawal-rate (added to abandonment family), application volume
+- **Completion detection** (`reachedAccountCreation`) now recognises real seed activity labels: Provision Account, Disburse, Fund & Record, Generate Account, Setup Account Products. Fixes Abandonment Rate (was showing 91% — now ~5%)
+- Same fix applied to Approval Rate
+- **Drop-off step** — text-typed metric now returns the activity name with the % share of abandoned cases that stop there (e.g., "Run Sanctions & PEP Screening (38%)")
+
+**Currency country-awareness**
+- New helper `currencyForCountry()` — USA → $ / UK → £ / EU countries → €
+- `FindingsContext` and `FindingsResult` now carry a `currency` field
+- Claude prompt in `buildFindingsPrompt` uses the country's currency symbol/code throughout (no more hardcoded £ in the prompt)
+- `FindingsSection` display reads `result.currency.symbol` (defaults to $) — all £ display references removed
+
+**Fifth Third demo engagement** (seeded for tomorrow's CEO demo)
+- `scripts/seed-fifth-third-engagement.ts` — produces a complete engagement end-to-end: bank profile, 2 processes (Commercial Account Onboarding + SME Loan Origination), processMap with actors+systems assigned, dataRequest with 7 system slots each, processCapabilities + processMetrics, 600 + 1,250 cases generated with realistic deviations (UBO rework, EDD escalation, manual underwriting, declined, abandoned, doc rework), per-system CSV files written to `sample-data/fifth-third-{commercial,sme}/`, Upload rows linked to data-request slots, 21,910 EventLog rows seeded, optional Claude findings pre-generation
+- `scripts/verify-fifth-third.ts` — sanity check
+- `scripts/test-anthropic-key.ts` — standalone API key validator
+
+**Mockup file** — `homepage-mockups.html` (in repo root) bundles design exploration tabs A/B/C (home options) and D/E/F (process detail options) used to converge on the current design
+
+### Schema migrations
+None.
+
+### Known limitations (deferred)
+- Cached findings generated before v1.3 still have £ baked into Claude's narrative text (rootCause / recommendation / valueLeakBreakdown). Numeric displays redisplay with $ correctly, but narrative copy needs a Regenerate to refresh
+- `.env.local` ANTHROPIC_API_KEY mismatch with running dev server (logged in backlog) — fix before next dev restart or Vercel deploy
+- Duplicate `Core Banking System` row from v1.2.1 untag pass — still orphan, harmless
+- `durationHistogram` computed in `processGraph.ts` but unused (UI removed in v1.2)
+
+### Rollback
+Tagged `v1.3` in git. To roll back: `git checkout v1.3`.
+
+---
+
 ## v1.2.1 — "Template seating cleanup" (locked 2026-05-11)
 
 **Purpose:** close out the seating gaps surfaced by the v1.2 audit so retail_onboarding and home_mortgage look demo-clean side-by-side.

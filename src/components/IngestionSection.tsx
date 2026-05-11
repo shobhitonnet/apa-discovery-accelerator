@@ -948,7 +948,7 @@ function Stage3Panel({ variants, processGraph, engagementId, processId }: { vari
         <div style={{ marginTop: 14, padding: "10px 12px", borderRadius: 8, background: "rgba(38,188,113,0.04)", border: "1px solid rgba(38,188,113,0.15)", display: "flex", alignItems: "center", gap: 10 }}>
           <span style={{ fontSize: 12 }}>✦</span>
           <span style={{ fontSize: 11, color: "#5C6E84", flex: 1 }}>
-            Next: <strong>Stage 5 (Findings)</strong> below quantifies these deviations into ranked £-value findings using the country and process repository.
+            Next: <strong>Stage 5 (Findings)</strong> below quantifies these deviations into ranked value findings using the country and process repository.
           </span>
         </div>
       </div>

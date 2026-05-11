@@ -1,0 +1,1029 @@
+case_id,activity,event_timestamp,actor,case_attributes
+FT-COM-2025-00001,Enable Treasury & Payments,2025-05-05 22:21:46,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00001,Enroll Digital Banking,2025-05-06 18:21:46,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00002,Enable Treasury & Payments,2025-05-11 21:51:12,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00002,Enroll Digital Banking,2025-05-12 03:51:12,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00003,Enable Treasury & Payments,2025-05-08 23:39:04,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00003,Enroll Digital Banking,2025-05-09 03:39:04,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00004,Enable Treasury & Payments,2025-05-09 15:33:57,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00004,Enroll Digital Banking,2025-05-09 21:33:57,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00005,Enable Treasury & Payments,2025-05-10 05:16:55,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00005,Enroll Digital Banking,2025-05-11 07:16:55,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00006,Enable Treasury & Payments,2025-05-13 01:56:02,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00006,Enroll Digital Banking,2025-05-13 13:56:02,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00007,Enable Treasury & Payments,2025-05-11 02:43:45,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00007,Enroll Digital Banking,2025-05-11 04:43:45,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00008,Enable Treasury & Payments,2025-05-15 11:55:15,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00008,Enroll Digital Banking,2025-05-16 10:55:15,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00010,Enable Treasury & Payments,2025-05-09 22:55:34,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00010,Enroll Digital Banking,2025-05-10 19:55:34,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00011,Enable Treasury & Payments,2025-05-09 19:01:30,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00011,Enroll Digital Banking,2025-05-10 17:01:30,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00012,Enable Treasury & Payments,2025-05-13 23:03:57,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00012,Enroll Digital Banking,2025-05-14 18:03:57,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00013,Enable Treasury & Payments,2025-05-12 20:56:12,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00013,Enroll Digital Banking,2025-05-13 00:56:12,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00014,Enable Treasury & Payments,2025-05-13 17:35:24,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00014,Enroll Digital Banking,2025-05-14 19:35:24,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00015,Enable Treasury & Payments,2025-05-13 12:53:33,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00015,Enroll Digital Banking,2025-05-14 10:53:33,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00016,Enable Treasury & Payments,2025-05-15 00:59:09,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00016,Enroll Digital Banking,2025-05-15 11:59:09,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00017,Enable Treasury & Payments,2025-05-14 20:01:08,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00017,Enroll Digital Banking,2025-05-15 02:01:08,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00018,Enable Treasury & Payments,2025-05-17 06:32:30,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00018,Enroll Digital Banking,2025-05-18 04:32:30,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00019,Enable Treasury & Payments,2025-05-17 19:43:09,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00019,Enroll Digital Banking,2025-05-18 04:43:09,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00020,Enable Treasury & Payments,2025-05-17 04:00:02,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00020,Enroll Digital Banking,2025-05-17 16:00:02,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00021,Enable Treasury & Payments,2025-05-17 22:30:24,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00021,Enroll Digital Banking,2025-05-18 07:30:24,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00022,Enable Treasury & Payments,2025-05-17 20:42:37,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00022,Enroll Digital Banking,2025-05-18 02:42:37,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00023,Enable Treasury & Payments,2025-05-18 22:36:42,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00023,Enroll Digital Banking,2025-05-19 01:36:42,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00025,Enable Treasury & Payments,2025-05-21 08:02:44,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00025,Enroll Digital Banking,2025-05-22 00:02:44,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00026,Enable Treasury & Payments,2025-05-20 10:33:16,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00026,Enroll Digital Banking,2025-05-20 17:33:16,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00027,Enable Treasury & Payments,2025-05-21 09:07:02,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00027,Enroll Digital Banking,2025-05-22 04:07:02,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00028,Enable Treasury & Payments,2025-05-22 05:20:22,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00028,Enroll Digital Banking,2025-05-23 01:20:22,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00029,Enable Treasury & Payments,2025-05-23 19:06:11,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00029,Enroll Digital Banking,2025-05-23 21:06:11,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00030,Enable Treasury & Payments,2025-05-25 07:57:18,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00030,Enroll Digital Banking,2025-05-25 20:57:18,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00031,Enable Treasury & Payments,2025-05-23 13:52:25,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00031,Enroll Digital Banking,2025-05-24 11:52:25,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00032,Enable Treasury & Payments,2025-05-25 23:33:04,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00032,Enroll Digital Banking,2025-05-26 01:33:04,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00033,Enable Treasury & Payments,2025-05-25 21:51:29,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00033,Enroll Digital Banking,2025-05-26 08:51:29,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00034,Enable Treasury & Payments,2025-05-26 23:48:04,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00034,Enroll Digital Banking,2025-05-27 20:48:04,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00035,Enable Treasury & Payments,2025-05-29 11:12:14,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00035,Enroll Digital Banking,2025-05-30 13:12:14,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00037,Enable Treasury & Payments,2025-05-27 04:25:39,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00037,Enroll Digital Banking,2025-05-27 08:25:39,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00038,Enable Treasury & Payments,2025-05-26 17:15:40,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00038,Enroll Digital Banking,2025-05-27 18:15:40,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00039,Enable Treasury & Payments,2025-05-26 00:46:31,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00039,Enroll Digital Banking,2025-05-27 02:46:31,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00040,Enable Treasury & Payments,2025-05-30 17:51:47,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00040,Enroll Digital Banking,2025-05-31 03:51:47,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00041,Enable Treasury & Payments,2025-06-07 03:04:21,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00041,Enroll Digital Banking,2025-06-07 07:04:21,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00043,Enable Treasury & Payments,2025-06-10 22:33:06,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00043,Enroll Digital Banking,2025-06-11 04:33:06,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00044,Enable Treasury & Payments,2025-06-01 03:55:23,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00044,Enroll Digital Banking,2025-06-02 04:55:23,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00045,Enable Treasury & Payments,2025-06-01 09:55:08,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00045,Enroll Digital Banking,2025-06-02 03:55:08,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00046,Enable Treasury & Payments,2025-05-31 12:42:33,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00046,Enroll Digital Banking,2025-05-31 23:42:33,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00047,Enable Treasury & Payments,2025-06-11 01:20:46,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00047,Enroll Digital Banking,2025-06-11 11:20:46,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00048,Enable Treasury & Payments,2025-06-07 11:24:14,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00048,Enroll Digital Banking,2025-06-07 15:24:14,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00049,Enable Treasury & Payments,2025-06-02 11:40:28,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00049,Enroll Digital Banking,2025-06-03 05:40:28,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00050,Enable Treasury & Payments,2025-06-04 14:37:18,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00050,Enroll Digital Banking,2025-06-05 06:37:18,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00051,Enable Treasury & Payments,2025-06-15 19:31:03,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00051,Enroll Digital Banking,2025-06-16 20:31:03,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00052,Enable Treasury & Payments,2025-06-07 08:04:26,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00052,Enroll Digital Banking,2025-06-08 05:04:26,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00053,Enable Treasury & Payments,2025-06-10 14:28:58,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00053,Enroll Digital Banking,2025-06-10 18:28:58,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00054,Enable Treasury & Payments,2025-06-06 20:06:32,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00054,Enroll Digital Banking,2025-06-07 19:06:32,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00055,Enable Treasury & Payments,2025-06-09 02:19:20,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00055,Enroll Digital Banking,2025-06-09 18:19:20,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00056,Enable Treasury & Payments,2025-06-05 22:17:03,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00056,Enroll Digital Banking,2025-06-06 12:17:03,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00057,Enable Treasury & Payments,2025-06-11 01:45:55,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00057,Enroll Digital Banking,2025-06-11 04:45:55,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00058,Enable Treasury & Payments,2025-06-12 01:52:44,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00058,Enroll Digital Banking,2025-06-12 03:52:44,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00059,Enable Treasury & Payments,2025-06-07 19:49:31,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00059,Enroll Digital Banking,2025-06-08 01:49:31,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00060,Enable Treasury & Payments,2025-06-09 20:32:58,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00060,Enroll Digital Banking,2025-06-10 13:32:58,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00061,Enable Treasury & Payments,2025-06-11 12:16:15,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00061,Enroll Digital Banking,2025-06-11 23:16:15,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00062,Enable Treasury & Payments,2025-06-12 14:00:35,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00062,Enroll Digital Banking,2025-06-12 18:00:35,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00063,Enable Treasury & Payments,2025-06-11 01:21:21,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00063,Enroll Digital Banking,2025-06-11 22:21:21,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00064,Enable Treasury & Payments,2025-06-15 20:13:58,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00064,Enroll Digital Banking,2025-06-16 22:13:58,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00065,Enable Treasury & Payments,2025-06-14 05:53:03,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00065,Enroll Digital Banking,2025-06-14 19:53:03,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00066,Enable Treasury & Payments,2025-06-23 08:36:44,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00066,Enroll Digital Banking,2025-06-23 15:36:44,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00067,Enable Treasury & Payments,2025-06-16 13:47:53,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00067,Enroll Digital Banking,2025-06-17 15:47:53,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00068,Enable Treasury & Payments,2025-06-16 09:29:55,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00068,Enroll Digital Banking,2025-06-17 05:29:55,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00070,Enable Treasury & Payments,2025-06-16 18:21:39,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00070,Enroll Digital Banking,2025-06-17 06:21:39,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00072,Enable Treasury & Payments,2025-06-21 04:03:47,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00072,Enroll Digital Banking,2025-06-22 00:03:47,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00074,Enable Treasury & Payments,2025-06-19 22:11:40,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00074,Enroll Digital Banking,2025-06-20 23:11:40,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00075,Enable Treasury & Payments,2025-06-18 18:06:04,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00075,Enroll Digital Banking,2025-06-19 15:06:04,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00076,Enable Treasury & Payments,2025-06-28 02:38:13,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00076,Enroll Digital Banking,2025-06-28 19:38:13,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00078,Enable Treasury & Payments,2025-06-21 09:03:43,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00078,Enroll Digital Banking,2025-06-22 02:03:43,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00079,Enable Treasury & Payments,2025-06-21 00:11:28,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00079,Enroll Digital Banking,2025-06-22 02:11:28,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00081,Enable Treasury & Payments,2025-07-02 16:31:20,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00081,Enroll Digital Banking,2025-07-03 03:31:20,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00082,Enable Treasury & Payments,2025-06-26 07:49:10,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00082,Enroll Digital Banking,2025-06-26 13:49:10,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00083,Enable Treasury & Payments,2025-07-01 18:49:48,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00083,Enroll Digital Banking,2025-07-02 10:49:48,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00084,Enable Treasury & Payments,2025-06-26 10:47:54,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00084,Enroll Digital Banking,2025-06-26 15:47:54,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00085,Enable Treasury & Payments,2025-06-28 22:31:05,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00085,Enroll Digital Banking,2025-06-29 14:31:05,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00086,Enable Treasury & Payments,2025-07-08 04:51:28,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00086,Enroll Digital Banking,2025-07-09 00:51:28,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00087,Enable Treasury & Payments,2025-06-24 23:25:51,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00087,Enroll Digital Banking,2025-06-25 23:25:51,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00088,Enable Treasury & Payments,2025-06-27 14:37:38,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00088,Enroll Digital Banking,2025-06-27 16:37:38,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00089,Enable Treasury & Payments,2025-07-03 04:08:44,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00089,Enroll Digital Banking,2025-07-04 00:08:44,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00090,Enable Treasury & Payments,2025-06-28 15:15:11,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00090,Enroll Digital Banking,2025-06-29 16:15:11,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00091,Enable Treasury & Payments,2025-06-30 08:12:36,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00091,Enroll Digital Banking,2025-07-01 10:12:36,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00094,Enable Treasury & Payments,2025-07-02 09:11:24,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00094,Enroll Digital Banking,2025-07-03 00:11:24,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00095,Enable Treasury & Payments,2025-07-07 23:17:28,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00095,Enroll Digital Banking,2025-07-08 02:17:28,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00096,Enable Treasury & Payments,2025-07-03 07:48:21,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00096,Enroll Digital Banking,2025-07-03 22:48:21,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00097,Enable Treasury & Payments,2025-07-09 09:50:07,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00097,Enroll Digital Banking,2025-07-09 13:50:07,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00098,Enable Treasury & Payments,2025-07-04 15:05:21,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00098,Enroll Digital Banking,2025-07-05 16:05:21,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00099,Enable Treasury & Payments,2025-07-04 20:09:17,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00099,Enroll Digital Banking,2025-07-05 07:09:17,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00100,Enable Treasury & Payments,2025-07-05 13:10:27,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00100,Enroll Digital Banking,2025-07-06 15:10:27,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00103,Enable Treasury & Payments,2025-07-06 21:08:12,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00103,Enroll Digital Banking,2025-07-07 09:08:12,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00104,Enable Treasury & Payments,2025-07-07 04:12:35,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00104,Enroll Digital Banking,2025-07-08 00:12:35,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00105,Enable Treasury & Payments,2025-07-09 02:03:56,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00105,Enroll Digital Banking,2025-07-09 08:03:56,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00107,Enable Treasury & Payments,2025-07-09 16:11:03,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00107,Enroll Digital Banking,2025-07-09 18:11:03,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00108,Enable Treasury & Payments,2025-07-15 00:01:37,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00108,Enroll Digital Banking,2025-07-15 22:01:37,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00109,Enable Treasury & Payments,2025-07-08 21:38:57,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00109,Enroll Digital Banking,2025-07-09 08:38:57,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00110,Enable Treasury & Payments,2025-07-11 08:49:07,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00110,Enroll Digital Banking,2025-07-12 00:49:07,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00111,Enable Treasury & Payments,2025-07-10 15:36:37,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00111,Enroll Digital Banking,2025-07-11 01:36:37,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00112,Enable Treasury & Payments,2025-07-11 18:18:34,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00112,Enroll Digital Banking,2025-07-12 09:18:34,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00113,Enable Treasury & Payments,2025-07-13 05:51:27,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00113,Enroll Digital Banking,2025-07-13 21:51:27,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00114,Enable Treasury & Payments,2025-07-13 12:55:44,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00114,Enroll Digital Banking,2025-07-14 09:55:44,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00115,Enable Treasury & Payments,2025-07-15 17:00:19,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00115,Enroll Digital Banking,2025-07-15 22:00:19,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00116,Enable Treasury & Payments,2025-07-13 17:55:57,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00116,Enroll Digital Banking,2025-07-14 14:55:57,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00117,Enable Treasury & Payments,2025-07-14 06:48:56,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00117,Enroll Digital Banking,2025-07-14 14:48:56,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00118,Enable Treasury & Payments,2025-07-14 18:46:07,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00118,Enroll Digital Banking,2025-07-15 11:46:07,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00120,Enable Treasury & Payments,2025-07-18 20:33:33,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00120,Enroll Digital Banking,2025-07-19 07:33:33,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00121,Enable Treasury & Payments,2025-07-15 11:37:11,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00121,Enroll Digital Banking,2025-07-15 23:37:11,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00123,Enable Treasury & Payments,2025-07-20 18:05:52,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00123,Enroll Digital Banking,2025-07-21 16:05:52,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00124,Enable Treasury & Payments,2025-07-18 20:13:45,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00124,Enroll Digital Banking,2025-07-19 02:13:45,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00125,Enable Treasury & Payments,2025-07-21 00:41:02,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00125,Enroll Digital Banking,2025-07-21 13:41:02,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00126,Enable Treasury & Payments,2025-07-19 06:52:00,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00126,Enroll Digital Banking,2025-07-20 01:52:00,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00127,Enable Treasury & Payments,2025-07-23 03:16:21,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00127,Enroll Digital Banking,2025-07-23 19:16:21,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00128,Enable Treasury & Payments,2025-07-22 20:33:28,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00128,Enroll Digital Banking,2025-07-23 07:33:28,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00129,Enable Treasury & Payments,2025-07-30 00:20:00,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00129,Enroll Digital Banking,2025-07-30 23:20:00,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00130,Enable Treasury & Payments,2025-07-31 22:56:27,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00130,Enroll Digital Banking,2025-08-01 13:56:27,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00132,Enable Treasury & Payments,2025-07-24 20:59:56,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00132,Enroll Digital Banking,2025-07-25 12:59:56,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00133,Enable Treasury & Payments,2025-07-25 22:44:40,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00133,Enroll Digital Banking,2025-07-26 22:44:40,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00135,Enable Treasury & Payments,2025-08-03 13:46:30,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00135,Enroll Digital Banking,2025-08-04 13:46:30,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00137,Enable Treasury & Payments,2025-07-26 21:37:49,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00137,Enroll Digital Banking,2025-07-27 13:37:49,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00138,Enable Treasury & Payments,2025-07-27 14:56:49,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00138,Enroll Digital Banking,2025-07-28 00:56:49,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00140,Enable Treasury & Payments,2025-07-31 02:52:44,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00140,Enroll Digital Banking,2025-07-31 13:52:44,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00141,Enable Treasury & Payments,2025-07-28 15:54:33,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00141,Enroll Digital Banking,2025-07-29 01:54:33,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00143,Enable Treasury & Payments,2025-08-11 11:14:23,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00143,Enroll Digital Banking,2025-08-12 03:14:23,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00144,Enable Treasury & Payments,2025-08-11 12:15:43,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00144,Enroll Digital Banking,2025-08-12 09:15:43,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00145,Enable Treasury & Payments,2025-08-04 20:52:37,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00145,Enroll Digital Banking,2025-08-04 23:52:37,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00146,Enable Treasury & Payments,2025-08-04 11:02:33,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00146,Enroll Digital Banking,2025-08-04 21:02:33,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00147,Enable Treasury & Payments,2025-08-01 14:56:03,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00147,Enroll Digital Banking,2025-08-02 09:56:03,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00148,Enable Treasury & Payments,2025-08-03 09:02:48,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00148,Enroll Digital Banking,2025-08-04 00:02:48,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00149,Enable Treasury & Payments,2025-08-03 17:23:18,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00149,Enroll Digital Banking,2025-08-04 18:23:18,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00150,Enable Treasury & Payments,2025-08-13 08:57:36,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00150,Enroll Digital Banking,2025-08-14 00:57:36,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00152,Enable Treasury & Payments,2025-08-12 08:21:07,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00152,Enroll Digital Banking,2025-08-12 12:21:07,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00153,Enable Treasury & Payments,2025-08-05 17:58:12,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00153,Enroll Digital Banking,2025-08-06 06:58:12,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00154,Enable Treasury & Payments,2025-08-10 11:02:01,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00154,Enroll Digital Banking,2025-08-11 12:02:01,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00156,Enable Treasury & Payments,2025-08-08 15:20:30,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00156,Enroll Digital Banking,2025-08-08 23:20:30,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00157,Enable Treasury & Payments,2025-08-11 11:12:00,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00157,Enroll Digital Banking,2025-08-11 19:12:00,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00158,Enable Treasury & Payments,2025-08-08 23:05:13,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00158,Enroll Digital Banking,2025-08-09 18:05:13,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00160,Enable Treasury & Payments,2025-08-13 12:45:54,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00160,Enroll Digital Banking,2025-08-14 12:45:54,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00161,Enable Treasury & Payments,2025-08-08 15:06:19,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00161,Enroll Digital Banking,2025-08-09 09:06:19,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00162,Enable Treasury & Payments,2025-08-11 15:26:50,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00162,Enroll Digital Banking,2025-08-11 19:26:50,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00163,Enable Treasury & Payments,2025-08-14 16:42:05,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00163,Enroll Digital Banking,2025-08-15 04:42:05,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00164,Enable Treasury & Payments,2025-08-11 09:21:53,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00164,Enroll Digital Banking,2025-08-11 16:21:53,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00165,Enable Treasury & Payments,2025-08-13 04:26:18,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00165,Enroll Digital Banking,2025-08-14 03:26:18,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00166,Enable Treasury & Payments,2025-08-16 23:04:11,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00166,Enroll Digital Banking,2025-08-17 05:04:11,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00167,Enable Treasury & Payments,2025-08-14 19:38:20,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00167,Enroll Digital Banking,2025-08-15 05:38:20,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00168,Enable Treasury & Payments,2025-08-24 12:42:46,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00168,Enroll Digital Banking,2025-08-24 17:42:46,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00169,Enable Treasury & Payments,2025-08-14 21:19:59,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00169,Enroll Digital Banking,2025-08-15 02:19:59,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00170,Enable Treasury & Payments,2025-08-26 08:25:09,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00170,Enroll Digital Banking,2025-08-27 06:25:09,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00171,Enable Treasury & Payments,2025-08-18 08:30:03,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00171,Enroll Digital Banking,2025-08-18 21:30:03,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00172,Enable Treasury & Payments,2025-08-18 05:04:53,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00172,Enroll Digital Banking,2025-08-18 11:04:53,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00173,Enable Treasury & Payments,2025-08-19 05:57:39,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00173,Enroll Digital Banking,2025-08-19 21:57:39,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00174,Enable Treasury & Payments,2025-08-19 22:19:44,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00174,Enroll Digital Banking,2025-08-20 03:19:44,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00175,Enable Treasury & Payments,2025-08-20 09:06:10,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00175,Enroll Digital Banking,2025-08-21 01:06:10,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00176,Enable Treasury & Payments,2025-08-17 19:16:21,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00176,Enroll Digital Banking,2025-08-18 08:16:21,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00177,Enable Treasury & Payments,2025-08-21 19:35:38,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00177,Enroll Digital Banking,2025-08-22 14:35:38,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00178,Enable Treasury & Payments,2025-08-19 09:33:28,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00178,Enroll Digital Banking,2025-08-20 00:33:28,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00179,Enable Treasury & Payments,2025-08-23 18:04:32,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00179,Enroll Digital Banking,2025-08-24 04:04:32,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00180,Enable Treasury & Payments,2025-08-25 13:02:30,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00180,Enroll Digital Banking,2025-08-26 03:02:30,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00181,Enable Treasury & Payments,2025-08-26 09:36:54,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00181,Enroll Digital Banking,2025-08-26 23:36:54,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00183,Enable Treasury & Payments,2025-08-24 03:15:14,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00183,Enroll Digital Banking,2025-08-24 14:15:14,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00184,Enable Treasury & Payments,2025-08-22 11:03:07,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00184,Enroll Digital Banking,2025-08-22 18:03:07,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00185,Enable Treasury & Payments,2025-08-27 03:28:57,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00185,Enroll Digital Banking,2025-08-27 23:28:57,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00186,Enable Treasury & Payments,2025-09-04 09:24:48,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00186,Enroll Digital Banking,2025-09-05 10:24:48,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00187,Enable Treasury & Payments,2025-08-27 07:31:09,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00187,Enroll Digital Banking,2025-08-28 02:31:09,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00189,Enable Treasury & Payments,2025-08-29 17:04:53,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00189,Enroll Digital Banking,2025-08-30 04:04:53,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00190,Enable Treasury & Payments,2025-08-28 23:24:37,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00190,Enroll Digital Banking,2025-08-29 12:24:37,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00192,Enable Treasury & Payments,2025-08-29 17:13:07,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00192,Enroll Digital Banking,2025-08-30 05:13:07,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00193,Enable Treasury & Payments,2025-08-28 11:09:17,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00193,Enroll Digital Banking,2025-08-29 00:09:17,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00194,Enable Treasury & Payments,2025-09-01 08:09:36,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00194,Enroll Digital Banking,2025-09-01 14:09:36,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00195,Enable Treasury & Payments,2025-09-01 14:48:49,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00195,Enroll Digital Banking,2025-09-02 04:48:49,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00196,Enable Treasury & Payments,2025-09-02 01:29:09,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00196,Enroll Digital Banking,2025-09-02 12:29:09,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00197,Enable Treasury & Payments,2025-08-31 03:44:30,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00197,Enroll Digital Banking,2025-08-31 07:44:30,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00198,Enable Treasury & Payments,2025-09-04 14:23:14,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00198,Enroll Digital Banking,2025-09-04 16:23:14,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00199,Enable Treasury & Payments,2025-09-04 12:44:04,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00199,Enroll Digital Banking,2025-09-05 06:44:04,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00200,Enable Treasury & Payments,2025-09-03 14:51:57,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00200,Enroll Digital Banking,2025-09-04 08:51:57,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00201,Enable Treasury & Payments,2025-09-03 23:27:20,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00201,Enroll Digital Banking,2025-09-04 05:27:20,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00202,Enable Treasury & Payments,2025-09-06 10:27:21,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00202,Enroll Digital Banking,2025-09-07 05:27:21,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00203,Enable Treasury & Payments,2025-09-05 08:52:41,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00203,Enroll Digital Banking,2025-09-05 13:52:41,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00204,Enable Treasury & Payments,2025-09-11 04:27:09,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00204,Enroll Digital Banking,2025-09-11 12:27:09,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00205,Enable Treasury & Payments,2025-09-08 21:53:41,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00205,Enroll Digital Banking,2025-09-09 17:53:41,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00206,Enable Treasury & Payments,2025-09-10 20:08:39,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00206,Enroll Digital Banking,2025-09-11 05:08:39,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00207,Enable Treasury & Payments,2025-09-14 02:41:57,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00207,Enroll Digital Banking,2025-09-15 04:41:57,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00208,Enable Treasury & Payments,2025-09-11 23:30:13,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00208,Enroll Digital Banking,2025-09-12 05:30:13,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00209,Enable Treasury & Payments,2025-09-09 19:13:57,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00209,Enroll Digital Banking,2025-09-10 02:13:57,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00211,Enable Treasury & Payments,2025-09-08 10:33:36,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00211,Enroll Digital Banking,2025-09-09 04:33:36,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00212,Enable Treasury & Payments,2025-09-11 17:10:30,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00212,Enroll Digital Banking,2025-09-12 05:10:30,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00213,Enable Treasury & Payments,2025-09-12 07:15:23,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00213,Enroll Digital Banking,2025-09-12 23:15:23,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00214,Enable Treasury & Payments,2025-09-11 08:10:40,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00214,Enroll Digital Banking,2025-09-12 10:10:40,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00215,Enable Treasury & Payments,2025-09-11 21:19:24,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00215,Enroll Digital Banking,2025-09-12 23:19:24,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00216,Enable Treasury & Payments,2025-09-12 18:19:55,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00216,Enroll Digital Banking,2025-09-13 13:19:55,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00218,Enable Treasury & Payments,2025-09-13 01:35:31,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00218,Enroll Digital Banking,2025-09-13 12:35:31,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00219,Enable Treasury & Payments,2025-09-13 15:58:02,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00219,Enroll Digital Banking,2025-09-14 06:58:02,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00221,Enable Treasury & Payments,2025-09-17 14:32:44,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00221,Enroll Digital Banking,2025-09-18 05:32:44,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00222,Enable Treasury & Payments,2025-09-24 06:09:45,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00222,Enroll Digital Banking,2025-09-24 13:09:45,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00223,Enable Treasury & Payments,2025-09-18 08:49:12,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00223,Enroll Digital Banking,2025-09-18 20:49:12,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00224,Enable Treasury & Payments,2025-09-17 16:34:21,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00224,Enroll Digital Banking,2025-09-17 18:34:21,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00225,Enable Treasury & Payments,2025-09-18 04:52:28,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00225,Enroll Digital Banking,2025-09-18 14:52:28,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00226,Enable Treasury & Payments,2025-09-20 07:48:25,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00226,Enroll Digital Banking,2025-09-20 19:48:25,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00227,Enable Treasury & Payments,2025-09-18 18:37:39,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00227,Enroll Digital Banking,2025-09-18 20:37:39,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00228,Enable Treasury & Payments,2025-09-19 07:13:12,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00228,Enroll Digital Banking,2025-09-20 00:13:12,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00229,Enable Treasury & Payments,2025-09-23 01:35:38,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00229,Enroll Digital Banking,2025-09-23 05:35:38,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00230,Enable Treasury & Payments,2025-09-22 20:26:52,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00230,Enroll Digital Banking,2025-09-23 19:26:52,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00231,Enable Treasury & Payments,2025-09-25 01:41:14,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00231,Enroll Digital Banking,2025-09-25 14:41:14,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00233,Enable Treasury & Payments,2025-09-24 23:36:37,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00233,Enroll Digital Banking,2025-09-25 07:36:37,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00235,Enable Treasury & Payments,2025-09-25 01:24:38,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00235,Enroll Digital Banking,2025-09-25 19:24:38,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00236,Enable Treasury & Payments,2025-09-25 04:50:46,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00236,Enroll Digital Banking,2025-09-26 05:50:46,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00237,Enable Treasury & Payments,2025-09-28 04:09:34,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00237,Enroll Digital Banking,2025-09-28 08:09:34,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00238,Enable Treasury & Payments,2025-09-30 11:04:21,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00238,Enroll Digital Banking,2025-09-30 17:04:21,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00239,Enable Treasury & Payments,2025-09-29 01:23:28,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00239,Enroll Digital Banking,2025-09-29 03:23:28,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00241,Enable Treasury & Payments,2025-09-26 18:58:10,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00241,Enroll Digital Banking,2025-09-27 03:58:10,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00242,Enable Treasury & Payments,2025-10-06 04:42:38,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00242,Enroll Digital Banking,2025-10-07 04:42:38,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00243,Enable Treasury & Payments,2025-10-09 19:20:11,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00243,Enroll Digital Banking,2025-10-10 03:20:11,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00244,Enable Treasury & Payments,2025-09-30 18:06:43,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00244,Enroll Digital Banking,2025-10-01 14:06:43,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00245,Enable Treasury & Payments,2025-09-29 23:31:00,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00245,Enroll Digital Banking,2025-09-30 13:31:00,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00246,Enable Treasury & Payments,2025-10-02 05:15:41,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00246,Enroll Digital Banking,2025-10-02 20:15:41,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00249,Enable Treasury & Payments,2025-10-02 16:02:09,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00249,Enroll Digital Banking,2025-10-03 06:02:09,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00250,Enable Treasury & Payments,2025-10-01 11:46:28,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00250,Enroll Digital Banking,2025-10-02 12:46:28,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00251,Enable Treasury & Payments,2025-10-15 04:55:12,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00251,Enroll Digital Banking,2025-10-15 14:55:12,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00252,Enable Treasury & Payments,2025-10-05 07:21:18,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00252,Enroll Digital Banking,2025-10-05 11:21:18,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00253,Enable Treasury & Payments,2025-10-07 05:27:53,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00253,Enroll Digital Banking,2025-10-07 14:27:53,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00255,Enable Treasury & Payments,2025-10-07 14:34:20,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00255,Enroll Digital Banking,2025-10-07 21:34:20,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00256,Enable Treasury & Payments,2025-10-13 23:53:49,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00256,Enroll Digital Banking,2025-10-14 17:53:49,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00257,Enable Treasury & Payments,2025-10-07 13:12:06,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00257,Enroll Digital Banking,2025-10-08 06:12:06,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00258,Enable Treasury & Payments,2025-10-07 09:53:29,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00258,Enroll Digital Banking,2025-10-08 11:53:29,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00259,Enable Treasury & Payments,2025-10-16 10:57:27,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00259,Enroll Digital Banking,2025-10-17 02:57:27,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00260,Enable Treasury & Payments,2025-10-08 07:53:30,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00260,Enroll Digital Banking,2025-10-08 12:53:30,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00261,Enable Treasury & Payments,2025-10-14 00:53:02,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00261,Enroll Digital Banking,2025-10-14 12:53:02,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00262,Enable Treasury & Payments,2025-10-12 13:24:12,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00262,Enroll Digital Banking,2025-10-13 01:24:12,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00263,Enable Treasury & Payments,2025-10-14 06:00:33,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00263,Enroll Digital Banking,2025-10-15 06:00:33,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00264,Enable Treasury & Payments,2025-10-11 19:38:12,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00264,Enroll Digital Banking,2025-10-11 22:38:12,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00265,Enable Treasury & Payments,2025-10-15 23:26:08,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00265,Enroll Digital Banking,2025-10-16 15:26:08,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00267,Enable Treasury & Payments,2025-10-12 10:44:32,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00267,Enroll Digital Banking,2025-10-13 00:44:32,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00268,Enable Treasury & Payments,2025-10-13 06:13:25,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00268,Enroll Digital Banking,2025-10-13 21:13:25,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00269,Enable Treasury & Payments,2025-10-15 21:52:10,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00269,Enroll Digital Banking,2025-10-16 13:52:10,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00270,Enable Treasury & Payments,2025-10-16 23:52:18,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00270,Enroll Digital Banking,2025-10-18 00:52:18,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00271,Enable Treasury & Payments,2025-10-17 11:21:54,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00271,Enroll Digital Banking,2025-10-18 09:21:54,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00272,Enable Treasury & Payments,2025-10-18 14:20:17,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00272,Enroll Digital Banking,2025-10-19 15:20:17,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00273,Enable Treasury & Payments,2025-10-21 04:19:32,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00273,Enroll Digital Banking,2025-10-21 18:19:32,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00274,Enable Treasury & Payments,2025-10-19 15:06:18,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00274,Enroll Digital Banking,2025-10-19 19:06:18,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00275,Enable Treasury & Payments,2025-10-19 04:53:24,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00275,Enroll Digital Banking,2025-10-19 16:53:24,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00276,Enable Treasury & Payments,2025-10-20 11:12:25,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00276,Enroll Digital Banking,2025-10-20 16:12:25,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00277,Enable Treasury & Payments,2025-10-28 20:34:03,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00277,Enroll Digital Banking,2025-10-29 03:34:03,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00279,Enable Treasury & Payments,2025-10-22 13:57:25,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00279,Enroll Digital Banking,2025-10-23 01:57:25,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00281,Enable Treasury & Payments,2025-10-23 13:47:35,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00281,Enroll Digital Banking,2025-10-24 05:47:35,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00282,Enable Treasury & Payments,2025-10-24 04:29:27,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00282,Enroll Digital Banking,2025-10-25 02:29:27,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00283,Enable Treasury & Payments,2025-10-28 08:34:29,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00283,Enroll Digital Banking,2025-10-28 20:34:29,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00284,Enable Treasury & Payments,2025-10-26 01:20:46,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00284,Enroll Digital Banking,2025-10-26 07:20:46,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00285,Enable Treasury & Payments,2025-10-27 14:10:43,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00285,Enroll Digital Banking,2025-10-28 07:10:43,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00286,Enable Treasury & Payments,2025-10-24 19:59:51,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00286,Enroll Digital Banking,2025-10-25 19:59:51,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00287,Enable Treasury & Payments,2025-11-04 00:52:21,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00287,Enroll Digital Banking,2025-11-05 01:52:21,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00288,Enable Treasury & Payments,2025-10-28 17:33:39,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00288,Enroll Digital Banking,2025-10-29 02:33:39,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00289,Enable Treasury & Payments,2025-10-28 01:17:19,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00289,Enroll Digital Banking,2025-10-28 04:17:19,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00290,Enable Treasury & Payments,2025-10-27 08:35:03,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00290,Enroll Digital Banking,2025-10-27 21:35:03,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00291,Enable Treasury & Payments,2025-10-30 03:54:04,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00291,Enroll Digital Banking,2025-10-30 14:54:04,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00292,Enable Treasury & Payments,2025-10-30 11:20:09,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00292,Enroll Digital Banking,2025-10-31 10:20:09,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00293,Enable Treasury & Payments,2025-10-31 04:33:35,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00293,Enroll Digital Banking,2025-10-31 22:33:35,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00294,Enable Treasury & Payments,2025-11-02 08:54:46,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00294,Enroll Digital Banking,2025-11-03 04:54:46,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00295,Enable Treasury & Payments,2025-11-11 16:36:40,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00295,Enroll Digital Banking,2025-11-11 21:36:40,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00296,Enable Treasury & Payments,2025-11-03 00:19:31,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00296,Enroll Digital Banking,2025-11-04 00:19:31,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00297,Enable Treasury & Payments,2025-11-04 03:35:20,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00297,Enroll Digital Banking,2025-11-05 04:35:20,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00299,Enable Treasury & Payments,2025-11-10 18:19:15,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00299,Enroll Digital Banking,2025-11-11 17:19:15,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00300,Enable Treasury & Payments,2025-11-13 11:26:45,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00300,Enroll Digital Banking,2025-11-14 03:26:45,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00301,Enable Treasury & Payments,2025-11-07 19:54:18,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00301,Enroll Digital Banking,2025-11-08 20:54:18,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00302,Enable Treasury & Payments,2025-11-11 15:24:41,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00302,Enroll Digital Banking,2025-11-12 02:24:41,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00303,Enable Treasury & Payments,2025-11-06 18:06:01,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00303,Enroll Digital Banking,2025-11-06 22:06:01,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00305,Enable Treasury & Payments,2025-11-07 02:04:24,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00305,Enroll Digital Banking,2025-11-07 15:04:24,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00306,Enable Treasury & Payments,2025-11-08 06:53:49,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00306,Enroll Digital Banking,2025-11-08 11:53:49,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00307,Enable Treasury & Payments,2025-11-08 03:38:35,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00307,Enroll Digital Banking,2025-11-09 01:38:35,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00308,Enable Treasury & Payments,2025-11-09 02:54:26,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00308,Enroll Digital Banking,2025-11-10 03:54:26,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00309,Enable Treasury & Payments,2025-11-09 23:26:37,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00309,Enroll Digital Banking,2025-11-10 22:26:37,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00310,Enable Treasury & Payments,2025-11-12 18:27:41,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00310,Enroll Digital Banking,2025-11-13 00:27:41,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00311,Enable Treasury & Payments,2025-11-18 12:38:42,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00311,Enroll Digital Banking,2025-11-19 13:38:42,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00312,Enable Treasury & Payments,2025-11-10 02:58:16,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00312,Enroll Digital Banking,2025-11-11 03:58:16,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00313,Enable Treasury & Payments,2025-11-15 01:43:07,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00313,Enroll Digital Banking,2025-11-16 03:43:07,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00314,Enable Treasury & Payments,2025-11-11 04:41:39,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00314,Enroll Digital Banking,2025-11-12 03:41:39,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00315,Enable Treasury & Payments,2025-11-14 10:29:03,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00315,Enroll Digital Banking,2025-11-14 16:29:03,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00316,Enable Treasury & Payments,2025-11-14 03:29:53,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00316,Enroll Digital Banking,2025-11-14 05:29:53,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00317,Enable Treasury & Payments,2025-11-13 07:13:53,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00317,Enroll Digital Banking,2025-11-13 21:13:53,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00318,Enable Treasury & Payments,2025-11-16 22:06:21,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00318,Enroll Digital Banking,2025-11-17 13:06:21,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00319,Enable Treasury & Payments,2025-11-17 02:09:10,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00319,Enroll Digital Banking,2025-11-18 01:09:10,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00321,Enable Treasury & Payments,2025-11-14 23:56:15,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00321,Enroll Digital Banking,2025-11-15 06:56:15,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00322,Enable Treasury & Payments,2025-11-19 02:02:06,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00322,Enroll Digital Banking,2025-11-19 18:02:06,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00323,Enable Treasury & Payments,2025-11-18 23:36:07,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00323,Enroll Digital Banking,2025-11-19 19:36:07,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00324,Enable Treasury & Payments,2025-11-18 21:42:51,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00324,Enroll Digital Banking,2025-11-19 09:42:51,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00326,Enable Treasury & Payments,2025-11-18 11:58:04,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00326,Enroll Digital Banking,2025-11-18 23:58:04,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00327,Enable Treasury & Payments,2025-11-21 19:31:07,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00327,Enroll Digital Banking,2025-11-22 07:31:07,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00328,Enable Treasury & Payments,2025-11-19 22:53:54,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00328,Enroll Digital Banking,2025-11-20 06:53:54,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00330,Enable Treasury & Payments,2025-11-21 11:58:57,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00330,Enroll Digital Banking,2025-11-22 10:58:57,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00331,Enable Treasury & Payments,2025-11-23 01:28:20,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00331,Enroll Digital Banking,2025-11-23 07:28:20,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00332,Enable Treasury & Payments,2025-11-23 12:28:44,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00332,Enroll Digital Banking,2025-11-23 19:28:44,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00335,Enable Treasury & Payments,2025-11-25 15:28:13,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00335,Enroll Digital Banking,2025-11-26 08:28:13,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00336,Enable Treasury & Payments,2025-12-02 23:02:01,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00336,Enroll Digital Banking,2025-12-03 15:02:01,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00337,Enable Treasury & Payments,2025-12-03 09:33:34,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00337,Enroll Digital Banking,2025-12-04 03:33:34,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00338,Enable Treasury & Payments,2025-11-27 14:52:28,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00338,Enroll Digital Banking,2025-11-28 06:52:28,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00339,Enable Treasury & Payments,2025-11-27 00:30:54,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00339,Enroll Digital Banking,2025-11-27 10:30:54,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00340,Enable Treasury & Payments,2025-11-30 01:10:53,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00340,Enroll Digital Banking,2025-11-30 06:10:53,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00341,Enable Treasury & Payments,2025-11-28 22:54:53,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00341,Enroll Digital Banking,2025-11-29 12:54:53,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00342,Enable Treasury & Payments,2025-12-02 10:51:01,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00342,Enroll Digital Banking,2025-12-03 01:51:01,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00343,Enable Treasury & Payments,2025-12-02 14:18:58,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00343,Enroll Digital Banking,2025-12-02 17:18:58,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00344,Enable Treasury & Payments,2025-12-03 00:33:06,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00344,Enroll Digital Banking,2025-12-03 21:33:06,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00345,Enable Treasury & Payments,2025-12-10 21:12:50,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00345,Enroll Digital Banking,2025-12-11 13:12:50,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00346,Enable Treasury & Payments,2025-12-01 09:38:04,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00346,Enroll Digital Banking,2025-12-01 18:38:04,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00347,Enable Treasury & Payments,2025-12-05 05:56:56,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00347,Enroll Digital Banking,2025-12-05 22:56:56,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00350,Enable Treasury & Payments,2025-12-05 13:53:46,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00350,Enroll Digital Banking,2025-12-05 18:53:46,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00351,Enable Treasury & Payments,2025-12-16 08:16:00,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00351,Enroll Digital Banking,2025-12-17 07:16:00,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00352,Enable Treasury & Payments,2025-12-06 02:50:39,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00352,Enroll Digital Banking,2025-12-06 08:50:39,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00353,Enable Treasury & Payments,2025-12-03 17:41:35,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00353,Enroll Digital Banking,2025-12-03 19:41:35,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00354,Enable Treasury & Payments,2025-12-08 11:55:44,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00354,Enroll Digital Banking,2025-12-08 16:55:44,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00355,Enable Treasury & Payments,2025-12-09 19:10:41,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00355,Enroll Digital Banking,2025-12-10 11:10:41,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00356,Enable Treasury & Payments,2025-12-05 11:36:14,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00356,Enroll Digital Banking,2025-12-06 00:36:14,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00358,Enable Treasury & Payments,2025-12-12 04:51:18,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00358,Enroll Digital Banking,2025-12-12 23:51:18,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00359,Enable Treasury & Payments,2025-12-09 12:21:40,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00359,Enroll Digital Banking,2025-12-10 04:21:40,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00362,Enable Treasury & Payments,2025-12-08 06:13:02,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00362,Enroll Digital Banking,2025-12-08 14:13:02,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00364,Enable Treasury & Payments,2025-12-20 02:11:58,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00364,Enroll Digital Banking,2025-12-20 16:11:58,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00365,Enable Treasury & Payments,2025-12-12 07:24:27,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00365,Enroll Digital Banking,2025-12-13 08:24:27,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00366,Enable Treasury & Payments,2025-12-15 02:38:36,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00366,Enroll Digital Banking,2025-12-15 16:38:36,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00367,Enable Treasury & Payments,2025-12-12 13:36:22,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00367,Enroll Digital Banking,2025-12-12 21:36:22,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00368,Enable Treasury & Payments,2025-12-15 03:44:57,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00368,Enroll Digital Banking,2025-12-15 07:44:57,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00369,Enable Treasury & Payments,2025-12-17 04:09:13,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00369,Enroll Digital Banking,2025-12-17 16:09:13,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00371,Enable Treasury & Payments,2025-12-18 01:15:08,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00371,Enroll Digital Banking,2025-12-18 07:15:08,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00372,Enable Treasury & Payments,2025-12-16 14:30:34,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00372,Enroll Digital Banking,2025-12-16 16:30:34,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00373,Enable Treasury & Payments,2025-12-17 12:46:29,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00373,Enroll Digital Banking,2025-12-17 14:46:29,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00374,Enable Treasury & Payments,2025-12-19 17:15:21,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00374,Enroll Digital Banking,2025-12-20 16:15:21,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00375,Enable Treasury & Payments,2025-12-19 06:00:08,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00375,Enroll Digital Banking,2025-12-20 07:00:08,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00376,Enable Treasury & Payments,2025-12-18 17:01:41,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00376,Enroll Digital Banking,2025-12-18 19:01:41,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00378,Enable Treasury & Payments,2025-12-23 20:40:10,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00378,Enroll Digital Banking,2025-12-24 14:40:10,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00380,Enable Treasury & Payments,2025-12-23 09:35:06,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00380,Enroll Digital Banking,2025-12-23 17:35:06,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00381,Enable Treasury & Payments,2025-12-22 08:16:06,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00381,Enroll Digital Banking,2025-12-23 05:16:06,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00382,Enable Treasury & Payments,2025-12-23 09:43:14,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00382,Enroll Digital Banking,2025-12-24 10:43:14,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00384,Enable Treasury & Payments,2025-12-24 13:21:32,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00384,Enroll Digital Banking,2025-12-25 05:21:32,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00387,Enable Treasury & Payments,2025-12-27 03:16:50,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00387,Enroll Digital Banking,2025-12-27 08:16:50,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00388,Enable Treasury & Payments,2025-12-26 13:39:00,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00388,Enroll Digital Banking,2025-12-27 00:39:00,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00389,Enable Treasury & Payments,2025-12-28 05:01:31,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00389,Enroll Digital Banking,2025-12-29 02:01:31,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00390,Enable Treasury & Payments,2025-12-29 18:27:22,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00390,Enroll Digital Banking,2025-12-30 07:27:22,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00391,Enable Treasury & Payments,2025-12-27 11:19:27,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00391,Enroll Digital Banking,2025-12-27 15:19:27,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00393,Enable Treasury & Payments,2026-01-10 03:44:37,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00393,Enroll Digital Banking,2026-01-10 14:44:37,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00394,Enable Treasury & Payments,2026-01-10 09:12:41,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00394,Enroll Digital Banking,2026-01-11 09:12:41,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00395,Enable Treasury & Payments,2026-01-02 05:50:00,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00395,Enroll Digital Banking,2026-01-02 12:50:00,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00397,Enable Treasury & Payments,2026-01-01 18:04:56,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00397,Enroll Digital Banking,2026-01-02 01:04:56,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00399,Enable Treasury & Payments,2026-01-06 11:01:01,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00399,Enroll Digital Banking,2026-01-06 17:01:01,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00400,Enable Treasury & Payments,2026-01-03 07:56:56,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00400,Enroll Digital Banking,2026-01-03 18:56:56,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00401,Enable Treasury & Payments,2026-01-02 19:39:30,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00401,Enroll Digital Banking,2026-01-03 05:39:30,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00402,Enable Treasury & Payments,2026-01-04 08:31:48,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00402,Enroll Digital Banking,2026-01-04 19:31:48,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00403,Enable Treasury & Payments,2026-01-05 06:51:35,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00403,Enroll Digital Banking,2026-01-05 08:51:35,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00404,Enable Treasury & Payments,2026-01-08 20:41:16,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00404,Enroll Digital Banking,2026-01-09 02:41:16,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00405,Enable Treasury & Payments,2026-01-05 08:12:04,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00405,Enroll Digital Banking,2026-01-06 09:12:04,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00406,Enable Treasury & Payments,2026-01-06 04:42:04,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00406,Enroll Digital Banking,2026-01-07 06:42:04,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00407,Enable Treasury & Payments,2026-01-07 19:47:30,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00407,Enroll Digital Banking,2026-01-08 17:47:30,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00409,Enable Treasury & Payments,2026-01-10 19:37:20,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00409,Enroll Digital Banking,2026-01-11 07:37:20,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00411,Enable Treasury & Payments,2026-01-09 22:51:29,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00411,Enroll Digital Banking,2026-01-10 10:51:29,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00412,Enable Treasury & Payments,2026-01-13 21:31:31,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00412,Enroll Digital Banking,2026-01-14 07:31:31,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00413,Enable Treasury & Payments,2026-01-15 01:21:55,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00413,Enroll Digital Banking,2026-01-15 20:21:55,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00414,Enable Treasury & Payments,2026-01-19 17:30:36,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00414,Enroll Digital Banking,2026-01-20 15:30:36,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00415,Enable Treasury & Payments,2026-01-11 19:59:51,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00415,Enroll Digital Banking,2026-01-12 12:59:51,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00417,Enable Treasury & Payments,2026-01-13 15:57:44,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00417,Enroll Digital Banking,2026-01-13 19:57:44,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00418,Enable Treasury & Payments,2026-01-16 09:31:31,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00418,Enroll Digital Banking,2026-01-17 06:31:31,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00419,Enable Treasury & Payments,2026-01-18 22:38:57,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00419,Enroll Digital Banking,2026-01-19 16:38:57,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00420,Enable Treasury & Payments,2026-01-14 05:54:15,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00420,Enroll Digital Banking,2026-01-15 05:54:15,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00421,Enable Treasury & Payments,2026-01-13 23:41:01,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00421,Enroll Digital Banking,2026-01-14 19:41:01,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00423,Enable Treasury & Payments,2026-01-20 08:16:54,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00423,Enroll Digital Banking,2026-01-20 17:16:54,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00424,Enable Treasury & Payments,2026-01-17 08:24:34,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00424,Enroll Digital Banking,2026-01-18 03:24:34,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00425,Enable Treasury & Payments,2026-01-16 21:44:11,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00425,Enroll Digital Banking,2026-01-17 08:44:11,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00426,Enable Treasury & Payments,2026-01-19 14:04:56,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00426,Enroll Digital Banking,2026-01-20 08:04:56,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00427,Enable Treasury & Payments,2026-01-20 03:19:39,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00427,Enroll Digital Banking,2026-01-20 16:19:39,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00428,Enable Treasury & Payments,2026-01-26 13:13:31,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00428,Enroll Digital Banking,2026-01-27 14:13:31,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00429,Enable Treasury & Payments,2026-01-23 00:23:31,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00429,Enroll Digital Banking,2026-01-24 02:23:31,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00430,Enable Treasury & Payments,2026-01-21 04:38:42,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00430,Enroll Digital Banking,2026-01-21 12:38:42,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00431,Enable Treasury & Payments,2026-01-20 17:13:22,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00431,Enroll Digital Banking,2026-01-21 02:13:22,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00432,Enable Treasury & Payments,2026-01-23 08:04:09,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00432,Enroll Digital Banking,2026-01-23 20:04:09,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00433,Enable Treasury & Payments,2026-01-22 18:18:23,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00433,Enroll Digital Banking,2026-01-23 01:18:23,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00434,Enable Treasury & Payments,2026-01-23 20:05:28,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00434,Enroll Digital Banking,2026-01-24 02:05:28,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00435,Enable Treasury & Payments,2026-01-22 22:48:35,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00435,Enroll Digital Banking,2026-01-23 18:48:35,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00436,Enable Treasury & Payments,2026-01-24 14:35:00,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00436,Enroll Digital Banking,2026-01-24 17:35:00,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00438,Enable Treasury & Payments,2026-01-25 11:58:29,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00438,Enroll Digital Banking,2026-01-26 04:58:29,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00439,Enable Treasury & Payments,2026-01-31 11:16:06,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00439,Enroll Digital Banking,2026-02-01 02:16:06,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00441,Enable Treasury & Payments,2026-01-29 08:11:30,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00441,Enroll Digital Banking,2026-01-30 02:11:30,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00442,Enable Treasury & Payments,2026-01-27 23:45:24,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00442,Enroll Digital Banking,2026-01-28 05:45:24,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00443,Enable Treasury & Payments,2026-01-29 23:28:51,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00443,Enroll Digital Banking,2026-01-30 17:28:51,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00444,Enable Treasury & Payments,2026-02-01 02:59:19,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00444,Enroll Digital Banking,2026-02-02 02:59:19,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00445,Enable Treasury & Payments,2026-02-02 09:55:34,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00445,Enroll Digital Banking,2026-02-03 04:55:34,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00446,Enable Treasury & Payments,2026-02-04 08:50:04,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00446,Enroll Digital Banking,2026-02-04 22:50:04,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00447,Enable Treasury & Payments,2026-02-07 03:02:46,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00447,Enroll Digital Banking,2026-02-07 16:02:46,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00448,Enable Treasury & Payments,2026-01-30 02:49:47,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00448,Enroll Digital Banking,2026-01-30 10:49:47,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00449,Enable Treasury & Payments,2026-02-01 15:02:22,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00449,Enroll Digital Banking,2026-02-02 16:02:22,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00450,Enable Treasury & Payments,2026-02-14 16:29:16,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00450,Enroll Digital Banking,2026-02-15 06:29:16,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00451,Enable Treasury & Payments,2026-02-06 13:09:51,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00451,Enroll Digital Banking,2026-02-07 03:09:51,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00452,Enable Treasury & Payments,2026-02-05 14:08:42,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00452,Enroll Digital Banking,2026-02-06 00:08:42,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00453,Enable Treasury & Payments,2026-02-06 01:56:23,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00453,Enroll Digital Banking,2026-02-06 14:56:23,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00454,Enable Treasury & Payments,2026-02-12 20:26:04,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00454,Enroll Digital Banking,2026-02-13 08:26:04,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00455,Enable Treasury & Payments,2026-02-04 04:16:01,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00455,Enroll Digital Banking,2026-02-04 06:16:01,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00456,Enable Treasury & Payments,2026-02-05 03:30:18,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00456,Enroll Digital Banking,2026-02-06 04:30:18,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00457,Enable Treasury & Payments,2026-02-07 14:53:34,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00457,Enroll Digital Banking,2026-02-08 09:53:34,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00458,Enable Treasury & Payments,2026-02-10 16:41:48,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00458,Enroll Digital Banking,2026-02-11 05:41:48,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00459,Enable Treasury & Payments,2026-02-08 05:01:05,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00459,Enroll Digital Banking,2026-02-09 03:01:05,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00461,Enable Treasury & Payments,2026-02-07 20:44:37,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00461,Enroll Digital Banking,2026-02-08 14:44:37,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00462,Enable Treasury & Payments,2026-02-07 17:10:31,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00462,Enroll Digital Banking,2026-02-08 13:10:31,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00463,Enable Treasury & Payments,2026-02-12 08:45:19,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00463,Enroll Digital Banking,2026-02-13 02:45:19,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00464,Enable Treasury & Payments,2026-02-10 01:30:49,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00464,Enroll Digital Banking,2026-02-10 15:30:49,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00466,Enable Treasury & Payments,2026-02-13 17:49:34,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00466,Enroll Digital Banking,2026-02-14 00:49:34,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00467,Enable Treasury & Payments,2026-02-13 01:20:28,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00467,Enroll Digital Banking,2026-02-13 04:20:28,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00468,Enable Treasury & Payments,2026-02-12 23:49:54,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00468,Enroll Digital Banking,2026-02-13 15:49:54,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00470,Enable Treasury & Payments,2026-02-15 21:03:35,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00470,Enroll Digital Banking,2026-02-16 18:03:35,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00471,Enable Treasury & Payments,2026-02-15 05:19:34,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00471,Enroll Digital Banking,2026-02-16 02:19:34,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00472,Enable Treasury & Payments,2026-02-16 11:04:52,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00472,Enroll Digital Banking,2026-02-17 10:04:52,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00473,Enable Treasury & Payments,2026-02-18 01:52:39,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00473,Enroll Digital Banking,2026-02-19 03:52:39,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00474,Enable Treasury & Payments,2026-02-17 20:18:01,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00474,Enroll Digital Banking,2026-02-18 04:18:01,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00475,Enable Treasury & Payments,2026-02-18 20:59:17,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00475,Enroll Digital Banking,2026-02-19 07:59:17,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00476,Enable Treasury & Payments,2026-02-27 08:44:31,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00476,Enroll Digital Banking,2026-02-28 10:44:31,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00477,Enable Treasury & Payments,2026-02-18 02:38:33,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00477,Enroll Digital Banking,2026-02-18 23:38:33,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00479,Enable Treasury & Payments,2026-02-20 08:14:47,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00479,Enroll Digital Banking,2026-02-20 15:14:47,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00480,Enable Treasury & Payments,2026-02-22 01:36:44,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00480,Enroll Digital Banking,2026-02-22 07:36:44,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00481,Enable Treasury & Payments,2026-02-21 10:21:48,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00481,Enroll Digital Banking,2026-02-21 19:21:48,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00482,Enable Treasury & Payments,2026-02-20 07:01:19,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00482,Enroll Digital Banking,2026-02-20 22:01:19,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00483,Enable Treasury & Payments,2026-02-24 11:03:57,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00483,Enroll Digital Banking,2026-02-24 16:03:57,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00484,Enable Treasury & Payments,2026-02-21 05:36:43,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00484,Enroll Digital Banking,2026-02-21 21:36:43,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00485,Enable Treasury & Payments,2026-02-24 20:50:28,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00485,Enroll Digital Banking,2026-02-25 18:50:28,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00486,Enable Treasury & Payments,2026-03-06 00:04:41,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00486,Enroll Digital Banking,2026-03-06 15:04:41,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00487,Enable Treasury & Payments,2026-02-25 05:23:12,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00487,Enroll Digital Banking,2026-02-25 22:23:12,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00488,Enable Treasury & Payments,2026-02-26 09:01:14,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00488,Enroll Digital Banking,2026-02-26 20:01:14,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00489,Enable Treasury & Payments,2026-02-24 01:21:52,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00489,Enroll Digital Banking,2026-02-24 07:21:52,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00490,Enable Treasury & Payments,2026-02-27 17:10:10,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00490,Enroll Digital Banking,2026-02-27 19:10:10,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00491,Enable Treasury & Payments,2026-02-24 20:47:08,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00491,Enroll Digital Banking,2026-02-25 01:47:08,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00492,Enable Treasury & Payments,2026-02-26 00:39:07,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00492,Enroll Digital Banking,2026-02-26 05:39:07,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00493,Enable Treasury & Payments,2026-02-28 17:08:37,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00493,Enroll Digital Banking,2026-02-28 21:08:37,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00494,Enable Treasury & Payments,2026-03-01 01:39:52,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00494,Enroll Digital Banking,2026-03-01 15:39:52,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00495,Enable Treasury & Payments,2026-03-02 02:07:10,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00495,Enroll Digital Banking,2026-03-03 03:07:10,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00496,Enable Treasury & Payments,2026-03-04 13:20:42,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00496,Enroll Digital Banking,2026-03-05 02:20:42,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00497,Enable Treasury & Payments,2026-03-03 19:56:47,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00497,Enroll Digital Banking,2026-03-04 05:56:47,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00498,Enable Treasury & Payments,2026-03-04 08:59:02,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00498,Enroll Digital Banking,2026-03-05 10:59:02,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00499,Enable Treasury & Payments,2026-03-05 08:27:09,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00499,Enroll Digital Banking,2026-03-05 14:27:09,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00500,Enable Treasury & Payments,2026-03-02 17:55:01,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00500,Enroll Digital Banking,2026-03-03 14:55:01,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00501,Enable Treasury & Payments,2026-03-05 13:41:29,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00501,Enroll Digital Banking,2026-03-06 07:41:29,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00502,Enable Treasury & Payments,2026-03-05 15:08:32,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00502,Enroll Digital Banking,2026-03-05 22:08:32,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00503,Enable Treasury & Payments,2026-03-08 16:31:20,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00503,Enroll Digital Banking,2026-03-08 19:31:20,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00504,Enable Treasury & Payments,2026-03-09 06:41:06,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00504,Enroll Digital Banking,2026-03-10 01:41:06,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00505,Enable Treasury & Payments,2026-03-08 01:51:53,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00505,Enroll Digital Banking,2026-03-08 22:51:53,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00507,Enable Treasury & Payments,2026-03-10 07:37:02,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00507,Enroll Digital Banking,2026-03-11 03:37:02,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00509,Enable Treasury & Payments,2026-03-20 07:30:24,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00509,Enroll Digital Banking,2026-03-20 16:30:24,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00510,Enable Treasury & Payments,2026-03-10 07:26:14,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00510,Enroll Digital Banking,2026-03-10 15:26:14,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00512,Enable Treasury & Payments,2026-03-11 16:44:13,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00512,Enroll Digital Banking,2026-03-11 19:44:13,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00515,Enable Treasury & Payments,2026-03-13 10:13:45,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00515,Enroll Digital Banking,2026-03-14 05:13:45,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00516,Enable Treasury & Payments,2026-03-17 07:24:10,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00516,Enroll Digital Banking,2026-03-18 03:24:10,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00517,Enable Treasury & Payments,2026-03-14 07:29:59,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00517,Enroll Digital Banking,2026-03-14 10:29:59,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00520,Enable Treasury & Payments,2026-03-20 01:36:07,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00520,Enroll Digital Banking,2026-03-20 11:36:07,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00521,Enable Treasury & Payments,2026-03-24 00:51:53,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00521,Enroll Digital Banking,2026-03-24 16:51:53,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00522,Enable Treasury & Payments,2026-03-20 04:36:39,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00522,Enroll Digital Banking,2026-03-20 14:36:39,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00524,Enable Treasury & Payments,2026-03-18 07:16:53,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00524,Enroll Digital Banking,2026-03-19 09:16:53,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00525,Enable Treasury & Payments,2026-03-20 13:03:43,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00525,Enroll Digital Banking,2026-03-21 07:03:43,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00526,Enable Treasury & Payments,2026-03-29 06:20:28,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00526,Enroll Digital Banking,2026-03-30 03:20:28,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00527,Enable Treasury & Payments,2026-03-21 07:53:14,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00527,Enroll Digital Banking,2026-03-22 09:53:14,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00528,Enable Treasury & Payments,2026-03-22 12:37:09,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00528,Enroll Digital Banking,2026-03-23 11:37:09,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00529,Enable Treasury & Payments,2026-03-24 02:15:20,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00529,Enroll Digital Banking,2026-03-24 04:15:20,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00530,Enable Treasury & Payments,2026-03-23 22:05:08,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00530,Enroll Digital Banking,2026-03-24 13:05:08,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00531,Enable Treasury & Payments,2026-03-22 15:39:01,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00531,Enroll Digital Banking,2026-03-23 13:39:01,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00532,Enable Treasury & Payments,2026-03-25 10:41:20,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00532,Enroll Digital Banking,2026-03-26 04:41:20,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00533,Enable Treasury & Payments,2026-03-28 17:29:13,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00533,Enroll Digital Banking,2026-03-29 14:29:13,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00534,Enable Treasury & Payments,2026-03-26 03:02:04,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00534,Enroll Digital Banking,2026-03-27 05:02:04,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00535,Enable Treasury & Payments,2026-03-26 20:12:42,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00535,Enroll Digital Banking,2026-03-27 03:12:42,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00536,Enable Treasury & Payments,2026-03-26 19:54:39,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00536,Enroll Digital Banking,2026-03-27 07:54:39,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00537,Enable Treasury & Payments,2026-03-28 10:05:24,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00537,Enroll Digital Banking,2026-03-28 14:05:24,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00538,Enable Treasury & Payments,2026-04-01 02:00:48,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00538,Enroll Digital Banking,2026-04-02 01:00:48,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00539,Enable Treasury & Payments,2026-03-30 09:53:03,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00539,Enroll Digital Banking,2026-03-30 15:53:03,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00540,Enable Treasury & Payments,2026-03-30 10:29:52,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00540,Enroll Digital Banking,2026-03-30 22:29:52,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00541,Enable Treasury & Payments,2026-03-29 11:49:40,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00541,Enroll Digital Banking,2026-03-29 22:49:40,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00542,Enable Treasury & Payments,2026-03-30 16:16:48,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00542,Enroll Digital Banking,2026-03-31 07:16:48,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00543,Enable Treasury & Payments,2026-03-31 13:56:18,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00543,Enroll Digital Banking,2026-03-31 18:56:18,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00544,Enable Treasury & Payments,2026-03-31 16:34:15,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00544,Enroll Digital Banking,2026-04-01 08:34:15,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00545,Enable Treasury & Payments,2026-04-07 19:56:35,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00545,Enroll Digital Banking,2026-04-08 03:56:35,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00546,Enable Treasury & Payments,2026-04-05 03:10:31,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00546,Enroll Digital Banking,2026-04-05 22:10:31,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00547,Enable Treasury & Payments,2026-04-02 13:08:22,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00547,Enroll Digital Banking,2026-04-03 09:08:22,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00548,Enable Treasury & Payments,2026-04-06 03:26:04,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00548,Enroll Digital Banking,2026-04-06 08:26:04,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00549,Enable Treasury & Payments,2026-04-05 14:21:51,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00549,Enroll Digital Banking,2026-04-06 10:21:51,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00550,Enable Treasury & Payments,2026-04-05 09:56:29,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00550,Enroll Digital Banking,2026-04-05 20:56:29,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00551,Enable Treasury & Payments,2026-04-05 04:44:07,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00551,Enroll Digital Banking,2026-04-06 06:44:07,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00552,Enable Treasury & Payments,2026-04-08 14:17:13,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00552,Enroll Digital Banking,2026-04-08 22:17:13,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00553,Enable Treasury & Payments,2026-04-04 14:27:41,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00553,Enroll Digital Banking,2026-04-04 23:27:41,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00554,Enable Treasury & Payments,2026-04-08 05:43:44,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00554,Enroll Digital Banking,2026-04-08 17:43:44,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00555,Enable Treasury & Payments,2026-04-08 04:32:52,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00555,Enroll Digital Banking,2026-04-08 09:32:52,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00556,Enable Treasury & Payments,2026-04-09 14:43:25,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00556,Enroll Digital Banking,2026-04-10 13:43:25,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00557,Enable Treasury & Payments,2026-04-10 08:23:22,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00557,Enroll Digital Banking,2026-04-11 09:23:22,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00558,Enable Treasury & Payments,2026-04-12 18:51:28,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00558,Enroll Digital Banking,2026-04-13 17:51:28,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00560,Enable Treasury & Payments,2026-04-07 20:17:06,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00560,Enroll Digital Banking,2026-04-08 13:17:06,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00561,Enable Treasury & Payments,2026-04-16 05:46:22,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00561,Enroll Digital Banking,2026-04-17 06:46:22,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00562,Enable Treasury & Payments,2026-04-13 03:07:12,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00562,Enroll Digital Banking,2026-04-13 15:07:12,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00563,Enable Treasury & Payments,2026-04-12 06:36:29,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00563,Enroll Digital Banking,2026-04-12 19:36:29,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00564,Enable Treasury & Payments,2026-04-15 03:16:55,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00564,Enroll Digital Banking,2026-04-15 18:16:55,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00565,Enable Treasury & Payments,2026-04-18 04:18:30,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00565,Enroll Digital Banking,2026-04-18 07:18:30,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00568,Enable Treasury & Payments,2026-04-15 20:04:19,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00568,Enroll Digital Banking,2026-04-15 22:04:19,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00569,Enable Treasury & Payments,2026-04-22 08:03:52,Treasury Services Specialist,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00569,Enroll Digital Banking,2026-04-22 13:03:52,Onboarding Operations,entity_type=Corp;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00570,Enable Treasury & Payments,2026-04-15 01:59:56,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00570,Enroll Digital Banking,2026-04-15 14:59:56,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00571,Enable Treasury & Payments,2026-04-17 07:16:51,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00571,Enroll Digital Banking,2026-04-18 03:16:51,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00572,Enable Treasury & Payments,2026-04-18 03:30:08,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00572,Enroll Digital Banking,2026-04-18 22:30:08,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00573,Enable Treasury & Payments,2026-04-19 04:45:47,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00573,Enroll Digital Banking,2026-04-19 06:45:47,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00574,Enable Treasury & Payments,2026-04-19 18:54:38,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00574,Enroll Digital Banking,2026-04-19 21:54:38,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00575,Enable Treasury & Payments,2026-04-20 16:30:26,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00575,Enroll Digital Banking,2026-04-21 18:30:26,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00576,Enable Treasury & Payments,2026-04-21 00:07:20,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00576,Enroll Digital Banking,2026-04-21 15:07:20,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00578,Enable Treasury & Payments,2026-04-25 03:15:28,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00578,Enroll Digital Banking,2026-04-25 11:15:28,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00579,Enable Treasury & Payments,2026-04-23 10:05:38,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00579,Enroll Digital Banking,2026-04-23 17:05:38,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00581,Enable Treasury & Payments,2026-04-23 11:31:56,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00581,Enroll Digital Banking,2026-04-24 13:31:56,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00583,Enable Treasury & Payments,2026-04-26 18:17:00,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00583,Enroll Digital Banking,2026-04-27 06:17:00,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00584,Enable Treasury & Payments,2026-05-05 07:08:40,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00584,Enroll Digital Banking,2026-05-06 08:08:40,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00585,Enable Treasury & Payments,2026-04-26 20:04:22,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00585,Enroll Digital Banking,2026-04-27 20:04:22,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00586,Enable Treasury & Payments,2026-04-27 08:14:58,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00586,Enroll Digital Banking,2026-04-27 12:14:58,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00587,Enable Treasury & Payments,2026-04-26 12:52:50,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00587,Enroll Digital Banking,2026-04-27 00:52:50,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00588,Enable Treasury & Payments,2026-05-08 14:57:23,Treasury Services Specialist,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00588,Enroll Digital Banking,2026-05-09 10:57:23,Onboarding Operations,entity_type=LLC;risk_flag=pep_hit;outcome=approved
+FT-COM-2025-00589,Enable Treasury & Payments,2026-04-28 22:58:52,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00589,Enroll Digital Banking,2026-04-29 12:58:52,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00590,Enable Treasury & Payments,2026-04-26 02:59:17,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00590,Enroll Digital Banking,2026-04-26 09:59:17,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00591,Enable Treasury & Payments,2026-04-30 01:35:44,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00591,Enroll Digital Banking,2026-04-30 05:35:44,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00592,Enable Treasury & Payments,2026-05-01 07:13:50,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00592,Enroll Digital Banking,2026-05-01 22:13:50,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00593,Enable Treasury & Payments,2026-05-04 16:22:08,Treasury Services Specialist,entity_type=LLC;outcome=approved
+FT-COM-2025-00593,Enroll Digital Banking,2026-05-05 18:22:08,Onboarding Operations,entity_type=LLC;outcome=approved
+FT-COM-2025-00594,Enable Treasury & Payments,2026-05-01 10:42:48,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00594,Enroll Digital Banking,2026-05-02 06:42:48,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00595,Enable Treasury & Payments,2026-04-29 12:01:41,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00595,Enroll Digital Banking,2026-04-29 14:01:41,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00597,Enable Treasury & Payments,2026-05-03 19:12:55,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00597,Enroll Digital Banking,2026-05-04 09:12:55,Onboarding Operations,entity_type=Partnership;outcome=approved
+FT-COM-2025-00598,Enable Treasury & Payments,2026-05-06 01:29:07,Treasury Services Specialist,entity_type=Corp;outcome=approved
+FT-COM-2025-00598,Enroll Digital Banking,2026-05-06 04:29:07,Onboarding Operations,entity_type=Corp;outcome=approved
+FT-COM-2025-00599,Enable Treasury & Payments,2026-05-03 09:20:08,Treasury Services Specialist,entity_type=LP;outcome=approved
+FT-COM-2025-00599,Enroll Digital Banking,2026-05-04 00:20:08,Onboarding Operations,entity_type=LP;outcome=approved
+FT-COM-2025-00600,Enable Treasury & Payments,2026-05-02 17:36:46,Treasury Services Specialist,entity_type=Partnership;outcome=approved
+FT-COM-2025-00600,Enroll Digital Banking,2026-05-03 04:36:46,Onboarding Operations,entity_type=Partnership;outcome=approved

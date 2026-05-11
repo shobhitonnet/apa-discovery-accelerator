@@ -236,6 +236,9 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
   const [durationFilter, setDurationFilter] = useState<DurationBucket[]>([]);
   const [conformanceFilter, setConformanceFilter] = useState<ConformanceBucket[]>([]);
 
+  // Right-rail filter panel collapse state (expanded by default)
+  const [filtersCollapsed, setFiltersCollapsed] = useState(false);
+
   // Independent toggles — filters compose (AND/intersection across dimensions).
   const toggleOutcome = (o: Outcome) => {
     setOutcomeFilter((prev) => prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]);
@@ -903,20 +906,50 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
         </div>
       </div>
 
-      {/* Right-rail filter panel */}
-      <div style={{ width: 360, flexShrink: 0 }}>
-        <FilterPanel
-          graph={graph}
-          outcomeFilter={outcomeFilter}
-          durationFilter={durationFilter}
-          conformanceFilter={conformanceFilter}
-          onToggleOutcome={toggleOutcome}
-          onToggleDuration={toggleDuration}
-          onToggleConformance={toggleConformance}
-          clearAll={clearAllAdvancedFilters}
-          activeCount={activeAdvancedFilterCount}
-        />
-      </div>
+      {/* Right-rail filter panel — collapsible */}
+      {filtersCollapsed ? (
+        <div style={{ width: 36, flexShrink: 0, height: 680 }}>
+          <button
+            onClick={() => setFiltersCollapsed(false)}
+            title="Expand filters"
+            style={{
+              width: "100%", height: "100%",
+              background: "#fff", border: "1px solid #DDE3EC", borderRadius: 12,
+              cursor: "pointer", padding: "12px 0",
+              display: "flex", flexDirection: "column", alignItems: "center", gap: 12,
+              color: "#5C6E84", fontWeight: 600, transition: "all 0.15s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "#1A5AFF";
+              (e.currentTarget as HTMLElement).style.color = "#1A5AFF";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "#DDE3EC";
+              (e.currentTarget as HTMLElement).style.color = "#5C6E84";
+            }}
+          >
+            <span style={{ fontSize: 16, lineHeight: 1 }}>‹</span>
+            <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", writingMode: "vertical-rl", transform: "rotate(180deg)" }}>
+              Filters{activeAdvancedFilterCount > 0 ? ` · ${activeAdvancedFilterCount}` : ""}
+            </span>
+          </button>
+        </div>
+      ) : (
+        <div style={{ width: 360, flexShrink: 0 }}>
+          <FilterPanel
+            graph={graph}
+            outcomeFilter={outcomeFilter}
+            durationFilter={durationFilter}
+            conformanceFilter={conformanceFilter}
+            onToggleOutcome={toggleOutcome}
+            onToggleDuration={toggleDuration}
+            onToggleConformance={toggleConformance}
+            clearAll={clearAllAdvancedFilters}
+            activeCount={activeAdvancedFilterCount}
+            onCollapse={() => setFiltersCollapsed(true)}
+          />
+        </div>
+      )}
       </div>
 
       {/* Stats footer */}
@@ -1245,6 +1278,7 @@ function FilterPanel({
   onToggleConformance,
   clearAll,
   activeCount,
+  onCollapse,
 }: {
   graph: ProcessGraphSummary;
   outcomeFilter: Outcome[];
@@ -1255,6 +1289,7 @@ function FilterPanel({
   onToggleConformance: (v: ConformanceBucket) => void;
   clearAll: () => void;
   activeCount: number;
+  onCollapse?: () => void;
 }) {
   return (
     <div style={{ background: "#fff", border: "1px solid #DDE3EC", borderRadius: 12, padding: "12px 14px", height: 680, display: "flex", flexDirection: "column" }}>
@@ -1272,6 +1307,15 @@ function FilterPanel({
             style={{ fontSize: 10, fontWeight: 700, padding: "3px 10px", borderRadius: 12, background: "transparent", color: "#5C6E84", border: "1px solid #DDE3EC", cursor: "pointer" }}>
             Clear ({activeCount})
           </button>
+        )}
+        {onCollapse && (
+          <button
+            onClick={onCollapse}
+            title="Collapse filters"
+            style={{ fontSize: 14, lineHeight: 1, fontWeight: 700, width: 24, height: 24, borderRadius: 6, background: "transparent", color: "#5C6E84", border: "1px solid #DDE3EC", cursor: "pointer", padding: 0 }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#1A5AFF"; (e.currentTarget as HTMLElement).style.color = "#1A5AFF"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#DDE3EC"; (e.currentTarget as HTMLElement).style.color = "#5C6E84"; }}
+          >›</button>
         )}
       </div>
 

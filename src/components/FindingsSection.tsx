@@ -33,6 +33,7 @@ type ElasticOpsBreakdown = {
 
 type FindingsResult = {
   generatedAt: string;
+  currency?: { symbol: string; code: string };
   summary: string;
   totalAnnualValueLeak: number;
   elasticOps?: {
@@ -124,6 +125,10 @@ export function FindingsSection({ engagementId, processId }: Props) {
 
   const generate = () => generateInternal({ silent: false });
 
+  // Currency symbol — sourced from the cached findings result (set at generate
+  // time from the engagement's country). Defaults to $ for backward compat.
+  const cur = result?.currency?.symbol ?? "$";
+
   return (
     <div style={{ borderRadius: 12, border: "1px solid #DDE3EC", overflow: "hidden", background: "#fff" }}>
       <div style={{
@@ -143,7 +148,7 @@ export function FindingsSection({ engagementId, processId }: Props) {
         </span>
         <span style={{ fontSize: 11, fontWeight: 600, color: result ? "#1A8F4F" : "#5C6E84", flex: 1 }}>
           {result
-            ? `${result.findings.length} findings · £${(result.totalAnnualValueLeak / 1000).toLocaleString(undefined, { maximumFractionDigits: 0 })}k annual leak${fromCache ? " · cached" : ""}`
+            ? `${result.findings.length} findings · ${cur}${(result.totalAnnualValueLeak / 1000).toLocaleString(undefined, { maximumFractionDigits: 0 })}k annual leak${fromCache ? " · cached" : ""}`
             : (loading ? "Generating findings…" : "AI-generated findings ranked by value impact")}
         </span>
         <button
@@ -175,7 +180,7 @@ export function FindingsSection({ engagementId, processId }: Props) {
 
         {!result && loading && (
           <div style={{ fontSize: 12, color: "#5C6E84", lineHeight: 1.5 }}>
-            Generating your first findings report — Claude is analysing variants, deviations, captured metrics, and the country / process repository to produce a ranked report with quantified £/$ value leak. Cached after first generation; <strong>Regenerate</strong> any time for a fresh narrative.
+            Generating your first findings report — Claude is analysing variants, deviations, captured metrics, and the country / process repository to produce a ranked report with quantified value leak. Cached after first generation; <strong>Regenerate</strong> any time for a fresh narrative.
           </div>
         )}
         {!result && !loading && !error && (
@@ -195,7 +200,7 @@ export function FindingsSection({ engagementId, processId }: Props) {
               <div style={{ flexShrink: 0, textAlign: "right", paddingLeft: 14, borderLeft: "1px solid #EEF2F8" }}>
                 <div style={{ fontSize: 9, fontWeight: 700, color: "#9AAABB", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>Total annual leak</div>
                 <div style={{ fontSize: 22, fontWeight: 800, color: "#001C3D", lineHeight: 1, fontFamily: "monospace" }}>
-                  £{(result.totalAnnualValueLeak / 1000).toLocaleString(undefined, { maximumFractionDigits: 0 })}k
+                  {cur}{(result.totalAnnualValueLeak / 1000).toLocaleString(undefined, { maximumFractionDigits: 0 })}k
                 </div>
                 <div style={{ fontSize: 10, color: "#9AAABB", marginTop: 2 }}>across {result.findings.length} findings</div>
               </div>
@@ -226,7 +231,7 @@ export function FindingsSection({ engagementId, processId }: Props) {
                       {/* Big number */}
                       <div>
                         <div style={{ fontSize: 22, fontWeight: 800, color: "#001C3D", lineHeight: 1, fontFamily: "monospace" }}>
-                          £{(data.totalAnnualValueLeak / 1000).toLocaleString(undefined, { maximumFractionDigits: 0 })}k
+                          {cur}{(data.totalAnnualValueLeak / 1000).toLocaleString(undefined, { maximumFractionDigits: 0 })}k
                         </div>
                         <div style={{ fontSize: 10, color: "#5C6E84", marginTop: 3 }}>
                           {pct.toFixed(0)}% of total · {data.findingCount} finding{data.findingCount !== 1 ? "s" : ""}
@@ -289,7 +294,7 @@ export function FindingsSection({ engagementId, processId }: Props) {
                       </span>
                       <div style={{ flex: 1 }} />
                       <span style={{ fontSize: 11, fontWeight: 700, color: cm.text, fontFamily: "monospace" }}>
-                        £{(total / 1000).toFixed(0)}k / yr
+                        {cur}{(total / 1000).toFixed(0)}k / yr
                       </span>
                     </div>
 
@@ -326,7 +331,7 @@ export function FindingsSection({ engagementId, processId }: Props) {
                               </div>
                               <div style={{ textAlign: "right", flexShrink: 0 }}>
                                 <div style={{ fontSize: 14, fontWeight: 800, color: cm.text, fontFamily: "monospace" }}>
-                                  £{(f.annualValueLeak / 1000).toFixed(0)}k
+                                  {cur}{(f.annualValueLeak / 1000).toFixed(0)}k
                                 </div>
                                 <div style={{ fontSize: 9, color: "#9AAABB" }}>per year</div>
                               </div>

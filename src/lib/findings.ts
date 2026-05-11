@@ -13,6 +13,17 @@ import { loadRepositoryBundle } from "@/lib/repositoryBootstrap";
 import type { GraphActivity, GraphEdge, ProcessGraphSummary } from "@/lib/processGraph.types";
 import type { VariantsSummary } from "@/lib/variants";
 
+// Currency lookup by country — used to format the value-leak figures and
+// keep the Claude prompt in the right currency.
+export function currencyForCountry(country: string | null | undefined): { symbol: string; code: string } {
+  if (!country) return { symbol: "$", code: "USD" };
+  const c = country.toLowerCase();
+  if (c.includes("united kingdom") || c === "uk" || c === "gb" || c === "great britain") return { symbol: "£", code: "GBP" };
+  if (c.includes("germany") || c.includes("france") || c.includes("netherlands") || c.includes("spain") || c.includes("italy") || c.includes("ireland") || c.includes("belgium") || c.includes("austria") || c.includes("portugal") || c.includes("finland") || c.includes("eurozone")) return { symbol: "€", code: "EUR" };
+  // Default to USD (covers United States, Canada — both use $; if Canada-specific currency is needed, add a special case)
+  return { symbol: "$", code: "USD" };
+}
+
 // ──────────────────────────────────────────────────────────────────────────
 // Detection — pull deviations out of the process graph
 // ──────────────────────────────────────────────────────────────────────────
@@ -165,11 +176,15 @@ export type FindingsContext = {
   metrics: Record<string, string> | null;
   capabilities: Record<string, string> | null;
   coefficients: Record<string, { value: number; unit: string; description: string }>;
+  /** Currency derived from country — used throughout the prompt + result */
+  currency: { symbol: string; code: string };
 };
 
 export function buildFindingsPrompt(ctx: FindingsContext): string {
   const sortedDeviations = [...ctx.deviations].sort((a, b) => b.caseCount - a.caseCount).slice(0, 12);
-  return `You are a senior banking process consultant producing a quantified findings report for a client engagement. Your goal is to convert observed process deviations into ranked findings with concrete £/$ value attached.
+  const cur = ctx.currency.symbol;
+  const code = ctx.currency.code;
+  return `You are a senior banking process consultant producing a quantified findings report for a client engagement. Your goal is to convert observed process deviations into ranked findings with concrete ${cur} value attached.
 
 ENGAGEMENT
 - Client: ${ctx.clientName}
@@ -207,7 +222,7 @@ ${d.candidateReasons.length === 0 ? "   (no library match — apply general proc
 TASK
 Generate 5-8 ranked findings. Each finding:
 1. Picks the most likely candidate reason for the deviation (or combines if appropriate)
-2. Uses the VALUE COEFFICIENTS above to compute a concrete £/$ annual value-leak figure (round to nearest £/$ thousand)
+2. Uses the VALUE COEFFICIENTS above to compute a concrete ${cur} annual value-leak figure (round to nearest ${cur} thousand)
 3. Quantifies based on the actual case counts observed × the multipliers
 4. References the specific banking POV (regulatory framework, fines, default rates) where relevant
 5. Recommends a concrete next step — automation, control, training, audit, or further investigation
@@ -215,7 +230,7 @@ Generate 5-8 ranked findings. Each finding:
 Return ONLY valid JSON in this structure:
 {
   "summary": "1-2 sentence executive summary of the digital twin findings",
-  "totalAnnualValueLeak": <number in major currency unit, e.g. GBP>,
+  "totalAnnualValueLeak": <number in major currency unit, ${code}>,
   "elasticOps": {
     "growth": {
       "totalAnnualValueLeak": <number — sum of annualValueLeak across findings tagged 'growth'>,
@@ -236,8 +251,8 @@ Return ONLY valid JSON in this structure:
       "severity": "low | medium | high | critical",
       "narrative": "2-3 sentence story — what's happening, why it matters, how big it is",
       "casesAffected": <number>,
-      "annualValueLeak": <number in GBP>,
-      "valueLeakBreakdown": "Show the math: e.g. '270 cases/yr × 12 mins/case × £35/hr = £1,890/yr'",
+      "annualValueLeak": <number in ${code}>,
+      "valueLeakBreakdown": "Show the math: e.g. '270 cases/yr × 12 mins/case × ${cur}35/hr = ${cur}1,890/yr'",
       "deviationType": "skip | loop | out_of_order | extra_step",
       "deviationStep": "the affected step name",
       "rootCause": "Most likely cause (from candidate reasons or inferred)",
@@ -293,18 +308,18 @@ THREE HARD RULES (audit-grade — your output is rejected if any rule is broken)
 
 RULE 1 — MATH CONSISTENCY ON EVERY FINDING
 The "valueLeakBreakdown" string MUST end with a single final number that equals
-"annualValueLeak" EXACTLY (rounded to nearest £1k). The formula shown in the
+"annualValueLeak" EXACTLY (rounded to nearest ${cur}1k). The formula shown in the
 breakdown must be the actual formula you used to derive annualValueLeak — no
 shortcuts, no rewrites, no dropped terms.
 
-✓ GOOD: "1,345 cases × 0.4% fraud rate × £4,800 avg loss = £25,824 + 1,345 cases × £1,060 reg risk = £1,425,700 → total £1,451k"
+✓ GOOD: "1,345 cases × 0.4% fraud rate × ${cur}4,800 avg loss = ${cur}25,824 + 1,345 cases × ${cur}1,060 reg risk = ${cur}1,425,700 → total ${cur}1,451k"
    (the partial sums are shown AND the final total matches annualValueLeak)
-✗ BAD:  "1,345 × 0.4% × £4,800 = £26k + 1,345 × £1,060 = £1,425k total"
-   (claims the total is £1,425k but actually £26k + £1,425k = £1,451k — math fails)
+✗ BAD:  "1,345 × 0.4% × ${cur}4,800 = ${cur}26k + 1,345 × ${cur}1,060 = ${cur}1,425k total"
+   (claims the total is ${cur}1,425k but actually ${cur}26k + ${cur}1,425k = ${cur}1,451k — math fails)
 
 RULE 2 — COEFFICIENT SOURCING
 Use ONLY the keys listed in the VALUE COEFFICIENTS section above. You may NOT
-invent or guess coefficients (no "£1,060/case regulatory risk" if that key
+invent or guess coefficients (no "${cur}1,060/case regulatory risk" if that key
 isn't in the list).
 
 If a coefficient you'd need for proper quantification is missing:
@@ -344,6 +359,8 @@ export type ElasticOpsBreakdown = {
 
 export type FindingsResult = {
   generatedAt: string;
+  /** Currency symbol + code derived from engagement country */
+  currency?: { symbol: string; code: string };
   summary: string;
   totalAnnualValueLeak: number;
   /** Per-vertex roll-up — Growth / Efficiency / Control */
@@ -414,5 +431,6 @@ export async function loadFindingsContext(engagementId: string, processId: strin
     metrics: process.processMetrics as Record<string, string> | null,
     capabilities: process.processCapabilities as Record<string, string> | null,
     coefficients: repository.coefficientByKey,
+    currency: currencyForCountry(engagement.country),
   };
 }

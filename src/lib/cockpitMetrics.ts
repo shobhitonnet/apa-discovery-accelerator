@@ -158,15 +158,18 @@ function computeDirect(metric: MetricDefinition, ctx: ComputeContext): number | 
   const k = metric.key.toLowerCase();
 
   // ── TIME ────────────────────────────────────────────────────────────────
-  // Generic lead/cycle/total/onboarding time
-  if (/total.?(onboarding|cycle|process)|onboarding.?time|end.?to.?end/.test(k) ||
-      (/lead.?time|cycle.?time/.test(k) && /(avg|average|mean)/.test(k)) ||
-      /(avg|mean).?(lead|cycle)/.test(k)) {
+  // Lead / cycle time — match `lead_time`, `cycle_time`, `onboarding_time`,
+  // and the seed's process-prefixed variants (e.g. commercial_onboarding_lead_time_days).
+  // Default = avg; percentile variants checked first.
+  if (/lead.?time|cycle.?time|onboarding.?time|end.?to.?end|total.?(onboarding|cycle|process)/.test(k)) {
+    if (/p99/.test(k))         return percentile(ctx.leadTimes, 99) / unitFactor(metric.unit);
+    if (/p90/.test(k))         return percentile(ctx.leadTimes, 90) / unitFactor(metric.unit);
+    if (/p50|median/.test(k))  return percentile(ctx.leadTimes, 50) / unitFactor(metric.unit);
     return avg(ctx.leadTimes) / unitFactor(metric.unit);
   }
-  if (/lead.?time/.test(k) && /p50|median/.test(k)) return percentile(ctx.leadTimes, 50) / unitFactor(metric.unit);
-  if (/lead.?time/.test(k) && /p90/.test(k))         return percentile(ctx.leadTimes, 90) / unitFactor(metric.unit);
-  if (/lead.?time/.test(k) && /p99/.test(k))         return percentile(ctx.leadTimes, 99) / unitFactor(metric.unit);
+  if (/(avg|mean).?(lead|cycle)/.test(k)) {
+    return avg(ctx.leadTimes) / unitFactor(metric.unit);
+  }
 
   // KYC time (start → first KYC event)
   if (/kyc.?(processing.?)?time|identity.?(verification.?)?time|aml.?time/.test(k)) {
@@ -174,13 +177,13 @@ function computeDirect(metric: MetricDefinition, ctx: ComputeContext): number | 
     return arr.length > 0 ? avg(arr) / unitFactor(metric.unit) : null;
   }
 
-  // Credit decision time
-  if (/credit.?(decision|check).?time|decision.?time/.test(k)) {
-    const arr = timeFromStartTo(ctx, /(credit|decision|underwrit|approval|review)/i);
+  // Credit / underwriting decision time — accepts "time", "days", "turn" suffixes
+  if (/credit.?(decision|check).?(time|days|turn)|decision.?(time|days|turn)|underwriting.?(decision|turn)|clear.?to.?close/.test(k)) {
+    const arr = timeFromStartTo(ctx, /(credit|decision|underwrit|approval|review|clear.?to.?close)/i);
     if (arr.length === 0) return null;
-    if (/p90/.test(k))      return percentile(arr, 90) / unitFactor(metric.unit);
-    if (/p99/.test(k))      return percentile(arr, 99) / unitFactor(metric.unit);
-    if (/p50|median/.test(k)) return percentile(arr, 50) / unitFactor(metric.unit);
+    if (/p99/.test(k))         return percentile(arr, 99) / unitFactor(metric.unit);
+    if (/p90/.test(k))         return percentile(arr, 90) / unitFactor(metric.unit);
+    if (/p50|median/.test(k))  return percentile(arr, 50) / unitFactor(metric.unit);
     return avg(arr) / unitFactor(metric.unit);
   }
 
@@ -224,13 +227,14 @@ function computeDirect(metric: MetricDefinition, ctx: ComputeContext): number | 
   }
 
   // ── OUTCOME ─────────────────────────────────────────────────────────────
-  if (/approval.?rate|approved.?rate|application.?approval/.test(k)) {
+  if (/approval.?rate|approved.?rate|application.?approval|edd.?(approval|pass)|pass.?rate/.test(k)) {
     return ctx.totalCases > 0 ? (ctx.approvedCount / ctx.totalCases) * 100 : null;
   }
   if (/decline.?rate|reject.?rate|application.?reject/.test(k) && !/document/.test(k)) {
     return ctx.totalCases > 0 ? (ctx.declinedCount / ctx.totalCases) * 100 : null;
   }
-  if (/abandon|drop.?off|dropout|incomplete/.test(k) && /rate|score/.test(k)) {
+  // Abandonment / withdrawal / dropout
+  if (/abandon|drop.?off|dropout|incomplete|withdraw|withdrawal/.test(k) && /rate|score/.test(k)) {
     return ctx.totalCases > 0 ? (ctx.abandonedCount / ctx.totalCases) * 100 : null;
   }
   if (/completion.?rate/.test(k)) {
@@ -242,7 +246,8 @@ function computeDirect(metric: MetricDefinition, ctx: ComputeContext): number | 
   if (/total.?fte.?hours|fte.?hours.?per.?case/.test(k)) {
     return (avg(ctx.leadTimes) * TOUCH_RATIO) / 3600_000;
   }
-  if (/cost.?per.?(case|onboarding)/.test(k)) {
+  // Cost per X (case / onboarding / loan / application) — process-prefixed variants too
+  if (/cost.?per/.test(k) && /(case|onboarding|loan|application)/.test(k)) {
     const rate = ctx.coefficients["fte_ops_hourly_rate"] ?? ctx.coefficients["fte_hourly_rate"] ?? 0;
     if (rate === 0) return null;
     const hoursPerCase = (avg(ctx.leadTimes) * TOUCH_RATIO) / 3600_000;
@@ -294,8 +299,18 @@ function computeDirect(metric: MetricDefinition, ctx: ComputeContext): number | 
   if (/fraud.?(detection|positive).?rate/.test(k)) {
     return ctx.totalCases > 0 ? (ctx.fraudPositiveCases / ctx.totalCases) * 100 : null;
   }
+  // Compliance touch rate — cases that hit a compliance/AML/EDD step
+  if (/compliance.?touch/.test(k)) {
+    const touched = ctx.caseInfos.filter((c) => c.activities.some((a) => /(compliance|aml|edd|sanctions|due.?dilig|kyc)/i.test(a))).length;
+    return ctx.totalCases > 0 ? (touched / ctx.totalCases) * 100 : null;
+  }
+  // Audit-flagged rate — cases tagged with audit/QA activities
+  if (/audit.?(flagged|flag)/.test(k)) {
+    const flagged = ctx.caseInfos.filter((c) => c.activities.some((a) => /(audit|qa.?review|retrospect)/i.test(a))).length;
+    return ctx.totalCases > 0 ? (flagged / ctx.totalCases) * 100 : null;
+  }
+  // Gate failure / regulatory reporting — cases hitting compliance/audit/escalation
   if (/regulatory.?reporting|gate.?(failure|fail)/.test(k)) {
-    // Proxy: % of cases hitting compliance / audit-related extra steps
     const auditCases = ctx.caseInfos.filter((c) => c.activities.some((a) => /(audit|review|compliance|escalat)/i.test(a))).length;
     return ctx.totalCases > 0 ? (auditCases / ctx.totalCases) * 100 : null;
   }
@@ -303,7 +318,8 @@ function computeDirect(metric: MetricDefinition, ctx: ComputeContext): number | 
   // ── VOLUME ──────────────────────────────────────────────────────────────
   if (/total.?cases|case.?count/.test(k)) return ctx.totalCases;
   if (/total.?events|event.?count/.test(k)) return ctx.totalEvents;
-  if (/monthly.?(onboarding.?)?volume|cases.?per.?month/.test(k)) {
+  // Monthly volume — catches `monthly_X_volume`, `application_volume_monthly`, `cases_per_month`, etc.
+  if (/monthly.*?(volume|onboarding|funding|application)|application.?volume|cases.?per.?month/.test(k)) {
     if (ctx.casesByMonth.size === 0) return null;
     return Array.from(ctx.casesByMonth.values()).reduce((a, b) => a + b, 0) / ctx.casesByMonth.size;
   }
@@ -333,18 +349,36 @@ function computeInferred(metric: MetricDefinition, ctx: ComputeContext, allCompu
   };
   const k = metric.key.toLowerCase();
 
-  if (/cost.?per.?(onboarding|case)/.test(k)) {
+  // Cost per X — fallback if computeDirect didn't catch it
+  if (/cost.?per/.test(k) && /(onboarding|case|loan|application)/.test(k)) {
     const rate = lookup("fte_ops_hourly_rate") ?? lookup("fte_hourly_rate") ?? 0;
     if (rate === 0) return null;
     const hoursPerCase = (avg(ctx.leadTimes) * TOUCH_RATIO) / 3600_000;
     return hoursPerCase * rate;
   }
-  if (/annual.?cost/.test(k)) {
-    const costPerCase = lookup("cost_per_case") ?? lookup("cost_per_onboarding") ?? null;
-    const casesPerYear = lookup("applications_per_year") ?? lookup("monthly_onboarding_volume") ?? null;
-    if (costPerCase === null || casesPerYear === null) return null;
-    const yearMultiplier = lookup("monthly_onboarding_volume") ? 12 : 1;
-    return costPerCase * casesPerYear * yearMultiplier;
+  // Annual ops cost — pattern-search through computed metrics for cost_per_X
+  // and monthly_X_volume (works regardless of process-specific prefix)
+  if (/annual.*?cost/.test(k)) {
+    // Find first computed cost_per_X
+    let costPerCase: number | null = null;
+    for (const [mk, val] of allComputed) {
+      const lk = mk.toLowerCase();
+      if (val !== null && /cost.?per/.test(lk) && /(case|onboarding|loan|application)/.test(lk)) {
+        costPerCase = val;
+        break;
+      }
+    }
+    // Find first computed monthly volume metric
+    let monthlyVolume: number | null = null;
+    for (const [mk, val] of allComputed) {
+      const lk = mk.toLowerCase();
+      if (val !== null && (/monthly.*?(volume|onboarding|funding|application)/.test(lk) || /application.?volume/.test(lk) || /cases.?per.?month/.test(lk))) {
+        monthlyVolume = val;
+        break;
+      }
+    }
+    if (costPerCase === null || monthlyVolume === null) return null;
+    return costPerCase * monthlyVolume * 12;
   }
   if (/customer.?effort.?score/.test(k)) {
     const touchpoints = ctx.totalCases > 0 ? ctx.totalEvents / ctx.totalCases : 0;
@@ -442,7 +476,10 @@ export async function computeCockpit(engagementId: string, processId: string): P
     if (!info.firstByActivity.has(e.activity)) info.firstByActivity.set(e.activity, e.timestamp);
     if (e.timestamp > info.lastTs) info.lastTs = e.timestamp;
     if (e.timestamp < info.firstTs) info.firstTs = e.timestamp;
-    if (/(account.?(open|creat|setup)|provisioning)/i.test(e.activity)) info.reachedAccountCreation = true;
+    // Completion indicators — recognise the real seed activity labels:
+    //   "Provision Account in Core", "Account Provisioning", "Disburse Loan Funds",
+    //   "Fund & Record", "Generate Account Number", "Setup Account Products"
+    if (/(account.?(open|creat|setup)|provision|disburs|fund.?(record|loan|account|&)|generate.?account|set.?up.?loan.?servicing|loan.?closing|complete)/i.test(e.activity)) info.reachedAccountCreation = true;
     if (/(manual|review|escalat|exception)/i.test(e.activity)) info.hasManualReview = true;
 
     // Pull attributes
@@ -483,8 +520,8 @@ export async function computeCockpit(engagementId: string, processId: string): P
     // Outcomes
     const allOutcomes = Array.from(c.outcomes).join(" ");
     const allActivities = c.activities.join(" ").toLowerCase();
-    if (/(approved|approve|success|complete)/.test(allOutcomes) ||
-        c.activities.some((a) => /(account.?(open|creat))/i.test(a))) approvedCount++;
+    if (/(approved|approve|success|complete|funded)/.test(allOutcomes) ||
+        c.activities.some((a) => /(account.?(open|creat)|provision|disburs|fund.?(record|loan|&)|generate.?account|set.?up.?loan.?servicing)/i.test(a))) approvedCount++;
     if (/(declined|decline|reject)/.test(allOutcomes) ||
         c.activities.some((a) => /(reject|decline)/i.test(a))) declinedCount++;
     if (!c.reachedAccountCreation && !/(reject|decline)/.test(allOutcomes) &&
@@ -559,16 +596,47 @@ export async function computeCockpit(engagementId: string, processId: string): P
     if (m.source === "inferred") allComputed.set(m.key, computeInferred(m, ctx, allComputed));
   }
 
+  // Drop-off step (text metric) — find the activity most often appearing as the
+  // last event in abandoned cases. Returned as a string, overrides formattedValue.
+  const dropOffStepName = ((): { name: string; share: number } | null => {
+    const abandoned = caseInfos.filter((c) =>
+      !c.reachedAccountCreation &&
+      !c.activities.some((a) => /(reject|decline)/i.test(a))
+    );
+    if (abandoned.length === 0) return null;
+    const lastActCounts = new Map<string, number>();
+    for (const c of abandoned) {
+      const last = c.activities[c.activities.length - 1];
+      if (last) lastActCounts.set(last, (lastActCounts.get(last) ?? 0) + 1);
+    }
+    let top: string | null = null;
+    let topCount = 0;
+    for (const [act, count] of lastActCounts) {
+      if (count > topCount) { topCount = count; top = act; }
+    }
+    return top ? { name: top, share: topCount / abandoned.length } : null;
+  })();
+
   const metricsByCategory = JSON.parse(JSON.stringify(EMPTY_CATEGORIES)) as Record<MetricCategory, CockpitMetric[]>;
   for (const m of metricDefs) {
     const value = allComputed.get(m.key) ?? null;
     const { status, thresholdInfo } = evaluateStatus(value, m);
     const isOverridden = m.source === "assumed" && typeof overrides[m.key] === "number";
+
+    // Text-metric override: drop-off / abandonment step shows an activity NAME
+    const isStepMetric = m.unit === "step" || /drop.?off.?step|abandon(ment)?.?(step|hotspot)/.test(m.key.toLowerCase());
+    let formattedValue = formatValue(value, m.unit);
+    let computable = value !== null;
+    if (isStepMetric && dropOffStepName) {
+      formattedValue = `${dropOffStepName.name} (${(dropOffStepName.share * 100).toFixed(0)}%)`;
+      computable = true;
+    }
+
     const cm: CockpitMetric = {
       key: m.key, label: m.label, category: m.category, source: m.source,
       unit: m.unit, description: m.description,
-      value, formattedValue: formatValue(value, m.unit),
-      status, thresholdInfo, computable: value !== null,
+      value, formattedValue,
+      status, thresholdInfo, computable,
       isOverridden, defaultValue: m.source === "assumed" ? (m.defaultValue ?? null) : null,
     };
     if (!metricsByCategory[m.category]) metricsByCategory[m.category] = [];

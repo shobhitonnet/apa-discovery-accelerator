@@ -108,6 +108,7 @@ export async function POST(
     const result: FindingsResult = {
       ...parsed,
       generatedAt: generatedAt.toISOString(),
+      currency: ctx.currency,
       totalAnnualValueLeak: sum,
       elasticOps: reconciledOps,
       findings,
