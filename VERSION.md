@@ -4,6 +4,43 @@ This file is the source of truth for version snapshots. Each version represents 
 
 ---
 
+## v1.2.1 — "Template seating cleanup" (locked 2026-05-11)
+
+**Purpose:** close out the seating gaps surfaced by the v1.2 audit so retail_onboarding and home_mortgage look demo-clean side-by-side.
+
+### Scope delivered
+
+**retail_onboarding**
+- Added 4 missing actors to global pool: Retail Applicant, Branch Customer Service Rep, Digital Onboarding Bot, KYC / AML Analyst
+- Renamed 8 generic-named systems to **Function — Vendor** format with US-incumbent vendors:
+  - CRM → Salesforce Financial Services Cloud
+  - Card Management → Marqeta / TSYS
+  - Core Banking → FIS Premier / Fiserv DNA
+  - Credit Decisioning → FICO / Provenir
+  - Onboarding Workflow → Alloy / Sift
+  - Digital Banking → Q2 / Alkami / NCR
+  - Document Management → Hyland OnBase
+  - KYC/AML Screening → LexisNexis Bridger / NICE Actimize
+- Added 3 new vendor categories: Credit Bureau (Experian / Equifax / TransUnion), Identity Verification (Onfido / Jumio / Socure), Fraud Database (Early Warning Services / ThreatMetrix)
+- Total: 11 systems seated, all with vendor-aware names. No Backbase products in the incumbent list — Backbase is the future-state pitch
+
+**home_mortgage**
+- Replaced 26 non-canonical ProcessStepTemplate rows with the canonical 14 TRID-aware steps (Submit Mortgage Application → Send Loan Estimate (TRID) → ... → Set Up Loan Servicing)
+- Untagged 10 generic-named systems from `home_mortgage` so the template now shows only the 9 US-specific vendors. Rows preserved (non-destructive) — they're orphan/available for other templates
+
+### Scripts (new)
+- `scripts/cleanup-v1-2-1.ts` — idempotent cleanup (actors + steps + system untag)
+- `scripts/seed-retail-vendors.ts` — idempotent retail vendor rename + add
+
+### Known limitations (deliberately deferred)
+- Duplicate `Core Banking System` row exists (orphan from the untag pass). Janitorial — no functional impact
+- `durationHistogram` still computed server-side but unused. Will remove in v1.3 cleanup
+
+### Rollback
+Tagged `v1.2.1` in git. To roll back: `git checkout v1.2.1`.
+
+---
+
 ## v1.2 — "Full-screen Explorer + US template seed" (locked 2026-05-11)
 
 **Purpose:** turn the Process Explorer into a full-screen, Celonis-grade workspace with a dedicated filter rail, vertical variants slider, and consolidated KPI strip — and seed three additional active US process templates (home_mortgage, commercial_onboarding, sme_loan_origination) so US demos have content beyond retail_onboarding.

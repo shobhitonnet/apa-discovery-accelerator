@@ -639,9 +639,50 @@
 
   <div class="v-card">
     <div class="head">
+      <div class="num">v1.2.1</div>
+      <div class="title">Template seating cleanup</div>
+      <div class="date">locked 2026-05-11 <span class="badge live">current</span></div>
+    </div>
+    <div class="tagline">Closes out the seating gaps from the v1.2 audit: retail_onboarding gets 4 missing actors and 11 vendor-aware systems (Salesforce, FIS, Marqeta, Experian, Onfido, LexisNexis, etc. — incumbent stack only, no Backbase); home_mortgage gets canonical TRID-aware steps and a clean 9-vendor list.</div>
+
+    <h4>retail_onboarding</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div><strong>Actors</strong> — added 4 missing to global pool: Retail Applicant · Branch Customer Service Rep · Digital Onboarding Bot · KYC / AML Analyst</div></li>
+      <li><span class="marker">·</span><div><strong>Systems</strong> — renamed 8 generics to "Function — Vendor" format: Salesforce FSC · Marqeta / TSYS · FIS Premier / Fiserv DNA · FICO / Provenir · Alloy / Sift · Q2 / Alkami / NCR · Hyland OnBase · LexisNexis Bridger / NICE Actimize</div></li>
+      <li><span class="marker">·</span><div><strong>Systems</strong> — added 3 new categories: Credit Bureau (Experian / Equifax / TransUnion) · Identity Verification (Onfido / Jumio / Socure) · Fraud Database (Early Warning / ThreatMetrix)</div></li>
+      <li><span class="marker">·</span><div>Total: <strong>11 systems</strong>, all vendor-aware. No Backbase products — incumbent stack only</div></li>
+    </ul>
+
+    <h4>home_mortgage</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div><strong>Steps</strong> — replaced 26 non-canonical rows with the canonical 14 TRID-aware steps</div></li>
+      <li><span class="marker">·</span><div><strong>Systems</strong> — untagged 10 generic carry-overs; template now shows the 9 US-specific vendors only</div></li>
+      <li><span class="marker">·</span><div>Non-destructive — untagged systems preserved as orphan rows for other templates</div></li>
+    </ul>
+
+    <h4>Scripts</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div><code>scripts/cleanup-v1-2-1.ts</code> — idempotent cleanup (actors + steps + untag)</div></li>
+      <li><span class="marker">·</span><div><code>scripts/seed-retail-vendors.ts</code> — idempotent retail vendor rename + add</div></li>
+    </ul>
+
+    <h4>Janitorial deferred</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Duplicate <code>Core Banking System</code> row exists (orphan from untag) — no functional impact</div></li>
+      <li><span class="marker">·</span><div><code>durationHistogram</code> dead code still computed — remove in v1.3</div></li>
+    </ul>
+
+    <h4>Rollback</h4>
+    <ul class="clean">
+      <li><span class="marker">·</span><div>Tagged <code>v1.2.1</code> in git. To roll back: <code>git checkout v1.2.1</code></div></li>
+    </ul>
+  </div>
+
+  <div class="v-card">
+    <div class="head">
       <div class="num">v1.2</div>
       <div class="title">Full-screen Explorer + US template seed</div>
-      <div class="date">locked 2026-05-11 <span class="badge live">current</span></div>
+      <div class="date">locked 2026-05-11</div>
     </div>
     <div class="tagline">Process Explorer goes full-screen with a dedicated right-rail filter panel, left-edge vertical variants slider, 5-stat KPI strip, and unified dropdown+bars filter. Three US process templates (home_mortgage, commercial_onboarding, sme_loan_origination) plus USA value coefficients seeded for US engagement demos.</div>
 
