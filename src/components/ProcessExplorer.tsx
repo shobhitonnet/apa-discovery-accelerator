@@ -14,6 +14,7 @@ import {
 } from "@/lib/processGraph.types";
 import { DEVIATION_LIBRARY, type DeviationReason } from "@/lib/deviationLibrary";
 import type { VariantsSummary } from "@/lib/variants";
+import { CaseSimulator } from "@/components/CaseSimulator";
 
 type OutcomeFilter = "all" | Outcome;
 const OUTCOME_META: Record<OutcomeFilter, { label: string; color: string; bg: string }> = {
@@ -238,6 +239,9 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
 
   // Right-rail filter panel collapse state (expanded by default)
   const [filtersCollapsed, setFiltersCollapsed] = useState(false);
+
+  // Case simulator — opens a focused popup walking through one variant's path.
+  const [simulatorOpen, setSimulatorOpen] = useState(false);
 
   // Independent toggles — filters compose (AND/intersection across dimensions).
   const toggleOutcome = (o: Outcome) => {
@@ -756,6 +760,22 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
 
         <div style={{ flex: 1 }} />
 
+        {/* Case Simulator trigger */}
+        {variants && variants.topVariants.length > 0 && (
+          <button
+            onClick={() => setSimulatorOpen(true)}
+            style={{
+              fontSize: 11, fontWeight: 700, padding: "6px 14px", borderRadius: 16,
+              border: "1px solid #1A5AFF", background: "rgba(26,90,255,0.06)",
+              color: "#1A5AFF", cursor: "pointer",
+              display: "flex", alignItems: "center", gap: 6,
+            }}
+            title="Animate a case through the selected variant"
+          >
+            ▶ Case Simulator
+          </button>
+        )}
+
         {/* Color mode toggle */}
         <div style={{ display: "flex", alignItems: "center", gap: 4, background: "#fff", border: "1px solid #DDE3EC", borderRadius: 16, padding: 2 }}>
           <button
@@ -963,6 +983,17 @@ export function ProcessExplorer({ graph: initialGraph, variants, engagementId, p
           </span>
         )}
       </div>
+
+      {/* Case Simulator modal — only mounted when open. Initial rank tracks the
+          variant slider so clicking the button shows whichever variant the
+          user is currently inspecting. */}
+      {simulatorOpen && variants && (
+        <CaseSimulator
+          variants={variants}
+          initialRank={Math.min(Math.max(1, topNVariants), variantCount)}
+          onClose={() => setSimulatorOpen(false)}
+        />
+      )}
     </div>
   );
 }
